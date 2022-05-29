@@ -4,7 +4,7 @@ namespace EngineSigma.Engine.Rendering;
 
 public class VertexBuffer: IDisposable
 {
-    public static readonly int MinVertexCount = 1;
+    public static readonly int MinVertexCount = 0;
     public static readonly int MaxVertexCount = 100_000;
     
     private bool _isDisposed;
@@ -34,6 +34,19 @@ public class VertexBuffer: IDisposable
         GL.BindBuffer(BufferTarget.ArrayBuffer, VertexBufferHandle);
         GL.BufferData(BufferTarget.ArrayBuffer, vertexCount * vertexInfo.SizeInBytes, IntPtr.Zero, hint);
     }
+    
+    public void SetData<T> (T[] data, int count) where T : struct
+    {
+        //Guard Statements
+        if (VertexInfo.Type != typeof(T)) throw new ArgumentException("Type 'T' does not match the vertex type of the VertexBuffer.");
+        if (data is null) throw new ArgumentNullException(nameof(data));
+        if (data.Length < 1) throw new ArgumentOutOfRangeException(nameof(data));
+        if (count <= 0 || count > VertexCount || count > data.Length) throw new ArgumentOutOfRangeException(nameof(count));
+
+        //Send Data to VertexBuffer
+        GL.BindBuffer(BufferTarget.ArrayBuffer, VertexBufferHandle);
+        GL.BufferSubData(BufferTarget.ArrayBuffer, IntPtr.Zero, count * VertexInfo.SizeInBytes, data);
+    }
 
     ~VertexBuffer()
     {
@@ -50,18 +63,5 @@ public class VertexBuffer: IDisposable
         
         _isDisposed = true;
         GC.SuppressFinalize(this);
-    }
-
-    public void SetData<T> (T[] data, int count) where T : struct
-    {
-        //Guard Statements
-        if (VertexInfo.Type != typeof(T)) throw new ArgumentException("Type 'T' does not match the vertex type of the VertexBuffer.");
-        if (data is null) throw new ArgumentNullException(nameof(data));
-        if (data.Length < 1) throw new ArgumentOutOfRangeException(nameof(data));
-        if (count <= 0 || count > VertexCount || count > data.Length) throw new ArgumentOutOfRangeException(nameof(count));
-
-        //Send Data to VertexBuffer
-        GL.BindBuffer(BufferTarget.ArrayBuffer, VertexBufferHandle);
-        GL.BufferSubData(BufferTarget.ArrayBuffer, IntPtr.Zero, count * VertexInfo.SizeInBytes, data);
     }
 }

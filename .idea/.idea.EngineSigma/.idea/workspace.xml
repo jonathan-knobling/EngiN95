@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="754f1658-6861-4473-8d02-ed66099f5dae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/EngineSigma.sln.DotSettings.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Mesh.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Renderer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/IndexBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/IndexBuffer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/VertexArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/VertexArray.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/VertexBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/VertexBuffer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/VertexDefinitions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/VertexDefinitions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Window.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/Window.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/shaders/Shader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/shaders/Shader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/shaders/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/shaders/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.vert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Rendering/IndexBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/IndexBuffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Rendering/VertexBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/VertexBuffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Window.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/Window.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" afterDir="false" />
@@ -90,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1653820723376</updated>
       <workItem from="1653820732518" duration="7259000" />
-      <workItem from="1653835084206" duration="17865000" />
+      <workItem from="1653835084206" duration="21291000" />
     </task>
     <servers />
   </component>

@@ -4,7 +4,7 @@ namespace EngineSigma.Engine.Rendering;
 
 public sealed class IndexBuffer : IDisposable
 {
-    public static readonly int MinIndexCount = 1;
+    public static readonly int MinIndexCount = 0;
     public static readonly int MaxIndexCount = 250_000;
 
     private bool _isDisposed;
