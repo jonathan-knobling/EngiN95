@@ -4,24 +4,48 @@
     <projectFile>EngineSigma.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="754f1658-6861-4473-8d02-ed66099f5dae" name="Changes" comment="" />
+    <list default="true" id="754f1658-6861-4473-8d02-ed66099f5dae" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Window.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/shaders/Shader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/shaders/Shader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/shaders/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/shaders/shader.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/shaders/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/shaders/shader.vert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/EngineSigma.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/EngineSigma.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/620a8babd6724afca0e27cddc0e9c851cc00/ed/16f2fa8d/GameWindow.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="29prA2TFoBCdfnYo38ysDYXGSqK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "vue.rearranger.settings.migration": "true"
   }
@@ -55,13 +79,26 @@
       <option name="presentableId" value="Default" />
       <updated>1653820723376</updated>
       <workItem from="1653820732518" duration="7259000" />
+      <workItem from="1653835084206" duration="3786000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

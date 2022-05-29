@@ -1,4 +1,4 @@
-﻿namespace EngineSigma.engine
+﻿namespace EngineSigma.Engine
 {
     internal static class Program
     {

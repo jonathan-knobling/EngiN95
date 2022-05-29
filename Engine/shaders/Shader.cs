@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using OpenTK.Graphics.OpenGL;
 
-namespace EngineSigma.engine.shaders;
+namespace EngineSigma.Engine.shaders;
 
 public sealed class Shader
 {
@@ -38,7 +38,6 @@ public sealed class Shader
         GL.CompileShader(fragmentShader);
 
         string infoLogFrag = GL.GetShaderInfoLog(fragmentShader);
-
         if (infoLogFrag != String.Empty)
             Console.WriteLine(infoLogFrag);
         

@@ -1,21 +1,22 @@
-﻿using EngineSigma.engine.shaders;
+﻿using EngineSigma.Engine.shaders;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
 
-namespace EngineSigma.engine;
+namespace EngineSigma.Engine;
 
-public class Game : GameWindow
+public class Window: GameWindow
 {
     private Shader? _shader;
     
     private int _vertexBufferHandle;
     private int _vertexArrayHandle;
+    private int _indexBufferHandle;
 
     private double _time;
     
-    public Game() 
+    public Window() 
         : base(GameWindowSettings.Default, NativeWindowSettings.Default)
     {
         _time = 0;
@@ -25,7 +26,7 @@ public class Game : GameWindow
     protected override void OnResize(ResizeEventArgs e)
     {
         GL.Viewport(0, 0, e.Width, e.Height);
-        
+
         base.OnResize(e);
     }
 
@@ -35,15 +36,25 @@ public class Game : GameWindow
 
         float[] vertices =
         {
-            0.4f, 0.1f, 0f, 1f, 1f, 1f, 1f,
-            0.7f, -0.3f, 0f, 0f, 0f, 1f, 0.5f,
-            -0.9f, 0.1f, 0f, 0f, 1f, 1f, 1f
+            -0.9f, -0.9f, 0f, 1f, 1f, 1f, 1f,
+            -0.9f, 0.9f, 0f, 1f, 1f, 0f, 1f,
+            0.9f, 0.9f, 0f, 0f, 1f, 1f, 1f,
+            0.9f, -0.9f, 0f, 1f, 0f, 1f, 1f,
+        };
+
+        int[] indices =
+        {
+            0, 1, 2, 0, 2, 3
         };
 
         _vertexBufferHandle = GL.GenBuffer();
         GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferHandle);
         GL.BufferData(BufferTarget.ArrayBuffer, vertices.Length * sizeof(float), vertices, BufferUsageHint.StaticDraw);
 
+        _indexBufferHandle = GL.GenBuffer();
+        GL.BindBuffer(BufferTarget.ElementArrayBuffer, _indexBufferHandle);
+        GL.BufferData(BufferTarget.ElementArrayBuffer, indices.Length * sizeof(int), indices, BufferUsageHint.StaticDraw);
+        
         _vertexArrayHandle = GL.GenVertexArray();
         GL.BindVertexArray(_vertexArrayHandle);
         
@@ -66,6 +77,9 @@ public class Game : GameWindow
     {
         GL.BindVertexArray(0);
         GL.DeleteVertexArray(_vertexArrayHandle);
+
+        GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+        GL.DeleteBuffer(_indexBufferHandle);
         
         GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
         GL.DeleteBuffer(_vertexBufferHandle);
@@ -81,9 +95,10 @@ public class Game : GameWindow
         
         float[] vertices =
         {
-            0.1f, 0.5f, 0f, (float) Math.Sin(_time) + 0f, 1f, 1f, 1f,
-            0.7f, -0.8f, 0f, 1f, (float) Math.Sin(_time) + 0f, 1f, 1f,
-            -0.9f, -0.5f, 0f, 1f, 0f, (float) Math.Sin(_time) + 0f, 1f
+            -0.9f, -0.9f, 0f, (float) Math.Cos(_time), 1f, 1f, 1f,
+            -0.9f, 0.9f, 0f, (float) Math.Sin(_time), (float) Math.Cos(_time), 0f, 1f,
+            0.9f, 0.9f, 0f, 0f, (float) Math.Sin(_time), (float) Math.Cos(_time), 1f,
+            0.9f, -0.9f, 0f, (float) Math.Cos(_time), 0f, (float) Math.Sin(_time), 1f,
         };
         
         GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBufferHandle);
@@ -99,7 +114,9 @@ public class Game : GameWindow
         _shader!.Use();
 
         GL.BindVertexArray(_vertexArrayHandle);
-        GL.DrawArrays(PrimitiveType.Triangles, 0, 3);
+        GL.BindBuffer(BufferTarget.ElementArrayBuffer, _indexBufferHandle);
+        
+        GL.DrawElements(PrimitiveType.Triangles, 6, DrawElementsType.UnsignedInt, 0);
 
         Context.SwapBuffers();
         base.OnRenderFrame(args);
