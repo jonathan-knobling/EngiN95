@@ -1,12 +1,10 @@
 ﻿using OpenTK.Graphics.OpenGL;
 
-namespace EngineSigma.Engine;
+namespace EngineSigma.Engine.Rendering;
 
 public class VertexArray: IDisposable
 {
     private bool _isDisposed;
-
-    private readonly VertexBuffer _vertexBuffer;
 
     public readonly int VertexArrayHandle;
 
@@ -17,20 +15,18 @@ public class VertexArray: IDisposable
         //Guard Statements
         if (vertexBuffer is null) throw new ArgumentNullException(nameof(vertexBuffer));
 
-        _vertexBuffer = vertexBuffer;
-        
         //Get Size of Vertex from Vertex Buffer
-        int vertexSizeInBytes = _vertexBuffer.VertexInfo.SizeInBytes;
+        int vertexSizeInBytes = vertexBuffer.VertexInfo.SizeInBytes;
         
         //Generate Vertex Array
         VertexArrayHandle = GL.GenVertexArray();
         
         //Bind Vertex Array and Vertex Buffer
         GL.BindVertexArray(VertexArrayHandle);
-        GL.BindBuffer(BufferTarget.ArrayBuffer, _vertexBuffer.VertexBufferHandle);
+        GL.BindBuffer(BufferTarget.ArrayBuffer, vertexBuffer.VertexBufferHandle);
 
         //Get Vertex Attributes
-        VertexAttribute[] attributes = _vertexBuffer.VertexInfo.VertexAttributes;
+        VertexAttribute[] attributes = vertexBuffer.VertexInfo.VertexAttributes;
 
         //Apply Vertex Attributes to Pointers
         foreach (var attribute in attributes)

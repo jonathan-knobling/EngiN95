@@ -1,10 +1,11 @@
-﻿using EngineSigma.Engine.shaders;
+﻿using EngineSigma.Engine.Rendering.shaders;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
+using OpenTK.Windowing.Common.Input;
 using OpenTK.Windowing.Desktop;
 
-namespace EngineSigma.Engine;
+namespace EngineSigma.Engine.Rendering;
 
 public class Window: GameWindow
 {
@@ -16,10 +17,11 @@ public class Window: GameWindow
     private double _time;
     
 #pragma warning disable CS8618
-    public Window() : base(GameWindowSettings.Default, NativeWindowSettings.Default)
+    public Window(NativeWindowSettings settings) : base(GameWindowSettings.Default, settings)
     {
         _time = 0;
-        CenterWindow(new Vector2i(1280,768));
+        CenterWindow();
+        IsVisible = true;
     }
 
     protected override void OnResize(ResizeEventArgs e)
@@ -77,8 +79,8 @@ public class Window: GameWindow
         _vertexArray = new VertexArray(_vertexBuffer);
 
         //Create Shader
-        _shader = new Shader("C:\\Users\\happy\\Desktop\\GitHub\\EngineSigma\\engine\\shaders\\shader.vert", 
-                            "C:\\Users\\happy\\Desktop\\GitHub\\EngineSigma\\engine\\shaders\\shader.frag");
+        _shader = new Shader("C:\\Users\\happy\\Desktop\\GitHub\\EngineSigma\\Engine\\Rendering\\Shaders\\shader.vert", 
+                            "C:\\Users\\happy\\Desktop\\GitHub\\EngineSigma\\Engine\\Rendering\\Shaders\\shader.frag");
 
         //Get Viewport Size
         int[] viewport = new int[4];

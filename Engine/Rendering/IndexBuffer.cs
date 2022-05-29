@@ -1,13 +1,13 @@
 ﻿using OpenTK.Graphics.OpenGL;
 
-namespace EngineSigma.Engine;
+namespace EngineSigma.Engine.Rendering;
 
 public sealed class IndexBuffer : IDisposable
 {
     public static readonly int MinIndexCount = 1;
     public static readonly int MaxIndexCount = 250_000;
 
-    private bool isDisposed;
+    private bool _isDisposed;
 
     public readonly int IndexBufferHandle;
     public readonly int IndexCount;
@@ -15,7 +15,7 @@ public sealed class IndexBuffer : IDisposable
 
     public IndexBuffer(int indexCount, bool isStatic = true)
     {
-        isDisposed = false;
+        _isDisposed = false;
 
         //Guard Statements
         if (indexCount < MinIndexCount || indexCount > MaxIndexCount)
@@ -51,13 +51,13 @@ public sealed class IndexBuffer : IDisposable
 
     public void Dispose()
     {
-        if (isDisposed) return;
+        if (_isDisposed) return;
 
         //Delete Index Buffer
         GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
         GL.DeleteBuffer(IndexBufferHandle);
         
-        isDisposed = true;
+        _isDisposed = true;
         GC.SuppressFinalize(this);
     }
 }

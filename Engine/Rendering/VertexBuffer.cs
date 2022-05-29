@@ -1,6 +1,6 @@
 ﻿using OpenTK.Graphics.OpenGL;
 
-namespace EngineSigma.Engine;
+namespace EngineSigma.Engine.Rendering;
 
 public class VertexBuffer: IDisposable
 {

@@ -1,6 +1,6 @@
 ﻿using OpenTK.Mathematics;
 
-namespace EngineSigma.Engine;
+namespace EngineSigma.Engine.Rendering;
 
 public sealed class VertexInfo
 {

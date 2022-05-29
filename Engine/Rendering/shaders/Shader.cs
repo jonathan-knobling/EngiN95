@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using OpenTK.Graphics.OpenGL;
 
-namespace EngineSigma.Engine.shaders;
+namespace EngineSigma.Engine.Rendering.shaders;
 
 public sealed class Shader
 {
@@ -11,14 +11,14 @@ public sealed class Shader
     {
         string vertexShaderSource;
 
-        using (StreamReader reader = new StreamReader(vertexPath, Encoding.UTF8))
+        using (var reader = new StreamReader(vertexPath, Encoding.UTF8))
         {
             vertexShaderSource = reader.ReadToEnd();
         }
 
         string fragmentShaderSource;
 
-        using (StreamReader reader = new StreamReader(fragmentPath, Encoding.UTF8))
+        using (var reader = new StreamReader(fragmentPath, Encoding.UTF8))
         {
             fragmentShaderSource = reader.ReadToEnd();
         }
@@ -59,7 +59,7 @@ public sealed class Shader
         GL.UseProgram(Handle);
     }
 
-    private bool _disposedValue = false;
+    private bool _disposedValue;
 
     ~Shader()
     {
