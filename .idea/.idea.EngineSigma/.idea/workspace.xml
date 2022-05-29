@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="754f1658-6861-4473-8d02-ed66099f5dae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Window.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/IndexBuffer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/VertexArray.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/VertexBuffer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/VertexDefinitions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Window.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Window.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/shaders/Shader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/shaders/Shader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/shaders/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/shaders/shader.vert" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/shaders/Shader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/shaders/Shader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/shaders/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/shaders/shader.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/shaders/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/shaders/shader.vert" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.pdb" afterDir="false" />
@@ -27,7 +27,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/620a8babd6724afca0e27cddc0e9c851cc00/bc/bfee12fd/NativeWindowSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/620a8babd6724afca0e27cddc0e9c851cc00/e3/e9a4389a/NativeWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/620a8babd6724afca0e27cddc0e9c851cc00/ed/16f2fa8d/GameWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93d3d28e76c34335b7c22f0ee48148434aa00/b8/6f0094d8/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d20f14ffdd3341b6958538d6a40541fdba00/3c/88383432/GLFW.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d20f14ffdd3341b6958538d6a40541fdba00/db/3ade66be/MouseState.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -79,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1653820723376</updated>
       <workItem from="1653820732518" duration="7259000" />
-      <workItem from="1653835084206" duration="3786000" />
+      <workItem from="1653835084206" duration="11841000" />
     </task>
     <servers />
   </component>
@@ -101,5 +106,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Frame#EngineSigma.Engine.Window.OnLoad" memberName="viewport" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

@@ -5,7 +5,7 @@ namespace EngineSigma.Engine.shaders;
 
 public sealed class Shader
 {
-    private readonly int _handle;
+    public int Handle { get; }
 
     public Shader(string vertexPath, string fragmentPath)
     {
@@ -41,43 +41,39 @@ public sealed class Shader
         if (infoLogFrag != String.Empty)
             Console.WriteLine(infoLogFrag);
         
-        _handle = GL.CreateProgram();
+        Handle = GL.CreateProgram();
 
-        GL.AttachShader(_handle, vertexShader);
-        GL.AttachShader(_handle, fragmentShader);
+        GL.AttachShader(Handle, vertexShader);
+        GL.AttachShader(Handle, fragmentShader);
 
-        GL.LinkProgram(_handle);
+        GL.LinkProgram(Handle);
         
-        GL.DetachShader(_handle, vertexShader);
-        GL.DetachShader(_handle, fragmentShader);
+        GL.DetachShader(Handle, vertexShader);
+        GL.DetachShader(Handle, fragmentShader);
         GL.DeleteShader(fragmentShader);
         GL.DeleteShader(vertexShader);
     }
 
     public void Use()
     {
-        GL.UseProgram(_handle);
+        GL.UseProgram(Handle);
     }
 
     private bool _disposedValue = false;
 
-    private void Dispose(bool disposing)
-    {
-        if (_disposedValue) return;
-        
-        GL.DeleteProgram(_handle);
-
-        _disposedValue = true;
-    }
-
     ~Shader()
     {
-        GL.DeleteProgram(_handle);
+        Dispose();
     }
     
     public void Dispose()
     {
-        Dispose(true);
+        if (_disposedValue) return;
+        
+        GL.DeleteProgram(Handle);
+
+        _disposedValue = true;
+        
         GC.SuppressFinalize(this);
     }
 }
