@@ -23,22 +23,22 @@ public sealed class Shader
             fragmentShaderSource = reader.ReadToEnd();
         }
         
-        int vertexShader = GL.CreateShader(ShaderType.VertexShader);
+        var vertexShader = GL.CreateShader(ShaderType.VertexShader);
         GL.ShaderSource(vertexShader, vertexShaderSource);
 
-        int fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
+        var fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
         GL.ShaderSource(fragmentShader, fragmentShaderSource);
         
         GL.CompileShader(vertexShader);
 
-        string infoLogVert = GL.GetShaderInfoLog(vertexShader);
-        if (infoLogVert != String.Empty)
+        var infoLogVert = GL.GetShaderInfoLog(vertexShader);
+        if (infoLogVert != string.Empty)
             Console.WriteLine(infoLogVert);
 
         GL.CompileShader(fragmentShader);
 
-        string infoLogFrag = GL.GetShaderInfoLog(fragmentShader);
-        if (infoLogFrag != String.Empty)
+        var infoLogFrag = GL.GetShaderInfoLog(fragmentShader);
+        if (infoLogFrag != string.Empty)
             Console.WriteLine(infoLogFrag);
         
         Handle = GL.CreateProgram();
@@ -73,7 +73,7 @@ public sealed class Shader
         GL.DeleteProgram(Handle);
 
         _disposedValue = true;
-        
+
         GC.SuppressFinalize(this);
     }
 }

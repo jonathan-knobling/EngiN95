@@ -11,7 +11,7 @@ public class Window: GameWindow
     public readonly Renderer Renderer;
     
     private Shader _shader;
-    
+
 #pragma warning disable CS8618
     public Window(NativeWindowSettings settings) : base(GameWindowSettings.Default, settings)
     {
@@ -29,20 +29,21 @@ public class Window: GameWindow
 
     protected override void OnLoad()
     {
-        //Background Color
         GL.ClearColor(Color4.Black);
 
+        var rootDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        
         //Create Shader
-        _shader = new Shader("C:\\Users\\happy\\Desktop\\GitHub\\EngineSigma\\Engine\\Rendering\\Shaders\\shader.vert", 
-                            "C:\\Users\\happy\\Desktop\\GitHub\\EngineSigma\\Engine\\Rendering\\Shaders\\shader.frag");
+        _shader = new Shader($"{rootDirectory}\\Engine\\Rendering\\shaders\\shader.vert", 
+                             $"{rootDirectory}\\Engine\\Rendering\\shaders\\shader.frag");
 
         //Get Viewport Size
-        int[] viewport = new int[4];
+        var viewport = new int[4];
         GL.GetInteger(GetPName.Viewport, viewport);
         
         //Set Viewport Size in Shader
         _shader.Use();
-        int vpsLocation = GL.GetUniformLocation(_shader.Handle, "viewPortSize");
+        var vpsLocation = GL.GetUniformLocation(_shader.Handle, "viewPortSize");
         GL.Uniform2(vpsLocation, (float) viewport[2], viewport[3]);
         
         base.OnLoad();

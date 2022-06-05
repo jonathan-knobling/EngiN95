@@ -11,4 +11,15 @@
       <PackageReference Include="OpenTK" Version="4.7.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Engine\Rendering\shaders\shader.frag" />
+      <Content Include="Engine\Rendering\shaders\shader.frag">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Engine\Rendering\shaders\shader.vert" />
+      <Content Include="Engine\Rendering\shaders\shader.vert">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>
