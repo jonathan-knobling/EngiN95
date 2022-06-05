@@ -41,6 +41,10 @@
             "OpenTK": {
               "target": "Package",
               "version": "[4.7.2, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[2.1.2, )"
             }
           },
           "imports": [
