@@ -1,11 +1,16 @@
 ﻿using System.Text;
 using OpenTK.Graphics.OpenGL;
+using OpenTK.Mathematics;
 
 namespace EngineSigma.Engine.Rendering.shaders;
 
 public sealed class Shader
 {
     public int Handle { get; }
+    
+    private readonly Dictionary<string, int> _uniformLocations;
+    
+    private bool _disposedValue;
 
     public Shader(string vertexPath, string fragmentPath)
     {
@@ -52,15 +57,30 @@ public sealed class Shader
         GL.DetachShader(Handle, fragmentShader);
         GL.DeleteShader(fragmentShader);
         GL.DeleteShader(vertexShader);
+        
+        //Get Number of Uniforms
+        GL.GetProgram(Handle, GetProgramParameterName.ActiveUniforms, out var numberOfUniforms);
+
+        //Create Dictionary to store Uniform locations
+        _uniformLocations = new Dictionary<string, int>();
+
+        for (var i = 0; i < numberOfUniforms; i++)
+        {
+            //Get Name of the Uniform
+            var key = GL.GetActiveUniform(Handle, i, out _, out _);
+
+            //Get Location of the Uniform
+            var location = GL.GetUniformLocation(Handle, key);
+            
+            _uniformLocations.Add(key, location);
+        }
     }
 
     public void Use()
     {
         GL.UseProgram(Handle);
     }
-
-    private bool _disposedValue;
-
+    
     ~Shader()
     {
         Dispose();
@@ -75,5 +95,29 @@ public sealed class Shader
         _disposedValue = true;
 
         GC.SuppressFinalize(this);
+    }
+
+    public void SetInt(string name, int data)
+    {
+        GL.UseProgram(Handle);
+        GL.Uniform1(_uniformLocations[name], data);
+    }
+    
+    public void SetFloat(string name, float data)
+    {
+        GL.UseProgram(Handle);
+        GL.Uniform1(_uniformLocations[name], data);
+    }
+    
+    public void SetMatrix4(string name, Matrix4 data)
+    {
+        GL.UseProgram(Handle);
+        GL.UniformMatrix4(_uniformLocations[name], true, ref data);
+    }
+    
+    public void SetVector3(string name, Vector3 data)
+    {
+        GL.UseProgram(Handle);
+        GL.Uniform3(_uniformLocations[name], data);
     }
 }

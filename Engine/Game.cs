@@ -1,4 +1,3 @@
-using System;
 using EngineSigma.Engine.Rendering;
 using EngineSigma.Engine.Rendering.Vertices;
 using OpenTK.Mathematics;
@@ -38,8 +37,10 @@ public class Game: IDisposable
 
     private void Update(FrameEventArgs obj)
     {
-        var x = new Random().Next(1920);
-        var y = new Random().Next(1080);
+        var rand = new Random();
+        
+        var x = rand.Next(1920);
+        var y = rand.Next(1080);
 
         var vertices = new Vertex[4];
 
@@ -81,7 +82,12 @@ public class Game: IDisposable
         var ib = new IndexBuffer(indices.Length);
         ib.SetData(indices, indices.Length);
 
-        var mesh = new Mesh(vb, va, ib);
+        var scale = rand.NextSingle() * 1.5f + 0.5f;
+        
+        var transform = Matrix4.CreateScale(scale);
+        transform *= Matrix4.CreateRotationZ(rand.NextSingle() * 360f);
+
+        var mesh = new Sprite(vb, va, ib, transform);
         _window.Renderer.AddMesh(mesh);
     }
 

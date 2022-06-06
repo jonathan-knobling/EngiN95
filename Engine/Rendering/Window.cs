@@ -65,7 +65,7 @@ public class Window: GameWindow
         
         _shader.Use();
         
-        Renderer.Render();
+        Renderer.Render(_shader);
 
         Context.SwapBuffers();
         base.OnRenderFrame(args);
