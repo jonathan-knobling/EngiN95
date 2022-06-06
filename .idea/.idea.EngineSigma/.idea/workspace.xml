@@ -5,38 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="754f1658-6861-4473-8d02-ed66099f5dae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Image.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Texture.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Vertices/Rect.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Vertices/Vertex.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Vertices/VertexAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Vertices/VertexInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/Sprites/grass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Resources/Sprites/stone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Resources/Sprites/grass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Resources/Sprites/stone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net6.0/SixLabors.ImageSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Mesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/Mesh.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Texture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/Texture.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Rendering/VertexArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/VertexArray.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/VertexBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/VertexBuffer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/VertexDefinitions.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine/Rendering/Window.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/Window.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.vert" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngineSigma.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/EngineSigma.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Engine/Rendering/shaders/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Engine/Rendering/shaders/shader.frag" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Engine/Rendering/shaders/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Engine/Rendering/shaders/shader.vert" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CopyComplete" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/EngineSigma.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/EngineSigma.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

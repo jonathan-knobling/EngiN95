@@ -1,4 +1,5 @@
-﻿namespace EngineSigma.Engine.Rendering;
+﻿
+namespace EngineSigma.Engine.Rendering;
 
 public struct Mesh
 {

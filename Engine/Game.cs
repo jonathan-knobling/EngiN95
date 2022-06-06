@@ -1,4 +1,6 @@
+using System;
 using EngineSigma.Engine.Rendering;
+using EngineSigma.Engine.Rendering.Vertices;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Common.Input;
@@ -36,26 +38,42 @@ public class Game: IDisposable
 
     private void Update(FrameEventArgs obj)
     {
-        var rand = new Random();
+        var x = new Random().Next(1920);
+        var y = new Random().Next(1080);
 
-        VertexPositionColor[] vertices = new VertexPositionColor[4];
+        var vertices = new Vertex[4];
 
-        vertices[0] = new VertexPositionColor(new Vector2(rand.Next(1920), rand.Next(1080)), new Color4(rand.Next(1), rand.Next(120), rand.Next(120), 1));
-        vertices[1] = new VertexPositionColor(new Vector2(rand.Next(1920), rand.Next(1080)), new Color4(rand.Next(1), rand.Next(120), rand.Next(1), 1));
-        vertices[2] = new VertexPositionColor(new Vector2(rand.Next(1920), rand.Next(1080)), new Color4(rand.Next(1), rand.Next(120), rand.Next(120), 1));
-        vertices[3] = new VertexPositionColor(new Vector2(rand.Next(1920), rand.Next(1080)), new Color4(rand.Next(120), rand.Next(1), rand.Next(120), 1));
+        vertices[0] = new Vertex(
+            new Vector2(x, y+64),
+            new Vector2(0f,1f),
+            Color4.White);
+        
+        vertices[1] = new Vertex(
+            new Vector2(x+64, y+64),
+            new Vector2(1f,1f),
+            Color4.White);
+        
+        vertices[2] = new Vertex(
+            new Vector2(x+64, y),
+            new Vector2(1f,0f),
+            Color4.White);
 
-        uint[] indices = new uint[6];
-        int indexCount = 0;
+        vertices[3] = new Vertex(
+            new Vector2(x, y),
+            new Vector2(0f,0f),
+            Color4.White);
+
+        var indices = new uint[6];
+        var indexCount = 0;
 
         indices[indexCount++] = 0;
         indices[indexCount++] = 1;
         indices[indexCount++] = 2;
         indices[indexCount++] = 0;
         indices[indexCount++] = 2;
-        indices[indexCount++] = 3;
+        indices[indexCount] = 3;
 
-        var vb = new VertexBuffer(VertexPositionColor.VertexInfo, vertices.Length);
+        var vb = new VertexBuffer(Vertex.VertexInfo, vertices.Length);
         vb.SetData(vertices, vertices.Length);
 
         var va = new VertexArray(vb);
@@ -63,7 +81,7 @@ public class Game: IDisposable
         var ib = new IndexBuffer(indices.Length);
         ib.SetData(indices, indices.Length);
 
-        Mesh mesh = new Mesh(vb, va, ib);
+        var mesh = new Mesh(vb, va, ib);
         _window.Renderer.AddMesh(mesh);
     }
 

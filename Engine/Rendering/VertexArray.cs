@@ -26,7 +26,7 @@ public class VertexArray: IDisposable
         GL.BindBuffer(BufferTarget.ArrayBuffer, vertexBuffer.VertexBufferHandle);
 
         //Get Vertex Attributes
-        VertexAttribute[] attributes = vertexBuffer.VertexInfo.VertexAttributes;
+        var attributes = vertexBuffer.VertexInfo.VertexAttributes;
 
         //Apply Vertex Attributes to Pointers
         foreach (var attribute in attributes)
@@ -41,7 +41,7 @@ public class VertexArray: IDisposable
             
             GL.EnableVertexAttribArray(attribute.Index);
         }
-
+        
         //Unbind Vertex Array
         GL.BindVertexArray(0);
     }

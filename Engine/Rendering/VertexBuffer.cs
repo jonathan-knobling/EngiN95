@@ -1,32 +1,31 @@
-﻿using OpenTK.Graphics.OpenGL;
+﻿using EngineSigma.Engine.Rendering.Vertices;
+using OpenTK.Graphics.OpenGL;
 
 namespace EngineSigma.Engine.Rendering;
 
 public class VertexBuffer: IDisposable
 {
-    public static readonly int MinVertexCount = 0;
-    public static readonly int MaxVertexCount = 100_000;
-    
+    private const int MinVertexCount = 0;
+    private const int MaxVertexCount = 100_000;
+
     private bool _isDisposed;
 
     public readonly int VertexBufferHandle;
     public readonly VertexInfo VertexInfo;
-    public readonly int VertexCount;
-    public readonly bool IsStatic;
+    private readonly int _vertexCount;
     
     public VertexBuffer(VertexInfo vertexInfo, int vertexCount, bool isStatic = true)
     {
         _isDisposed = false;
         
         //Guard Statements
-        if (vertexCount < MinVertexCount || vertexCount > MaxVertexCount) throw new ArgumentOutOfRangeException(nameof(vertexCount));
+        if (vertexCount is < MinVertexCount or > MaxVertexCount) throw new ArgumentOutOfRangeException(nameof(vertexCount));
 
         VertexInfo = vertexInfo;
-        VertexCount = vertexCount;
-        IsStatic = isStatic;
+        _vertexCount = vertexCount;
 
         //Determine Buffer Usage Hint
-        BufferUsageHint hint = BufferUsageHint.StaticDraw;
+        var hint = BufferUsageHint.StaticDraw;
         if (!isStatic) hint = BufferUsageHint.StreamDraw;
 
         //Generate Vertex Buffer
@@ -41,7 +40,7 @@ public class VertexBuffer: IDisposable
         if (VertexInfo.Type != typeof(T)) throw new ArgumentException("Type 'T' does not match the vertex type of the VertexBuffer.");
         if (data is null) throw new ArgumentNullException(nameof(data));
         if (data.Length < 1) throw new ArgumentOutOfRangeException(nameof(data));
-        if (count <= 0 || count > VertexCount || count > data.Length) throw new ArgumentOutOfRangeException(nameof(count));
+        if (count <= 0 || count > _vertexCount || count > data.Length) throw new ArgumentOutOfRangeException(nameof(count));
 
         //Send Data to VertexBuffer
         GL.BindBuffer(BufferTarget.ArrayBuffer, VertexBufferHandle);

@@ -9,7 +9,7 @@ namespace EngineSigma.Engine.Rendering;
 public class Window: GameWindow
 {
     public readonly Renderer Renderer;
-    
+
     private Shader _shader;
 
 #pragma warning disable CS8618
@@ -45,6 +45,9 @@ public class Window: GameWindow
         _shader.Use();
         var vpsLocation = GL.GetUniformLocation(_shader.Handle, "viewPortSize");
         GL.Uniform2(vpsLocation, (float) viewport[2], viewport[3]);
+        
+        var texture = Texture.LoadFromFile("Resources/Sprites/grass.png");
+        texture.Use(TextureUnit.Texture0);
         
         base.OnLoad();
     }
