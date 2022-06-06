@@ -8,12 +8,14 @@
     ".NETCoreApp,Version=v6.0": {
       "EngineSigma/1.0.0": {
         "dependencies": {
-          "OpenTK": "4.7.2"
+          "OpenTK": "4.7.2",
+          "SixLabors.ImageSharp": "2.1.2"
         },
         "runtime": {
           "EngineSigma.dll": {}
         }
       },
+      "Microsoft.NETCore.Platforms/5.0.0": {},
       "OpenTK/4.7.2": {
         "dependencies": {
           "OpenTK.Compute": "4.7.2",
@@ -148,7 +150,24 @@
           }
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/5.0.0": {}
+      "SixLabors.ImageSharp/2.1.2": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.2.0"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
+      "System.Text.Encoding.CodePages/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.0"
+        }
+      }
     }
   },
   "libraries": {
@@ -156,6 +175,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
+      "path": "microsoft.netcore.platforms/5.0.0",
+      "hashPath": "microsoft.netcore.platforms.5.0.0.nupkg.sha512"
     },
     "OpenTK/4.7.2": {
       "type": "package",
@@ -234,12 +260,26 @@
       "path": "opentk.windowing.graphicslibraryframework/4.7.2",
       "hashPath": "opentk.windowing.graphicslibraryframework.4.7.2.nupkg.sha512"
     },
+    "SixLabors.ImageSharp/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-In0pC521LqJXJXZgFVHegvSzES10KkKRN31McxqA1+fKtKsNe+EShWavBFQnKRlXCdeAmfx/wDjLILbvCaq+8Q==",
+      "path": "sixlabors.imagesharp/2.1.2",
+      "hashPath": "sixlabors.imagesharp.2.1.2.nupkg.sha512"
+    },
     "System.Runtime.CompilerServices.Unsafe/5.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
       "path": "system.runtime.compilerservices.unsafe/5.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NyscU59xX6Uo91qvhOs2Ccho3AR2TnZPomo1Z0K6YpyztBPM/A5VbkzOO19sy3A3i1TtEnTxA7bCe3Us+r5MWg==",
+      "path": "system.text.encoding.codepages/5.0.0",
+      "hashPath": "system.text.encoding.codepages.5.0.0.nupkg.sha512"
     }
   }
 }

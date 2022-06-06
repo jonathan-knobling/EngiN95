@@ -4,11 +4,52 @@
     <projectFile>EngineSigma.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="754f1658-6861-4473-8d02-ed66099f5dae" name="Changes" comment="" />
+    <list default="true" id="754f1658-6861-4473-8d02-ed66099f5dae" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Image.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Texture.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Vertices/Rect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Vertices/Vertex.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Vertices/VertexAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Engine/Rendering/Vertices/VertexInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/Sprites/grass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/Sprites/stone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Resources/Sprites/grass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Resources/Sprites/stone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/net6.0/SixLabors.ImageSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Rendering/VertexArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/VertexArray.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Rendering/VertexBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/VertexBuffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Rendering/VertexDefinitions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Window.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/Window.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.vert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EngineSigma.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/EngineSigma.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Engine/Rendering/shaders/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Engine/Rendering/shaders/shader.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Engine/Rendering/shaders/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Engine/Rendering/shaders/shader.vert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/EngineSigma.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/EngineSigma.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -25,7 +66,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="run" />
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="EngineSigma" type="DotNetProject" factoryName=".NET Project">
@@ -58,7 +105,7 @@
       <workItem from="1653820732518" duration="7259000" />
       <workItem from="1653835084206" duration="21291000" />
       <workItem from="1654451998698" duration="33000" />
-      <workItem from="1654452086181" duration="1903000" />
+      <workItem from="1654452086181" duration="13425000" />
     </task>
     <servers />
   </component>
