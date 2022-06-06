@@ -1,7 +1,9 @@
-﻿using EngineSigma.Engine.Rendering;
+using EngineSigma.Engine.Rendering;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
+using OpenTK.Windowing.Common.Input;
 using OpenTK.Windowing.Desktop;
+using Image = OpenTK.Windowing.Common.Input.Image;
 
 namespace EngineSigma.Engine;
 
@@ -11,6 +13,8 @@ public class Game: IDisposable
 
     public Game()
     {
+        var icon = new Rendering.Image(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\Sprites\\stone.png");
+
         var settings = new NativeWindowSettings()
         {
             Title = "Engine Sigma",
@@ -20,13 +24,15 @@ public class Game: IDisposable
             API = ContextAPI.OpenGL,
             Profile = ContextProfile.Core,
             WindowBorder = WindowBorder.Hidden,
-            Size = new Vector2i(1920, 1080)
+            Size = new Vector2i(1920, 1080),
+            Icon = new WindowIcon(new Image(icon.Width, icon.Height, icon.PixelData))
         };
-        
+
         _window = new Window(settings);
 
         _window.UpdateFrame += Update;
     }
+
 
     private void Update(FrameEventArgs obj)
     {
