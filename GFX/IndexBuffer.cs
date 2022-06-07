@@ -1,17 +1,17 @@
 ﻿using OpenTK.Graphics.OpenGL;
 
-namespace EngineSigma.Engine.Rendering;
+namespace EngineSigma.GFX;
 
 public sealed class IndexBuffer : IDisposable
 {
     public static readonly int MinIndexCount = 0;
     public static readonly int MaxIndexCount = 250_000;
 
-    private bool _isDisposed;
-
     public readonly int IndexBufferHandle;
     public readonly int IndexCount;
     public readonly bool IsStatic;
+
+    private bool _isDisposed;
 
     public IndexBuffer(int indexCount, bool isStatic = true)
     {
@@ -25,12 +25,24 @@ public sealed class IndexBuffer : IDisposable
         IsStatic = isStatic;
 
         //Determine Buffer Usage Hint
-        BufferUsageHint hint = BufferUsageHint.StaticDraw;
+        var hint = BufferUsageHint.StaticDraw;
         if (!IsStatic) hint = BufferUsageHint.StreamDraw;
 
         IndexBufferHandle = GL.GenBuffer();
         GL.BindBuffer(BufferTarget.ElementArrayBuffer, IndexBufferHandle);
         GL.BufferData(BufferTarget.ElementArrayBuffer, IndexCount * sizeof(uint), IntPtr.Zero, hint);
+    }
+
+    public void Dispose()
+    {
+        if (_isDisposed) return;
+
+        //Delete Index Buffer
+        GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+        GL.DeleteBuffer(IndexBufferHandle);
+
+        _isDisposed = true;
+        GC.SuppressFinalize(this);
     }
 
     public void SetData(uint[] data, int count)
@@ -47,17 +59,5 @@ public sealed class IndexBuffer : IDisposable
     ~IndexBuffer()
     {
         Dispose();
-    }
-
-    public void Dispose()
-    {
-        if (_isDisposed) return;
-
-        //Delete Index Buffer
-        GL.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
-        GL.DeleteBuffer(IndexBufferHandle);
-        
-        _isDisposed = true;
-        GC.SuppressFinalize(this);
     }
 }

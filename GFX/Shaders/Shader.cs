@@ -2,14 +2,12 @@
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 
-namespace EngineSigma.Engine.Rendering.shaders;
+namespace EngineSigma.GFX.Shaders;
 
-public sealed class Shader
+internal sealed class Shader
 {
-    public int Handle { get; }
-    
     private readonly Dictionary<string, int> _uniformLocations;
-    
+
     private bool _disposedValue;
 
     public Shader(string vertexPath, string fragmentPath)
@@ -27,13 +25,13 @@ public sealed class Shader
         {
             fragmentShaderSource = reader.ReadToEnd();
         }
-        
+
         var vertexShader = GL.CreateShader(ShaderType.VertexShader);
         GL.ShaderSource(vertexShader, vertexShaderSource);
 
         var fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
         GL.ShaderSource(fragmentShader, fragmentShaderSource);
-        
+
         GL.CompileShader(vertexShader);
 
         var infoLogVert = GL.GetShaderInfoLog(vertexShader);
@@ -45,19 +43,19 @@ public sealed class Shader
         var infoLogFrag = GL.GetShaderInfoLog(fragmentShader);
         if (infoLogFrag != string.Empty)
             Console.WriteLine(infoLogFrag);
-        
+
         Handle = GL.CreateProgram();
 
         GL.AttachShader(Handle, vertexShader);
         GL.AttachShader(Handle, fragmentShader);
 
         GL.LinkProgram(Handle);
-        
+
         GL.DetachShader(Handle, vertexShader);
         GL.DetachShader(Handle, fragmentShader);
         GL.DeleteShader(fragmentShader);
         GL.DeleteShader(vertexShader);
-        
+
         //Get Number of Uniforms
         GL.GetProgram(Handle, GetProgramParameterName.ActiveUniforms, out var numberOfUniforms);
 
@@ -71,25 +69,27 @@ public sealed class Shader
 
             //Get Location of the Uniform
             var location = GL.GetUniformLocation(Handle, key);
-            
+
             _uniformLocations.Add(key, location);
         }
     }
+
+    public int Handle { get; }
 
     public void Use()
     {
         GL.UseProgram(Handle);
     }
-    
+
     ~Shader()
     {
         Dispose();
     }
-    
+
     public void Dispose()
     {
         if (_disposedValue) return;
-        
+
         GL.DeleteProgram(Handle);
 
         _disposedValue = true;
@@ -102,19 +102,19 @@ public sealed class Shader
         GL.UseProgram(Handle);
         GL.Uniform1(_uniformLocations[name], data);
     }
-    
+
     public void SetFloat(string name, float data)
     {
         GL.UseProgram(Handle);
         GL.Uniform1(_uniformLocations[name], data);
     }
-    
+
     public void SetMatrix4(string name, Matrix4 data)
     {
         GL.UseProgram(Handle);
         GL.UniformMatrix4(_uniformLocations[name], true, ref data);
     }
-    
+
     public void SetVector3(string name, Vector3 data)
     {
         GL.UseProgram(Handle);

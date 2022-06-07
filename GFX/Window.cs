@@ -1,23 +1,77 @@
-﻿using EngineSigma.Engine.Rendering.shaders;
+﻿using EngineSigma.GFX.Shaders;
+using EngineSigma.IO;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
 
-namespace EngineSigma.Engine.Rendering;
+namespace EngineSigma.GFX;
 
-public class Window: GameWindow
+internal class Window : GameWindow
 {
+    public const int Width = 1920;
+    public const int Height = 1080;
+
     public readonly Renderer Renderer;
 
-    private Shader _shader;
+    private Shader _shader = null!;
 
-#pragma warning disable CS8618
     public Window(NativeWindowSettings settings) : base(GameWindowSettings.Default, settings)
     {
         CenterWindow();
         IsVisible = true;
         Renderer = new Renderer();
+
+        Input.KeyboardState = KeyboardState;
+        Input.MouseState = MouseState;
+    }
+
+    protected override void OnLoad()
+    {
+        //Set Background Color
+        GL.ClearColor(Color4.Gray);
+
+        //Enable Depth Testing
+        GL.Enable(EnableCap.DepthTest);
+
+        //Get root Directory
+        var rootDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+        //Create Shader
+        _shader = new Shader($"{rootDirectory}\\GFX\\Shaders\\shader.vert",
+            $"{rootDirectory}\\GFX\\Shaders\\shader.frag");
+
+        //Get Viewport Size
+        var viewport = new int[4];
+        GL.GetInteger(GetPName.Viewport, viewport);
+
+        //Set Viewport Size in Shader
+        _shader.Use();
+        var vpsLocation = GL.GetUniformLocation(_shader.Handle, "viewPortSize");
+        GL.Uniform2(vpsLocation, (float) viewport[2], viewport[3]);
+
+        //Load Texture
+        var texture = Texture.LoadFromFile("Resources/Sprites/grass.png");
+        texture.Use(TextureUnit.Texture0);
+
+        base.OnLoad();
+    }
+
+    protected override void OnRenderFrame(FrameEventArgs args)
+    {
+        //Clear Depth and Color Buffer
+        GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+
+        //Use Shader
+        _shader.Use();
+
+        //Render sprites
+        Renderer.Render(_shader);
+
+        //Swap Buffers
+        Context.SwapBuffers();
+
+        base.OnRenderFrame(args);
     }
 
     protected override void OnResize(ResizeEventArgs e)
@@ -27,47 +81,10 @@ public class Window: GameWindow
         base.OnResize(e);
     }
 
-    protected override void OnLoad()
-    {
-        GL.ClearColor(Color4.Black);
-
-        var rootDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        
-        //Create Shader
-        _shader = new Shader($"{rootDirectory}\\Engine\\Rendering\\shaders\\shader.vert", 
-                             $"{rootDirectory}\\Engine\\Rendering\\shaders\\shader.frag");
-
-        //Get Viewport Size
-        var viewport = new int[4];
-        GL.GetInteger(GetPName.Viewport, viewport);
-        
-        //Set Viewport Size in Shader
-        _shader.Use();
-        var vpsLocation = GL.GetUniformLocation(_shader.Handle, "viewPortSize");
-        GL.Uniform2(vpsLocation, (float) viewport[2], viewport[3]);
-        
-        var texture = Texture.LoadFromFile("Resources/Sprites/grass.png");
-        texture.Use(TextureUnit.Texture0);
-        
-        base.OnLoad();
-    }
-
     protected override void OnUnload()
     {
         _shader.Dispose();
-        
+
         base.OnUnload();
-    }
-
-    protected override void OnRenderFrame(FrameEventArgs args)
-    {
-        GL.Clear(ClearBufferMask.ColorBufferBit);
-        
-        _shader.Use();
-        
-        Renderer.Render(_shader);
-
-        Context.SwapBuffers();
-        base.OnRenderFrame(args);
     }
 }

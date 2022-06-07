@@ -1,26 +1,25 @@
 ﻿using OpenTK.Graphics.OpenGL;
 
-namespace EngineSigma.Engine.Rendering;
+namespace EngineSigma.GFX;
 
-public class VertexArray: IDisposable
+internal class VertexArray : IDisposable
 {
-    private bool _isDisposed;
-
     public readonly int VertexArrayHandle;
+    private bool _isDisposed;
 
     public VertexArray(VertexBuffer vertexBuffer)
     {
         _isDisposed = false;
-        
+
         //Guard Statements
         if (vertexBuffer is null) throw new ArgumentNullException(nameof(vertexBuffer));
 
         //Get Size of Vertex from Vertex Buffer
-        int vertexSizeInBytes = vertexBuffer.VertexInfo.SizeInBytes;
-        
+        var vertexSizeInBytes = vertexBuffer.VertexInfo.SizeInBytes;
+
         //Generate Vertex Array
         VertexArrayHandle = GL.GenVertexArray();
-        
+
         //Bind Vertex Array and Vertex Buffer
         GL.BindVertexArray(VertexArrayHandle);
         GL.BindBuffer(BufferTarget.ArrayBuffer, vertexBuffer.VertexBufferHandle);
@@ -32,33 +31,33 @@ public class VertexArray: IDisposable
         foreach (var attribute in attributes)
         {
             GL.VertexAttribPointer(
-                attribute.Index, 
-                attribute.ComponentCount, 
-                VertexAttribPointerType.Float, 
-                false, 
+                attribute.Index,
+                attribute.ComponentCount,
+                VertexAttribPointerType.Float,
+                false,
                 vertexSizeInBytes,
                 attribute.Offset);
-            
+
             GL.EnableVertexAttribArray(attribute.Index);
         }
-        
+
         //Unbind Vertex Array
         GL.BindVertexArray(0);
+    }
+
+    public void Dispose()
+    {
+        if (_isDisposed) return;
+
+        GL.BindVertexArray(0);
+        GL.DeleteVertexArray(VertexArrayHandle);
+
+        _isDisposed = true;
+        GC.SuppressFinalize(this);
     }
 
     ~VertexArray()
     {
         Dispose();
-    }
-    
-    public void Dispose()
-    {
-        if(_isDisposed) return;
-
-        GL.BindVertexArray(0);
-        GL.DeleteVertexArray(VertexArrayHandle);
-        
-        _isDisposed = true;
-        GC.SuppressFinalize(this);
     }
 }

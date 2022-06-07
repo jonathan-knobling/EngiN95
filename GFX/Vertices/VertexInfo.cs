@@ -1,9 +1,9 @@
-﻿namespace EngineSigma.Engine.Rendering.Vertices;
+﻿namespace EngineSigma.GFX.Vertices;
 
-public sealed class VertexInfo
+internal sealed class VertexInfo
 {
-    public readonly Type Type;
     public readonly int SizeInBytes;
+    public readonly Type Type;
     public readonly VertexAttribute[] VertexAttributes;
 
     public VertexInfo(Type type, params VertexAttribute[] attributes)
@@ -12,9 +12,6 @@ public sealed class VertexInfo
         SizeInBytes = 0;
         VertexAttributes = attributes;
 
-        foreach (var attribute in VertexAttributes)
-        {
-            SizeInBytes += attribute.ComponentCount * sizeof(float);
-        }
+        foreach (var attribute in VertexAttributes) SizeInBytes += attribute.ComponentCount * sizeof(float);
     }
 }
