@@ -1,4 +1,7 @@
+using EngineSigma.ECS;
+using EngineSigma.ECS.Components;
 using EngineSigma.GFX;
+using EngineSigma.GFX.Rendering;
 using EngineSigma.GFX.Vertices;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
@@ -34,15 +37,18 @@ internal class Game : IDisposable
         _window.UpdateFrame += Update;
     }
 
-    private void Update(FrameEventArgs obj)
+    private void Update(FrameEventArgs args)
     {
         //Set Time
-        Time.DeltaTime = (float) obj.Time;
-
+        Time.DeltaTime = (float) args.Time;
+        
+        //Update Entities
+        EntityManager.OnUpdate();
+        
         var rand = new Random();
 
-        var x = rand.Next(1920);
-        var y = rand.Next(1080);
+        int x = rand.Next(1920);
+        int y = rand.Next(1080);
 
         var vertices = new Vertex[4];
 
@@ -84,13 +90,16 @@ internal class Game : IDisposable
         var ib = new IndexBuffer(indices.Length);
         ib.SetData(indices, indices.Length);
 
-        var scale = rand.NextSingle() * 1.5f + 0.5f;
+        float scale = rand.NextSingle() * 1.5f + 0.5f;
 
         var transform = Matrix4.CreateScale(scale);
         transform *= Matrix4.CreateRotationZ(rand.NextSingle() * 360f);
 
-        var mesh = new Sprite(vb, va, ib, transform);
-        _window.Renderer.AddSprite(mesh);
+        var sprite = new Sprite(vb, va, ib);
+        
+        var entity = Entity.Instantiate(new SpriteRenderer());
+        entity.GetComponent<SpriteRenderer>()!.Sprite = sprite;
+        entity.Transform.SetTransformationWithMatrix(transform);
     }
 
     public void Run()

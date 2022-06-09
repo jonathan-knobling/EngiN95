@@ -1,6 +1,6 @@
 ﻿using OpenTK.Graphics.OpenGL;
 
-namespace EngineSigma.GFX;
+namespace EngineSigma.GFX.Rendering;
 
 internal class VertexArray : IDisposable
 {

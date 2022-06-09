@@ -1,8 +1,8 @@
 ﻿using OpenTK.Graphics.OpenGL;
 
-namespace EngineSigma.GFX;
+namespace EngineSigma.GFX.Rendering;
 
-public sealed class IndexBuffer : IDisposable
+internal sealed class IndexBuffer : IDisposable
 {
     public static readonly int MinIndexCount = 0;
     public static readonly int MaxIndexCount = 250_000;

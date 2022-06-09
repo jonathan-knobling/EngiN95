@@ -1,4 +1,6 @@
-﻿using EngineSigma.GFX.Shaders;
+﻿using EngineSigma.ECS;
+using EngineSigma.GFX.Rendering;
+using EngineSigma.GFX.Shaders;
 using EngineSigma.IO;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
@@ -35,7 +37,7 @@ internal class Window : GameWindow
         GL.Enable(EnableCap.DepthTest);
 
         //Get root Directory
-        var rootDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        string rootDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
         //Create Shader
         _shader = new Shader($"{rootDirectory}\\GFX\\Shaders\\shader.vert",
@@ -47,7 +49,7 @@ internal class Window : GameWindow
 
         //Set Viewport Size in Shader
         _shader.Use();
-        var vpsLocation = GL.GetUniformLocation(_shader.Handle, "viewPortSize");
+        int vpsLocation = GL.GetUniformLocation(_shader.Handle, "viewPortSize");
         GL.Uniform2(vpsLocation, (float) viewport[2], viewport[3]);
 
         //Load Texture
@@ -64,13 +66,16 @@ internal class Window : GameWindow
 
         //Use Shader
         _shader.Use();
+        
+        //Add Renderables to Renderer
+        EntityManager.OnRender(Renderer);
 
         //Render sprites
         Renderer.Render(_shader);
 
         //Swap Buffers
         Context.SwapBuffers();
-
+        
         base.OnRenderFrame(args);
     }
 

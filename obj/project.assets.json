@@ -491,11 +491,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\happy\\Documents\\GitHub\\EngineSigma\\EngineSigma.csproj",
+      "projectUniqueName": "C:\\Users\\happy\\Desktop\\GitHub\\EngineSigma\\EngineSigma.csproj",
       "projectName": "EngineSigma",
-      "projectPath": "C:\\Users\\happy\\Documents\\GitHub\\EngineSigma\\EngineSigma.csproj",
+      "projectPath": "C:\\Users\\happy\\Desktop\\GitHub\\EngineSigma\\EngineSigma.csproj",
       "packagesPath": "C:\\Users\\happy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\happy\\Documents\\GitHub\\EngineSigma\\obj\\",
+      "outputPath": "C:\\Users\\happy\\Desktop\\GitHub\\EngineSigma\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\happy\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -546,7 +546,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\happy\\.dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\happy\\.dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

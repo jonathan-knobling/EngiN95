@@ -5,37 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="754f1658-6861-4473-8d02-ed66099f5dae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GFX/Renderer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IO/Input.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Time.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECS/Component.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECS/Components/SpriteRenderer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECS/Components/Transform.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECS/Entity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECS/EntityManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GFX/Rendering/IRenderable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GFX/Rendering/Renderer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CopyComplete" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EngineSigma/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Image.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Image.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/IndexBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/IndexBuffer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Renderer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Sprite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Sprite.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Texture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Texture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/VertexArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/VertexArray.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/VertexBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/VertexBuffer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Vertices/Vertex.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Vertices/Vertex.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Vertices/VertexAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Vertices/VertexAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Vertices/VertexInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Vertices/VertexInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/Window.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Window.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/shaders/Shader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Shaders/Shader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Shaders/shader.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engine/Rendering/shaders/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Shaders/shader.vert" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EngineSigma.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/EngineSigma.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GFX/IndexBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Rendering/IndexBuffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GFX/Renderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GFX/Sprite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Sprite.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GFX/VertexArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Rendering/VertexArray.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GFX/VertexBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Rendering/VertexBuffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GFX/Window.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GFX/Window.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/EngineSigma.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/EngineSigma.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/EngineSigma.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/EngineSigma.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/EngineSigma.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/EngineSigma.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/EngineSigma.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +55,14 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d20f14ffdd3341b6958538d6a40541fdba00/95/4ecda4ac/KeyboardState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d20f14ffdd3341b6958538d6a40541fdba00/6e/c673a90b/MouseState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5956701c92ec47bc98145555cd08eafca23890/01/ad3711d0/Predicate`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5956701c92ec47bc98145555cd08eafca23890/8d/19ac5d5f/Guid.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5956701c92ec47bc98145555cd08eafca23890/c4/b661cf5e/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/620a8babd6724afca0e27cddc0e9c851cc00/ed/16f2fa8d/GameWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833e102ab4ad49f79cce0999df675d9a3000/1f/a84ba707/FrameEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/833e102ab4ad49f79cce0999df675d9a3000/41/5754442a/WindowBorder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5956701c92ec47bc98145555cd08eafca23890/_e67e6/Void.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f025f9463fee36b19b93b1626bbe65e496a2d14a991af67ff4a8f371f8ef3/MethodImplAttribute.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,13 +75,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "RiderUnitTestingPageId",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="run" />
@@ -109,6 +119,7 @@
       <workItem from="1653835084206" duration="21291000" />
       <workItem from="1654451998698" duration="33000" />
       <workItem from="1654452086181" duration="13425000" />
+      <workItem from="1654773268521" duration="18107000" />
     </task>
     <servers />
   </component>

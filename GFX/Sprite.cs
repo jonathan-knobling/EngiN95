@@ -1,30 +1,19 @@
-﻿using OpenTK.Mathematics;
+﻿using EngineSigma.GFX.Rendering;
 
 namespace EngineSigma.GFX;
 
-internal struct Sprite
+public struct Sprite
 {
-    public VertexBuffer _vertexBuffer;
-    public VertexArray VertexArray;
-    public IndexBuffer IndexBuffer;
-    public Matrix4 Transform;
+    internal VertexBuffer VertexBuffer;
+    internal VertexArray VertexArray;
+    internal IndexBuffer IndexBuffer;
     public readonly string ID;
 
-    public Sprite(VertexBuffer vb, VertexArray va, IndexBuffer ib, Matrix4 transform)
+    internal Sprite(VertexBuffer vb, VertexArray va, IndexBuffer ib)
     {
-        _vertexBuffer = vb;
+        VertexBuffer = vb;
         VertexArray = va;
         IndexBuffer = ib;
-        Transform = transform;
-        ID = Guid.NewGuid().ToString();
-    }
-
-    public Sprite(VertexBuffer vb, VertexArray va, IndexBuffer ib)
-    {
-        _vertexBuffer = vb;
-        VertexArray = va;
-        IndexBuffer = ib;
-        Transform = Matrix4.Identity;
         ID = Guid.NewGuid().ToString();
     }
 }
