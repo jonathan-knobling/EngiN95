@@ -4,7 +4,7 @@ using OpenTK.Graphics.OpenGL;
 
 namespace EngineSigma.Core.ECS.Components;
 
-public class SpriteRenderer : Component
+public sealed class SpriteRenderer : Component
 {
     public Sprite Sprite { get; set; }
 

@@ -11,13 +11,13 @@ using Image = EngineSigma.Core.GFX.Image;
 
 namespace EngineSigma.Core;
 
-public class Game : IDisposable
+public class GameManager : IDisposable
 {
     private readonly Window _window;
 
-    public Game()
+    public GameManager()
     {
-        var icon = new GFX.Image(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\Sprites\\stone.png");
+        var icon = new Image(AppDomain.CurrentDomain.BaseDirectory + "\\Resources\\Sprites\\stone.png");
 
         var settings = new NativeWindowSettings
         {
@@ -35,16 +35,16 @@ public class Game : IDisposable
         _window = new Window(settings);
 
         _window.UpdateFrame += Update;
+        _window.RenderFrame += Render;
     }
 
-    private void Update(FrameEventArgs args)
+    /// <summary>
+    /// Gets called right after the window is updated
+    /// base.Update updates the EntityManager
+    /// </summary>
+    /// <param name="args">Includes the Time since the last update</param>
+    protected virtual void Update(FrameEventArgs args)
     {
-        //Set Time
-        Time.DeltaTime = (float) args.Time;
-        
-        //Update Entities
-        EntityManager.OnUpdate();
-        
         var rand = new Random();
 
         int x = rand.Next(1920);
@@ -96,10 +96,19 @@ public class Game : IDisposable
         transform *= Matrix4.CreateRotationZ(rand.NextSingle() * 360f);
 
         var sprite = new Sprite(vb, va, ib);
-        
+
         var entity = Entity.Instantiate(new SpriteRenderer());
         entity.GetComponent<SpriteRenderer>()!.Sprite = sprite;
         entity.Transform.SetTransformationWithMatrix(transform);
+    }
+
+    /// <summary>
+    ///     Gets called directly after the window was rendered
+    /// </summary>
+    /// <param name="args">Includes the Time since the last Frame was rendered</param>
+    protected virtual void Render(FrameEventArgs args)
+    {
+        
     }
 
     public void Run()

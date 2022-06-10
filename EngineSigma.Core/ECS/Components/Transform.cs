@@ -2,7 +2,7 @@
 
 namespace EngineSigma.Core.ECS.Components;
 
-public class Transform : ICloneable
+public sealed class Transform : ICloneable
 {
     internal Matrix4 TransformMatrix => CalculateTransformMatrix();
 

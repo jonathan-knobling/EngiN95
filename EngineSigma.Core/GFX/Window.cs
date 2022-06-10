@@ -59,6 +59,17 @@ internal class Window : GameWindow
         base.OnLoad();
     }
 
+    protected override void OnUpdateFrame(FrameEventArgs args)
+    {
+        //Set Time
+        Time.DeltaTime = (float) args.Time;
+
+        //Update Entities
+        EntityManager.OnUpdate();
+        
+        base.OnUpdateFrame(args);
+    }
+
     protected override void OnRenderFrame(FrameEventArgs args)
     {
         //Clear Depth and Color Buffer

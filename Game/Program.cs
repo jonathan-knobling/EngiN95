@@ -4,7 +4,8 @@ public static class Program
 {
     private static void Main()
     {
-        using var game = new EngineSigma.Core.Game();
+        //hier am besten nicht ändern
+        using var game = new EngineSigma.Core.GameManager();
         game.Run();
     }
 }
