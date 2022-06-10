@@ -19,23 +19,7 @@
 
     <ItemGroup>
       <None Remove="Resources\Sprites\grass.png" />
-      <Content Include="GFX\Shaders\shader.frag">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="GFX\Shaders\shader.vert">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="Resources\Sprites\grass.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
       <None Remove="Resources\Sprites\stone.png" />
-      <Content Include="Resources\Sprites\stone.png">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Resources\Sprites" />
     </ItemGroup>
 
 </Project>

@@ -1,0 +1,16 @@
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\bin\Debug\net6.0\Engine.deps.json
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\bin\Debug\net6.0\Engine.dll
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\bin\Debug\net6.0\Engine.pdb
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\obj\Debug\net6.0\Engine.csproj.AssemblyReference.cache
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\obj\Debug\net6.0\Engine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\obj\Debug\net6.0\Engine.AssemblyInfoInputs.cache
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\obj\Debug\net6.0\Engine.AssemblyInfo.cs
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\obj\Debug\net6.0\Engine.csproj.CoreCompileInputs.cache
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\obj\Debug\net6.0\Engine.dll
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\obj\Debug\net6.0\refint\Engine.dll
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\obj\Debug\net6.0\Engine.pdb
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\obj\Debug\net6.0\ref\Engine.dll
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\bin\Debug\net6.0\GFX\Shaders\shader.frag
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\bin\Debug\net6.0\GFX\Shaders\shader.vert
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\bin\Debug\net6.0\Resources\Sprites\grass.png
+C:\Users\happy\Desktop\GitHub\EngineSigma\Engine\bin\Debug\net6.0\Resources\Sprites\stone.png
