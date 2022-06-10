@@ -7,22 +7,26 @@ public abstract class Component : ICloneable
     /// </summary>
     public Entity Entity = null!;
 
+    internal void InternalInit() => Init();
+    internal void InternalUpdate() => Update();
+    internal void InternalFixedUpdate() => FixedUpdate();
+
     /// <summary>
     /// Gets called when this Component Gets added to an Entity
     /// </summary>
-    internal virtual void Init() {}
+    protected virtual void Init() {}
     
     /// <summary>
     /// Gets called every time the Window is Updated
     /// </summary>
-    internal virtual void Update() {}
+    protected virtual void Update() {}
     
     /// <summary>
     /// Gets called a fixed amount of Times per second
     /// See Time.TickSpeed
     /// Good For Physics Calculations
     /// </summary>
-    internal virtual void FixedUpdate() {}
+    protected virtual void FixedUpdate() {}
 
     public abstract object Clone();
 }

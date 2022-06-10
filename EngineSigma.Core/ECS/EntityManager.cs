@@ -2,10 +2,12 @@
 
 namespace EngineSigma.Core.ECS;
 
+// ReSharper disable InconsistentNaming
+
 internal static class EntityManager
 {
     private const int MaxEntities = 100_000;
-    
+
     private static readonly List<Entity> Entities;
     private static readonly Queue<int> IDs;
 
@@ -43,7 +45,10 @@ internal static class EntityManager
 
     public static void OnUpdate()
     {
-        
+        foreach (var entity in Entities)
+        {
+            entity.Update();
+        }
     }
 
     public static void OnRender(Renderer renderer)

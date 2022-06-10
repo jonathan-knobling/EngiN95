@@ -38,6 +38,22 @@ public sealed class Entity : ICloneable, IRenderable
         _spriteRenderer?.Render(shader);
     }
 
+    internal void Update()
+    {
+        foreach (var component in _components)
+        {
+            component.InternalUpdate();
+        }
+    }
+
+    internal void FixedUpdate()
+    {
+        foreach (var component in _components)
+        {
+            component.InternalFixedUpdate();
+        }
+    }
+
     //public Entity this[int i] => Children[i];
 
     /// <summary>
