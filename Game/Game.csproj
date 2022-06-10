@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Engine\Engine.csproj" />
+      <ProjectReference Include="..\EngineSigma.Core\EngineSigma.Core.csproj" />
     </ItemGroup>
 
 </Project>
