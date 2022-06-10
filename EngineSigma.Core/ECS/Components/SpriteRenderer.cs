@@ -6,16 +6,15 @@ namespace EngineSigma.Core.ECS.Components;
 
 public sealed class SpriteRenderer : Component
 {
+    /// <summary>
+    /// The Sprite this SpriteRenderer Renders
+    /// </summary>
     public Sprite Sprite { get; set; }
 
-    public override object Clone()
-    {
-        return new SpriteRenderer()
-        {
-            Sprite = Sprite
-        };
-    }
-
+    /// <summary>
+    /// Renders this Sprite
+    /// </summary>
+    /// <param name="shader">The Shader Program to Render the Sprite with</param>
     internal void Render(Shader shader)
     {
         //Bind VertexArray and IndexBuffer
@@ -36,5 +35,13 @@ public sealed class SpriteRenderer : Component
         
         //Draw Vertices
         GL.DrawElements(PrimitiveType.Triangles, 6, DrawElementsType.UnsignedInt, 0);
+    }
+
+    public override object Clone()
+    {
+        return new SpriteRenderer()
+        {
+            Sprite = Sprite
+        };
     }
 }

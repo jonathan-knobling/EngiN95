@@ -29,6 +29,10 @@ public sealed class Entity : ICloneable, IRenderable
         Active = true;
     }
 
+    /// <summary>
+    /// Renders this Entity
+    /// </summary>
+    /// <param name="shader">The Shader whith which this Entity gets Rendered</param>
     void IRenderable.Render(Shader shader)
     {
         _spriteRenderer?.Render(shader);
@@ -36,18 +40,32 @@ public sealed class Entity : ICloneable, IRenderable
 
     //public Entity this[int i] => Children[i];
 
+    /// <summary>
+    /// Gets a component of Type T in this Entity
+    /// </summary>
+    /// <typeparam name="T">Type of Component to Get</typeparam>
+    /// <returns>A Component of Type T in this Entity</returns>
     public T? GetComponent<T>() where T : class
     {
         var component = _components.Find(component => component.GetType() == typeof(T));
         return component as T;
     }
 
+    /// <summary>
+    /// Gets all Components of Type T of this Entity
+    /// </summary>
+    /// <typeparam name="T">Type of Components to Get</typeparam>
+    /// <returns>A List of all Components of Type T of this Entity</returns>
     public List<T> GetComponents<T>() where T : class
     {
         var components = _components.FindAll(component => component.GetType() == typeof(T));
         return components as List<T> ?? new List<T>();
     }
 
+    /// <summary>
+    /// Adds a new component of Type T to this Entity
+    /// </summary>
+    /// <typeparam name="T">Type of Component to Add</typeparam>
     public void AddComponent<T>() where T : Component, new()
     {
         var component = new T();
@@ -55,16 +73,26 @@ public sealed class Entity : ICloneable, IRenderable
         _components.Add(component);
     }
 
+    /// <summary>
+    /// Gets a Component of Type T in this Entities Parent
+    /// </summary>
+    /// <typeparam name="T">The Type of Component to Get</typeparam>
+    /// <returns>A Component of Type T in this Entities Parent</returns>
     public T? GetComponentInParent<T>() where T : class
     {
         return Parent?.GetComponent<T>();
     }
 
+    /// <summary>
+    /// Gets all Components of Type T in this Entities Parent
+    /// </summary>
+    /// <typeparam name="T">The Type of Components to Get</typeparam>
+    /// <returns>A list of all components of Type T in this Entities Parent</returns>
     public List<T>? GetComponentsInParent<T>() where T : class
     {
         return Parent?.GetComponents<T>();
     }
-
+    
     public object Clone()
     {
         //Create Cloned Entity
@@ -87,20 +115,33 @@ public sealed class Entity : ICloneable, IRenderable
                $"Components: {_components.Count}";
     }
     
+    /// <summary>
+    /// Instantiates an Empty Entity
+    /// </summary>
+    /// <returns></returns>
+    /// <exception cref="Exception">Gets thrown when the Maximum number of Entities has been reached</exception>
     public static Entity Instantiate()
     {
         var entity = new Entity();
-        
+
         //Instantiate the entity
         if (!EntityManager.InstantiateEntity(entity)) throw new Exception("Maximum number of Instantiated Entities Reached");
 
         return entity;
     }
 
-    public static Entity Instantiate(Entity entity)
+    /// <summary>
+    /// Instantiates a given Entity with the given transform
+    /// </summary>
+    /// <param name="entity">The Entity to be Instantiated</param>
+    /// <param name="transform">The Transform of the Entity</param>
+    /// <returns></returns>
+    /// <exception cref="Exception">Gets thrown when the Maximum number of Entities has been reached</exception>
+    public static Entity Instantiate(Entity entity, Transform transform)
     {
         //Clone entity
         var newEntity = (Entity) entity.Clone();
+        newEntity.Transform = transform;
         
         //Instantiate the entity
         if (!EntityManager.InstantiateEntity(entity)) throw new Exception("Maximum number of Instantiated Entities Reached");
@@ -108,6 +149,12 @@ public sealed class Entity : ICloneable, IRenderable
         return newEntity;
     }
 
+    /// <summary>
+    /// Instantiates an Entity with the given Components
+    /// </summary>
+    /// <param name="components">The components of the Entity</param>
+    /// <returns></returns>
+    /// <exception cref="Exception">Gets thrown when the Maximum number of Entities has been reached</exception>
     public static Entity Instantiate(params Component[] components)
     {
         //Create new Entity
