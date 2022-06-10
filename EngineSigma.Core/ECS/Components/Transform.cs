@@ -2,58 +2,76 @@
 
 namespace EngineSigma.Core.ECS.Components;
 
+// ReSharper disable ConvertToAutoProperty
+
 public sealed class Transform : ICloneable
 {
     internal Matrix4 TransformMatrix => CalculateTransformMatrix();
 
+    private Vector3 _position;
+    private Vector3 _scale;
+    private Quaternion _rotation;
+    
     /// <summary>
     /// The Position of this Transform
     /// </summary>
-    public Vector3 Position { get; set; }
+    public Vector3 Position 
+    {
+        get => _position;
+        set => _position = value;
+    }
 
     /// <summary>
     /// The Scale of this Transform
     /// </summary>
-    public Vector3 Scale { get; set; }
+    public Vector3 Scale 
+    {
+        get => _scale;
+        set => _scale = value;
+    }
 
     /// <summary>
     /// The Rotation of this Transform
     /// </summary>
-    public Quaternion Rotation { get; set; }
+    public Quaternion Rotation
+    {
+        get => _rotation;
+        set => _rotation = value;
+    }
     
     public Transform()
     {
-        Position = Vector3.Zero;
-        Scale = Vector3.One;
-        Rotation = Quaternion.Identity;
+        _position = Vector3.Zero;
+        _scale = Vector3.One;
+        _rotation = Quaternion.Identity;
     }
 
     public Transform(Vector3 position, Vector3 scale, Quaternion rotation)
     {
-        Position = position;
-        Scale = scale;
-        Rotation = rotation;
+        _position = position;
+        _scale = scale;
+        _rotation = rotation;
     }
 
     public Transform(Vector3 position, Quaternion rotation)
     {
-        Position = position;
-        Scale = Vector3.One;
-        Rotation = rotation;
+        _position = position;
+        _scale = Vector3.One;
+        _rotation = rotation;
     }
 
     public Transform(Vector3 position)
     {
-        Position = position;
-        Scale = Vector3.One;
-        Rotation = Quaternion.Identity;
+        _position = position;
+        _scale = Vector3.One;
+        _rotation = Quaternion.Identity;
     }
 
     public Transform(Quaternion rotation)
     {
-        Position = Vector3.Zero;
-        Scale = Vector3.One;
-        Rotation = rotation;
+        _position = Vector3.Zero;
+        _scale = Vector3.One;
+        _rotation = rotation;
     }
 
     /// <summary>
