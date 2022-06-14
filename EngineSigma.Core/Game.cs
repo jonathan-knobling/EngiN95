@@ -1,5 +1,7 @@
-﻿using OpenTK.Graphics.OpenGL4;
+﻿using EngineSigma.Core.Management;
+using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
+using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
 
 namespace EngineSigma.Core;
@@ -21,12 +23,13 @@ public abstract class Game
 
         _nativeWindowSettings.Size = new Vector2i(initialWindowWidth, initialWindowHeight);
         _nativeWindowSettings.Title = WindowTitle;
+        _nativeWindowSettings.API = ContextAPI.OpenGL;
     }
 
     public void Run()
     {
         Init();
-        using GameWindow gameWindow = new GameWindow(_gameWindowSettings, _nativeWindowSettings);
+        using GameWindow gameWindow = DisplayManager.CreateWindow(_gameWindowSettings, _nativeWindowSettings);
         gameWindow.Load += OnLoad;
         gameWindow.UpdateFrame += args =>
         {
