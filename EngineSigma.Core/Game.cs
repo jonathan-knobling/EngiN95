@@ -8,28 +8,20 @@ namespace EngineSigma.Core;
 
 public abstract class Game
 {
-    protected string WindowTitle { get; set; }
-    protected int InitialWindowWidth { get; set; }
-    protected int InitialWindowHeight { get; set; }
-    
-    private GameWindowSettings _gameWindowSettings = GameWindowSettings.Default;
-    private NativeWindowSettings _nativeWindowSettings = NativeWindowSettings.Default;
+    private readonly GameWindowSettings _gameWindowSettings = GameWindowSettings.Default;
+    private readonly NativeWindowSettings _nativeWindowSettings = NativeWindowSettings.Default;
 
     protected Game(string windowTitle, int initialWindowWidth, int initialWindowHeight)
     {
-        WindowTitle = windowTitle;
-        InitialWindowWidth = initialWindowWidth;
-        InitialWindowHeight = initialWindowHeight;
-
         _nativeWindowSettings.Size = new Vector2i(initialWindowWidth, initialWindowHeight);
-        _nativeWindowSettings.Title = WindowTitle;
+        _nativeWindowSettings.Title = windowTitle;
         _nativeWindowSettings.API = ContextAPI.OpenGL;
     }
 
     public void Run()
     {
         Init();
-        using GameWindow gameWindow = DisplayManager.CreateWindow(_gameWindowSettings, _nativeWindowSettings);
+        using var gameWindow = DisplayManager.CreateWindow(_gameWindowSettings, _nativeWindowSettings);
         gameWindow.Load += OnLoad;
         gameWindow.UpdateFrame += args =>
         {

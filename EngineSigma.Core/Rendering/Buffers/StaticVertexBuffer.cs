@@ -2,13 +2,13 @@
 
 namespace EngineSigma.Core.Rendering;
 
-public class VertexBuffer : IBuffer
+public class StaticVertexBuffer : IBuffer
 {
     public int Handle { get; }
 
     private bool _disposed;
 
-    public VertexBuffer(float[] vertices)
+    public StaticVertexBuffer(float[] vertices)
     {
         Handle = GL.GenBuffer();
         GL.BindBuffer(BufferTarget.ArrayBuffer, Handle);
@@ -25,7 +25,7 @@ public class VertexBuffer : IBuffer
         GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
     }
 
-    ~VertexBuffer()
+    ~StaticVertexBuffer()
     {
         Dispose();
     }
