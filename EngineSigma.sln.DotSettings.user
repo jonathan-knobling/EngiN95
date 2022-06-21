@@ -3,4 +3,10 @@
   &lt;Assembly Path="C:\Users\happy\.dotnet\packs\NETStandard.Library.Ref\2.1.0\ref\netstandard2.1\netstandard.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Users\happy\.dotnet\packs\Microsoft.NETCore.App.Ref\6.0.5\ref\net6.0\System.ComponentModel.TypeConverter.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Users\happy\.dotnet\packs\Microsoft.NETCore.App.Ref\6.0.5\ref\net6.0\System.Drawing.Primitives.dll" /&gt;&#xD;
-&lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e7183ebc_002De83c_002D4a76_002D8db3_002D9f0a2d41472b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;tests&amp;gt; #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\happy\Desktop\GitHub\EngineSigma" Presentation="&amp;lt;tests&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f9ee8c3d_002D231c_002D4eae_002Db2f3_002D12cc79b8e3cd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from &amp;lt;tests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\happy\Desktop\GitHub\EngineSigma" Presentation="&amp;lt;tests&amp;gt;" /&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
