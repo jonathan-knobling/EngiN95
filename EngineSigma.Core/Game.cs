@@ -11,6 +11,8 @@ public abstract class Game
     private readonly GameWindowSettings _gameWindowSettings = GameWindowSettings.Default;
     private readonly NativeWindowSettings _nativeWindowSettings = NativeWindowSettings.Default;
 
+    public GameWindow GameWindow { get; private set; } = null!;
+
     protected Game(string windowTitle, int initialWindowWidth, int initialWindowHeight)
     {
         _nativeWindowSettings.Size = new Vector2i(initialWindowWidth, initialWindowHeight);
@@ -21,7 +23,13 @@ public abstract class Game
     public void Run()
     {
         Init();
+        SetupGameWindow();
+    }
+
+    private void SetupGameWindow()
+    {
         using var gameWindow = DisplayManager.CreateWindow(_gameWindowSettings, _nativeWindowSettings);
+        
         gameWindow.Load += OnLoad;
         gameWindow.UpdateFrame += args =>
         {
@@ -34,10 +42,10 @@ public abstract class Game
             OnRender();
             gameWindow.SwapBuffers();
         };
-        gameWindow.Resize += args =>
-        {
-            GL.Viewport(0, 0, gameWindow.Size.X, gameWindow.Size.Y);
-        };
+        gameWindow.Resize += args => { GL.Viewport(0, 0, gameWindow.Size.X, gameWindow.Size.Y); };
+        
+        GameWindow = gameWindow;
+        
         gameWindow.Run();
     }
 

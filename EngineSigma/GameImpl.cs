@@ -1,4 +1,5 @@
-﻿using EngineSigma.Core;
+﻿using System.Drawing.Drawing2D;
+using EngineSigma.Core;
 using EngineSigma.Core.Management;
 using EngineSigma.Core.Rendering;
 using OpenTK.Graphics.OpenGL4;
@@ -13,10 +14,10 @@ internal class GameImpl : Game
         _vertices = new[]
         
         {
-            new Vertex(new Vector3( 0.5f,  0.5f, 0.0f), new Vector2(1.0f, 1.0f), Color4.DarkBlue),
-            new Vertex(new Vector3( 0.5f, -0.5f, 0.0f), new Vector2(1.0f, 0.0f), Color4.Transparent),
-            new Vertex(new Vector3(-0.5f, -0.5f, 0.0f), new Vector2(0.0f, 0.0f), Color4.Fuchsia),
-            new Vertex(new Vector3(-0.5f,  0.5f, 0.0f), new Vector2(0.0f, 1.0f), Color4.Lime)
+            new Vertex(new Vector3(700, 700, 0.0f), new Vector2(1.0f, 1.0f), Color4.DarkBlue),
+            new Vertex(new Vector3(700, 100, 0.0f), new Vector2(1.0f, 0.0f), Color4.Transparent),
+            new Vertex(new Vector3(100, 100, 0.0f), new Vector2(0.0f, 0.0f), Color4.Fuchsia),
+            new Vertex(new Vector3(100, 700, 0.0f), new Vector2(0.0f, 1.0f), Color4.Lime)
         };
         
 
@@ -53,6 +54,9 @@ internal class GameImpl : Game
         
         _texture = ResourceManager.LoadTexture("Resources/Sprites/wall.jpg");
         _texture.Use();
+
+        _shader.SetMatrix4("projection", 
+            Matrix4.CreateOrthographic(GameWindow.Size.X, GameWindow.Size.Y, -1, 100));
     }
 
     protected override void OnUpdate()
@@ -67,16 +71,14 @@ internal class GameImpl : Game
         
         _shader.Use();
         
-        for (var i = 0; i < _vertices.Length; i++)
-        {
-            _vertices[i].Position += (0.1f * Time.DeltaTime, 0.1f * Time.DeltaTime, 0);
-        }
-        
         _vertexBuffer.BufferData(_vertices);
         
         _vertexArray.Bind();
         _indexBuffer.Bind();
         _vertexBuffer.Bind();
+        
+        _shader.SetMatrix4("transform", Matrix4.CreateScale(0.3f));
+        
         GL.DrawElements(PrimitiveType.Triangles, _indices.Length, DrawElementsType.UnsignedInt, 0);
     }
 }
