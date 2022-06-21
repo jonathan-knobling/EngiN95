@@ -30,7 +30,7 @@ internal class GameImpl : Game
     private Texture _texture = null!;
     
     private IndexBuffer _indexBuffer = null!;
-    private StaticVertexBuffer _vertexBuffer = null!;
+    private DynamicVertexBuffer _vertexBuffer = null!;
     private VertexArray _vertexArray = null!;
 
     private readonly uint[] _indices;
@@ -46,8 +46,8 @@ internal class GameImpl : Game
         var src = ShaderProgramSource.LoadFromFiles("Resources/Shaders/vertex.glsl", "Resources/Shaders/fragment.glsl");
         _shader = new Shader(src);
 
-        _vertexBuffer = new StaticVertexBuffer(_vertices);
-        //_vertexBuffer.BufferData(_vertices);
+        _vertexBuffer = new DynamicVertexBuffer();
+        _vertexBuffer.BufferData(_vertices);
         _vertexArray = new VertexArray();
         _indexBuffer = new IndexBuffer(_indices);
         
@@ -66,6 +66,13 @@ internal class GameImpl : Game
         GL.ClearColor(Color4.CornflowerBlue);
         
         _shader.Use();
+        
+        for (var i = 0; i < _vertices.Length; i++)
+        {
+            _vertices[i].Position += (0.1f * Time.DeltaTime, 0.1f * Time.DeltaTime, 0);
+        }
+        
+        _vertexBuffer.BufferData(_vertices);
         
         _vertexArray.Bind();
         _indexBuffer.Bind();

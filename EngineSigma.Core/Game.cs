@@ -25,8 +25,8 @@ public abstract class Game
         gameWindow.Load += OnLoad;
         gameWindow.UpdateFrame += args =>
         {
-            Time.DeltaTime = TimeSpan.FromSeconds(args.Time);
-            Time.TotalGameTime += TimeSpan.FromSeconds(args.Time);
+            Time.DeltaTimeSpan = TimeSpan.FromSeconds(args.Time);
+            Time.TotalGameTimeSpan += TimeSpan.FromSeconds(args.Time);
             OnUpdate();
         };
         gameWindow.RenderFrame += args =>
