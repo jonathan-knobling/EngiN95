@@ -8,11 +8,11 @@ public class StaticVertexBuffer : IBuffer
 
     private bool _disposed;
 
-    public StaticVertexBuffer(float[] vertices)
+    public StaticVertexBuffer(Vertex[] vertices)
     {
         Handle = GL.GenBuffer();
         GL.BindBuffer(BufferTarget.ArrayBuffer, Handle);
-        GL.BufferData(BufferTarget.ArrayBuffer, vertices.Length * sizeof(float), vertices, BufferUsageHint.StaticDraw);
+        GL.BufferData(BufferTarget.ArrayBuffer, vertices.Length * Vertex.Size, vertices, BufferUsageHint.StaticDraw);
     }
 
     public void Bind()

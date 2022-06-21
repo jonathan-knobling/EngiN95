@@ -26,7 +26,6 @@ public class DynamicVertexBuffer : IBuffer
         Elements = data.Length;
         Bind();
         GL.BufferSubData(BufferTarget.ArrayBuffer, IntPtr.Zero, data.Length * Vertex.ComponentAmount, data);
-        UnBind();
     }
 
     public void Bind()

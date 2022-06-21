@@ -2,6 +2,9 @@
 
 public static class Time
 {
+    /// <summary>
+    /// The total amount of time passed since the start of the game
+    /// </summary>
     public static TimeSpan TotalGameTime { get; internal set; }
     
     /// <summary>
@@ -12,5 +15,5 @@ public static class Time
     /// <summary>
     /// Amount of Times FixedUpdate gets Executed per Second
     /// </summary>
-    public static TimeSpan TickSpeed { get; set; }
+    public static int TickSpeed { get; set; }
 }
