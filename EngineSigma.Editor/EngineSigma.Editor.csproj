@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Images" />
+      <Folder Include="MVVM\Model" />
+      <Folder Include="MVVM\View" />
+      <Folder Include="MVVM\ViewModel" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Fonts\Raleway-VariableFont_wght.ttf" />
+      <Content Include="Fonts\Raleway-VariableFont_wght.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+</Project>

@@ -18,3 +18,11 @@ EngineSigma/bin/
 EngineTests/bin/
 
 EngineTests/obj/
+
+obj/
+
+Frontend/bin/
+
+EngineSigma.Editor/bin/
+
+.vs/

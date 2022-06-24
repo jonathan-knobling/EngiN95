@@ -1,0 +1,7 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=MVVM_005CVIEW_005CIMAGES_005CDOWNLAOD_002EPNG/@EntryIndexedValue">MVVM\View\Images\downlaod.png</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=MVVM_005CVIEW_005CIMAGES_005CDOWNLOAD_002EPNG_0029/@EntryIndexedValue">MVVM\View\Images\download.png)</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=MVVM_005CVIEW_005C_0021_005B_005D_0028_002E_002E/@EntryIndexedValue">MVVM\View\![](..</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=MVVM_005CVIEW_005CIMAGES_005CDOWNLAOD_002EPNG/@EntryIndexedValue">MVVM\View\Images\downlaod.png</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=MVVM_005CVIEW_005CIMAGES_005CDOWNLOAD_002EPNG_0029/@EntryIndexedValue">MVVM\View\Images\download.png)</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=MVVM_005CVIEW_005C_0021_005B_005D_0028_002E_002E/@EntryIndexedValue">MVVM\View\![](..</s:String></wpf:ResourceDictionary>
