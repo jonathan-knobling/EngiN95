@@ -1,6 +1,8 @@
 ﻿<Application x:Class="EngineSigma.Editor.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModel="clr-namespace:EngineSigma.Editor.MVVM.ViewModel"
+             xmlns:view="clr-namespace:EngineSigma.Editor.MVVM.View"
              StartupUri="MainWindow.xaml">
     
     <Application.Resources>
@@ -13,6 +15,14 @@
                 <ResourceDictionary Source="Theme/SearchBarTheme.xaml"/>
                 <ResourceDictionary Source="Theme/CloseButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:ProjectsViewModel}">
+                <view:ProjectsView/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
