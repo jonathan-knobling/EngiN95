@@ -1,5 +1,4 @@
-﻿using System.Drawing.Drawing2D;
-using EngineSigma.Core;
+﻿using EngineSigma.Core;
 using EngineSigma.Core.Management;
 using EngineSigma.Core.Rendering;
 using OpenTK.Graphics.OpenGL4;
@@ -12,7 +11,6 @@ internal class GameImpl : Game
     public GameImpl(string windowTitle, int initialWindowWidth, int initialWindowHeight) : base(windowTitle, initialWindowWidth, initialWindowHeight)
     {
         _vertices = new[]
-        
         {
             new Vertex(new Vector3(700, 700, 0.0f), new Vector2(1.0f, 1.0f), Color4.DarkBlue),
             new Vertex(new Vector3(700, 100, 0.0f), new Vector2(1.0f, 0.0f), Color4.Transparent),
@@ -77,7 +75,18 @@ internal class GameImpl : Game
         _indexBuffer.Bind();
         _vertexBuffer.Bind();
         
-        _shader.SetMatrix4("transform", Matrix4.CreateScale(0.3f));
+        Matrix4.CreateScale(0.5f, out var scale);
+        Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(360f * DateTime.Now.Millisecond / 1000), out var rotation);
+        Matrix4.CreateTranslation(400, 0, 0, out var translation);
+
+        var transform = Matrix4.Identity;
+        transform *= scale;
+        transform *= rotation;
+        transform *= translation;
+
+        _shader.SetMatrix4("transform", transform);
+        
+        _shader.SetMatrix4("view", Matrix4.CreateTranslation(0, 300, 0));
         
         GL.DrawElements(PrimitiveType.Triangles, _indices.Length, DrawElementsType.UnsignedInt, 0);
     }
