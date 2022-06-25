@@ -1,4 +1,5 @@
-﻿using EngineSigma.Core.Management;
+﻿using EngineSigma.Core.IO;
+using EngineSigma.Core.Management;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
@@ -45,6 +46,9 @@ public abstract class Game
         gameWindow.Resize += args => { GL.Viewport(0, 0, gameWindow.Size.X, gameWindow.Size.Y); };
         
         GameWindow = gameWindow;
+        
+        Input.KeyboardState = gameWindow.KeyboardState;
+        Input.MouseState = gameWindow.MouseState;
         
         gameWindow.Run();
     }

@@ -1,8 +1,10 @@
 ﻿using EngineSigma.Core;
+using EngineSigma.Core.IO;
 using EngineSigma.Core.Management;
 using EngineSigma.Core.Rendering;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
+using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace EngineTest;
 
@@ -59,7 +61,9 @@ internal class GameImpl : Game
 
     protected override void OnUpdate()
     {
-        
+        var movementDirection = Input.MousePositionDelta;
+        Console.WriteLine(movementDirection);
+        Camera.Instance.Move((movementDirection.X, -movementDirection.Y));
     }
 
     protected override void OnRender()
@@ -86,7 +90,7 @@ internal class GameImpl : Game
 
         _shader.SetMatrix4("transform", transform);
         
-        _shader.SetMatrix4("view", Matrix4.CreateTranslation(0, 300, 0));
+        _shader.SetMatrix4("view", Camera.Instance.ToViewMatrix());
         
         GL.DrawElements(PrimitiveType.Triangles, _indices.Length, DrawElementsType.UnsignedInt, 0);
     }
