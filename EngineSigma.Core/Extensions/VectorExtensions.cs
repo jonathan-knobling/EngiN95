@@ -55,7 +55,7 @@ public static class Vector3Extensions
     /// </summary>
     /// <param name="vec3"></param>
     /// <returns></returns>
-    public static Vector2 ToVector2(Vector3 vec3)
+    public static Vector2 ToVector2(this Vector3 vec3)
     {
         return new Vector2(vec3.X, vec3.Y);
     }
@@ -91,16 +91,16 @@ public static class Vector4Extensions
     /// <returns></returns>
     public static Vector2 ToVector2(this Vector4 vec4)
     {
-        return new Vector2(vec4.X, vec4.Y);
+        return vec4.Xy;
     }
 
     /// <summary>
     /// Converts a Vector4 to a Vector3 by ignoring its W Component
     /// </summary>
-    /// <param name="vec4"></param>
+    /// <param name="vec4">The Vector4 to Convert</param>
     /// <returns></returns>
     public static Vector3 ToVector3(this Vector4 vec4)
     {
-        return new Vector3(vec4.X, vec4.Y, vec4.Z);
+        return vec4.Xyz;
     }
 }

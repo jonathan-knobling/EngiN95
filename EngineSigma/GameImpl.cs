@@ -13,26 +13,23 @@ internal class GameImpl : Game
     {
         _vertices = new[]
         {
-            new Vertex(new Vector3(700, 700, 0.0f), new Vector2(1.0f, 1.0f), Color4.DarkBlue),
-            new Vertex(new Vector3(700, 100, 0.0f), new Vector2(1.0f, 0.0f), Color4.Transparent),
-            new Vertex(new Vector3(100, 100, 0.0f), new Vector2(0.0f, 0.0f), Color4.Fuchsia),
-            new Vertex(new Vector3(100, 700, 0.0f), new Vector2(0.0f, 1.0f), Color4.Lime)
+            new Vertex(new Vector3(600, 600, 0.0f), new Vector2(1.0f, 1.0f), Color4.DarkBlue),
+            new Vertex(new Vector3(600, 0, 0.0f), new Vector2(1.0f, 0.0f), Color4.Transparent),
+            new Vertex(new Vector3(0, 0, 0.0f), new Vector2(0.0f, 0.0f), Color4.Fuchsia),
+            new Vertex(new Vector3(0, 600, 0.0f), new Vector2(0.0f, 1.0f), Color4.Lime)
         };
         
-
         _indices = new uint[]
         {
             0, 1, 3, 1, 2, 3
         };
     }
-    
+
     private IShader _shader = null!;
-    private Texture _texture = null!;
-    
+    private Texture _texture = null! ;
     private IndexBuffer _indexBuffer = null!;
     private DynamicVertexBuffer _vertexBuffer = null!;
     private VertexArray _vertexArray = null!;
-
     private readonly uint[] _indices;
     private readonly Vertex[] _vertices;
 
@@ -80,8 +77,7 @@ internal class GameImpl : Game
         _vertexBuffer.Bind();
         
         Matrix4.CreateScale(0.5f, out var scale);
-        //Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(360f * DateTime.Now.Millisecond / 1000), out var rotation);
-        var rotation = Matrix4.Identity;
+        Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(360f * DateTime.Now.Millisecond / 1000), out var rotation);
         Matrix4.CreateTranslation(400, 0, 0, out var translation);
 
         var transform = Matrix4.Identity;
