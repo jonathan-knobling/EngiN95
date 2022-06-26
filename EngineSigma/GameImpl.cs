@@ -51,7 +51,7 @@ internal class GameImpl : Game
         _vertexArray = new VertexArray();
         _indexBuffer = new IndexBuffer(_indices);
         
-        _texture = ResourceManager.LoadTexture("Resources/Sprites/wall.jpg");
+        _texture = ResourceManager.GetTexture("Resources/Sprites/wall.jpg");
         _texture.Use();
 
         _shader.SetMatrix4("projection", 

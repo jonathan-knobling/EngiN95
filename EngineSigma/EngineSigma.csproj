@@ -23,18 +23,19 @@
       <None Update="Resources\Shaders\fragment.glsl">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="Resources\Sprites\wall.jpg">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="Resources\Sprites\grass.png">
+      <Content Include="Resources\Sprites\grass.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Include="Resources\Sprites\stone.png">
+      </Content>
+      <Content Include="Resources\Sprites\stone.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+      </Content>
+      <None Remove="Resources\Sprites\wall.jpg" />
+      <Content Include="Resources\Sprites\wall.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>
