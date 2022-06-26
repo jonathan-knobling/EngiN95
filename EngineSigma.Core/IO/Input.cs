@@ -3,12 +3,8 @@ using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace EngineSigma.Core.IO;
 
-// ReSharper disable MemberCanBePrivate.Global
-// ReSharper disable UnusedAutoPropertyAccessor.Global
-
 public static class Input
 {
-    //Input States passed from Window
     internal static MouseState MouseState { private get; set; } = null!;
     internal static KeyboardState KeyboardState { private get; set; } = null!;
     
@@ -45,7 +41,7 @@ public static class Input
     /// Get a Vector2 representing the amount that the mouse wheel moved since the last frame.
     /// </summary>
     public static Vector2 MouseScrollDelta => MouseState.ScrollDelta;
-
+    
     public static float MouseX => MousePosition.X;
     public static float MouseY => MousePosition.Y;
 
@@ -53,14 +49,14 @@ public static class Input
     public static float PreviousMouseY => PreviousMousePosition.Y;
     
     /// <summary>
-    ///     Gets whether this mouse button is currently down
+    /// Gets whether this mouse button is currently down
     /// </summary>
     /// <param name="button"></param>
     /// <returns></returns>
     public static bool IsMouseButtonDown(MouseButton button) => MouseState.IsButtonDown(button);
     
     /// <summary>
-    ///     Gets whether this button was down in the last frame
+    /// Gets whether this button was down in the last frame
     /// </summary>
     /// <param name="button"></param>
     /// <returns></returns>
@@ -74,35 +70,35 @@ public static class Input
     public static bool IsMouseButtonPressed(MouseButton button) => MouseState.IsButtonPressed(button);
     
     /// <summary>
-    ///     Gets whether this button is released in the current frame
+    /// Gets whether this button is released in the current frame
     /// </summary>
     /// <param name="button"></param>
     /// <returns></returns>
     public static bool IsMouseButtonReleased(MouseButton button) => MouseState.IsButtonReleased(button);
 
     /// <summary>
-    ///     Gets whether this key is down in the current frame
+    /// Gets whether this key is down in the current frame
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
     public static bool IsKeyDown(Keys key) => KeyboardState.IsKeyDown(key);
 
     /// <summary>
-    ///     Gets whether this key was down in the previous frame
+    /// Gets whether this key was down in the previous frame
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
     public static bool WasKeyDown(Keys key) => KeyboardState.WasKeyDown(key);
 
     /// <summary>
-    ///     Gets whether this key is down in the current frame but wasnt in the last frame
+    /// Gets whether this key is down in the current frame but wasnt in the last frame
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
     public static bool IsKeyPressed(Keys key) => KeyboardState.IsKeyPressed(key);
 
     /// <summary>
-    ///     Gets whether this key is released in the current frame
+    /// Gets whether this key is released in the current frame
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
@@ -112,45 +108,19 @@ public static class Input
     public static bool IsAnyKeyDown() => KeyboardState.IsAnyKeyDown;
     
     /// <summary>
-    ///     Gets the current MovementDirection
-    ///     x = 1 means right | y = 1 means up
-    ///     0 means no movement in this axis and minus one means left or down
+    /// Gets the current MovementDirection
+    /// x = 1 means right | y = 1 means up
+    /// 0 means no movement in this axis and minus one means left or down
     /// </summary>
     public static Vector2 MovementDirection { get; internal set; }
 
     internal static void Update()
     {
-        //get wasd keys
-        var w = IsKeyDown(Keys.W);
-        var a = IsKeyDown(Keys.A);
-        var s = IsKeyDown(Keys.S);
-        var d = IsKeyDown(Keys.D);
-
-        //temporary movement direction vector
-        var dir = new Vector2
-        {
-            //set x direction
-            X = a switch
-            {
-                //a && !d
-                true when !d => 1f,
-                //!a && d
-                false when d => -1f,
-                //!(a && d)
-                _ => 0f
-            },
-            //set y direction
-            Y = w switch
-            {
-                //w && !s
-                true when !s => 1f,
-                //!w && s
-                false when s => -1f,
-                //!(w && s)
-                _ => 0f
-            }
-        };
-
-        MovementDirection = dir;
+        var movementDirection = Vector2.Zero;
+        if (IsKeyDown(Keys.W)) movementDirection.Y += 1;
+        if (IsKeyDown(Keys.S)) movementDirection.Y -= 1;
+        if (IsKeyDown(Keys.A)) movementDirection.X -= 1;
+        if (IsKeyDown(Keys.D)) movementDirection.X += 1;
+        MovementDirection = movementDirection;
     }
 }

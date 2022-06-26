@@ -4,7 +4,6 @@ using EngineSigma.Core.Management;
 using EngineSigma.Core.Rendering;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
-using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace EngineTest;
 
@@ -61,9 +60,10 @@ internal class GameImpl : Game
 
     protected override void OnUpdate()
     {
-        var movementDirection = Input.MousePositionDelta;
+        var movementDirection = Input.MovementDirection;
+        const float speed = 800f; // pixel/s
         Console.WriteLine(movementDirection);
-        Camera.Instance.Move((movementDirection.X, -movementDirection.Y));
+        Camera.Instance.Move(movementDirection * speed * Time.DeltaTime);
     }
 
     protected override void OnRender()
@@ -80,7 +80,8 @@ internal class GameImpl : Game
         _vertexBuffer.Bind();
         
         Matrix4.CreateScale(0.5f, out var scale);
-        Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(360f * DateTime.Now.Millisecond / 1000), out var rotation);
+        //Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(360f * DateTime.Now.Millisecond / 1000), out var rotation);
+        var rotation = Matrix4.Identity;
         Matrix4.CreateTranslation(400, 0, 0, out var translation);
 
         var transform = Matrix4.Identity;

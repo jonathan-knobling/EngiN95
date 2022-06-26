@@ -1,5 +1,4 @@
 ﻿using EngineSigma.Core.IO;
-using EngineSigma.Core.Management;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
@@ -12,13 +11,14 @@ public abstract class Game
     private readonly GameWindowSettings _gameWindowSettings = GameWindowSettings.Default;
     private readonly NativeWindowSettings _nativeWindowSettings = NativeWindowSettings.Default;
 
-    public GameWindow GameWindow { get; private set; } = null!;
+    protected GameWindow GameWindow { get; private set; } = null!;
 
     protected Game(string windowTitle, int initialWindowWidth, int initialWindowHeight)
     {
         _nativeWindowSettings.Size = new Vector2i(initialWindowWidth, initialWindowHeight);
         _nativeWindowSettings.Title = windowTitle;
         _nativeWindowSettings.API = ContextAPI.OpenGL;
+        _nativeWindowSettings.APIVersion = new Version(4, 6);
     }
 
     public void Run()
@@ -29,13 +29,14 @@ public abstract class Game
 
     private void SetupGameWindow()
     {
-        using var gameWindow = DisplayManager.CreateWindow(_gameWindowSettings, _nativeWindowSettings);
-        
+        var gameWindow = new GameWindow(_gameWindowSettings, _nativeWindowSettings);
+
         gameWindow.Load += OnLoad;
         gameWindow.UpdateFrame += args =>
         {
             Time.DeltaTimeSpan = TimeSpan.FromSeconds(args.Time);
             Time.TotalGameTimeSpan += TimeSpan.FromSeconds(args.Time);
+            Input.Update();
             OnUpdate();
         };
         gameWindow.RenderFrame += args =>
@@ -43,13 +44,17 @@ public abstract class Game
             OnRender();
             gameWindow.SwapBuffers();
         };
-        gameWindow.Resize += args => { GL.Viewport(0, 0, gameWindow.Size.X, gameWindow.Size.Y); };
+        gameWindow.Resize += args =>
+        {
+            GL.Viewport(0, 0, gameWindow.Size.X, gameWindow.Size.Y);
+        };
         
         GameWindow = gameWindow;
         
         Input.KeyboardState = gameWindow.KeyboardState;
         Input.MouseState = gameWindow.MouseState;
         
+        gameWindow.CenterWindow();
         gameWindow.Run();
     }
 
