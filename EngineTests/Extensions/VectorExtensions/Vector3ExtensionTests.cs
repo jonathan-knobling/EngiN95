@@ -2,9 +2,9 @@
 using FluentAssertions;
 using OpenTK.Mathematics;
 
-namespace EngineTests;
+namespace EngineTests.Extensions.VectorExtensions;
 
-public class Vector3Extensions
+public class Vector3ExtensionTests
 {
     [Fact]
     public void ConvertToVec2()

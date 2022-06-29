@@ -3,10 +3,13 @@ using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace EngineSigma.Core.IO;
 
-public sealed class InputHandler
+/// <summary>
+/// Provides an API for Input related Data
+/// </summary>
+public sealed class InputHandler : IInputHandler
 {
-    private IMouseInputHandler MouseInput { get; }
-    private IKeyboardInputHandler KeyboardInput { get; }
+    public IMouseInputHandler MouseInput { get; }
+    public IKeyboardInputHandler KeyboardInput { get; }
 
     public InputHandler(IMouseInputHandler mouseInput, IKeyboardInputHandler keyboardInput)
     {
@@ -14,38 +17,22 @@ public sealed class InputHandler
         KeyboardInput = keyboardInput;
     }
 
-
-    /// <summary>
-    /// Gets a Vector2 representing the absolute position of the pointer
-    /// in the current frame, relative to the top-left corner of the contents of the window.
-    /// </summary>
+    /// <inheritdoc cref="IInputHandler.MousePosition"/>
     public Vector2 MousePosition => MouseInput.Position;
 
-    /// <summary>
-    /// Gets a Vector2 representing the absolute position of the pointer
-    /// in the previous frame, relative to the top-left corner of the contents of the window.
-    /// </summary>
+    /// <inheritdoc cref="IInputHandler.PreviousMousePosition"/>
     public Vector2 PreviousMousePosition => MouseInput.PreviousPosition;
 
-    /// <summary>
-    /// Gets a Vector2 representing the amount that the mouse moved since the last frame.
-    /// This does not necessarily correspond to pixels, for example in the case of raw input.
-    /// </summary>
+    /// <inheritdoc cref="IInputHandler.MousePositionDelta"/>
     public Vector2 MousePositionDelta => MouseInput.PositionDelta;
 
-    /// <summary>
-    /// Get a Vector2 representing the position of the mouse wheel.
-    /// </summary>
+    /// <inheritdoc cref="IInputHandler.MouseScroll"/>
     public Vector2 MouseScroll => MouseInput.Scroll;
 
-    /// <summary>
-    /// Get a Vector2 representing the previous position of the mouse wheel.
-    /// </summary>
+    /// <inheritdoc cref="IInputHandler.PreviousMouseScroll"/>
     public Vector2 PreviousMouseScroll => MouseInput.PreviousScroll;
 
-    /// <summary>
-    /// Get a Vector2 representing the amount that the mouse wheel moved since the last frame.
-    /// </summary>
+    /// <inheritdoc cref="IInputHandler.MouseScrollDelta"/>
     public Vector2 MouseScrollDelta => MouseInput.ScrollDelta;
     
     public float MouseX => MousePosition.X;
@@ -54,79 +41,37 @@ public sealed class InputHandler
     public float PreviousMouseX => PreviousMousePosition.X;
     public float PreviousMouseY => PreviousMousePosition.Y;
     
-    /// <summary>
-    /// Gets whether this mouse button is currently down
-    /// </summary>
-    /// <param name="button"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="IInputHandler.IsMouseButtonDown"/>
     public bool IsMouseButtonDown(MouseButton button) => MouseInput.IsButtonDown(button);
 
-    /// <summary>
-    /// Gets whether this button was down in the last frame
-    /// </summary>
-    /// <param name="button"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="IInputHandler.WasMouseButtonDown"/>
     public bool WasMouseButtonDown(MouseButton button) => MouseInput.WasButtonDown(button);
 
-    /// <summary>
-    /// Gets whether this key is down in this frame but wasnt in the last frame
-    /// </summary>
-    /// <param name="button"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="IInputHandler.IsMouseButtonPressed"/>
     public bool IsMouseButtonPressed(MouseButton button) => MouseInput.IsButtonPressed(button);
 
-    /// <summary>
-    /// Gets whether this button is released in the current frame
-    /// </summary>
-    /// <param name="button"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="IInputHandler.IsMouseButtonReleased"/>
     public bool IsMouseButtonReleased(MouseButton button) => MouseInput.IsButtonReleased(button);
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns>If any mouse button is currently pressed</returns>
+    
+    /// <inheritdoc cref="IInputHandler.IsAnyMouseButtonDown"/>
     public bool IsAnyMouseButtonDown() => MouseInput.IsAnyButtonDown();
 
-    /// <summary>
-    /// Gets whether this key is down in the current frame
-    /// </summary>
-    /// <param name="key"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="IInputHandler.IsKeyDown"/>
     public bool IsKeyDown(Keys key) => KeyboardInput.IsKeyDown(key);
 
-    /// <summary>
-    /// Gets whether this key was down in the previous frame
-    /// </summary>
-    /// <param name="key"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="IInputHandler.WasKeyDown"/>
     public bool WasKeyDown(Keys key) => KeyboardInput.WasKeyDown(key);
 
-    /// <summary>
-    /// Gets whether this key is down in the current frame but wasnt in the last frame
-    /// </summary>
-    /// <param name="key"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="IInputHandler.IsKeyPressed"/>
     public bool IsKeyPressed(Keys key) => KeyboardInput.IsKeyPressed(key);
 
-    /// <summary>
-    /// Gets whether this key is released in the current frame
-    /// </summary>
-    /// <param name="key"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="IInputHandler.IsKeyReleased"/>
     public bool IsKeyReleased(Keys key) => KeyboardInput.IsKeyReleased(key);
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns>If any key is currently pressed</returns>
+    /// <inheritdoc cref="IInputHandler.IsAnyKeyDown"/>
     public bool IsAnyKeyDown() => KeyboardInput.IsAnyKeyDown();
     
-    /// <summary>
-    /// Gets the current MovementDirection
-    /// x = 1 means right | y = 1 means up
-    /// 0 means no movement in this axis and minus one means left or down
-    /// </summary>
+    /// <inheritdoc cref="IInputHandler.MovementDirection"/>
     public Vector2 MovementDirection
     {
         get

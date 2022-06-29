@@ -2,9 +2,9 @@ using EngineSigma.Core.Extensions;
 using FluentAssertions;
 using OpenTK.Mathematics;
 
-namespace EngineTests;
+namespace EngineTests.Extensions.VectorExtensions;
 
-public class Vector2Extensions
+public class Vector2ExtensionTests
 {
     [Fact]
     public void ConvertToVec3_WithDefaultZ()

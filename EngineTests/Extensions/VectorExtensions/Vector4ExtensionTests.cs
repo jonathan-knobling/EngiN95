@@ -2,7 +2,7 @@
 using FluentAssertions;
 using OpenTK.Mathematics;
 
-namespace EngineTests;
+namespace EngineTests.Extensions.VectorExtensions;
 
 public class Vector4ExtensionTests
 {
