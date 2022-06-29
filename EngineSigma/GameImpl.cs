@@ -57,7 +57,7 @@ internal class GameImpl : Game
 
     protected override void OnUpdate()
     {
-        var movementDirection = Input.MovementDirection;
+        var movementDirection = InputHandler.MovementDirection;
         const float speed = 800f; // pixel/s
         Console.WriteLine(movementDirection);
         Camera.Instance.Move(movementDirection * speed * Time.DeltaTime);

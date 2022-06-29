@@ -14,6 +14,7 @@ public abstract class Game
     private readonly NativeWindowSettings _nativeWindowSettings = NativeWindowSettings.Default;
 
     protected GameWindow GameWindow { get; private set; } = null!;
+    protected InputHandler InputHandler { get; private set; } = null!;
 
     protected Game(string windowTitle, int initialWindowWidth, int initialWindowHeight)
     {
@@ -41,7 +42,6 @@ public abstract class Game
         {
             Time.DeltaTimeSpan = TimeSpan.FromSeconds(args.Time);
             Time.TotalGameTimeSpan += TimeSpan.FromSeconds(args.Time);
-            Input.Update();
             OnUpdate();
         };
         gameWindow.RenderFrame += args =>
@@ -55,9 +55,9 @@ public abstract class Game
         };
         
         GameWindow = gameWindow;
-        
-        Input.KeyboardState = gameWindow.KeyboardState;
-        Input.MouseState = gameWindow.MouseState;
+        InputHandler = new InputHandler(
+            new MouseInputHandler(gameWindow.MouseState),
+            new KeyboardInputHandler(gameWindow.KeyboardState));
         
         gameWindow.CenterWindow();
         gameWindow.Run();
