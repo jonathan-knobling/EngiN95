@@ -43,10 +43,12 @@ internal class GameImpl : Game
         var src = ShaderProgramSource.LoadFromFiles("Resources/Shaders/vertex.glsl", "Resources/Shaders/fragment.glsl");
         _shader = new Shader(src);
 
-        _vertexBuffer = new DynamicVertexBuffer();
+        IGLWrapper glWrapper = new GLWrapper();
+        
+        _vertexBuffer = new DynamicVertexBuffer(glWrapper);
         _vertexBuffer.BufferData(_vertices);
-        _vertexArray = new VertexArray();
-        _indexBuffer = new IndexBuffer(_indices);
+        _vertexArray = new VertexArray(glWrapper);
+        _indexBuffer = new IndexBuffer(glWrapper, _indices);
         
         _texture = ResourceManager.GetTexture("Resources/Sprites/wall.jpg");
         _texture.Use();

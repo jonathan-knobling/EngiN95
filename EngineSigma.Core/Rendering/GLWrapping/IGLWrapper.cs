@@ -2,13 +2,14 @@
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 
-namespace EngineSigma.Core.Rendering.GLWrap;
+namespace EngineSigma.Core.Rendering;
 
 public interface IGLWrapper
 {
     int GenBuffer();
     void BindBuffer(BufferTarget target, int buffer);
     void BufferData(BufferTarget target, int size, IntPtr data, BufferUsageHint usage);
+    void BufferData<T>(BufferTarget target, int size, [In, Out] T[] data, BufferUsageHint usage) where T : struct;
     void BufferSubData<T>(BufferTarget target, IntPtr offset, int size, [In, Out] T[] data) where T : struct;
     void DeleteBuffer(int buffer);
 

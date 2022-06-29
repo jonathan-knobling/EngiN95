@@ -1,8 +1,8 @@
 ﻿namespace EngineSigma.Core.Rendering;
 
-public interface IBuffer : IDisposable
+public interface IVertexBuffer : IDisposable
 {
-    int Handle { get; }
+    public int Handle { get; }
     void Bind();
     void UnBind();
 }

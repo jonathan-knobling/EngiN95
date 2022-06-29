@@ -1,7 +1,7 @@
 ﻿using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 
-namespace EngineSigma.Core.Rendering.GLWrap;
+namespace EngineSigma.Core.Rendering;
 
 public class GLWrapper : IGLWrapper
 {
@@ -12,7 +12,10 @@ public class GLWrapper : IGLWrapper
     
     public void BufferData(BufferTarget target, int size, IntPtr data, BufferUsageHint usage) =>
         GL.BufferData(target, size, data, usage);
-    
+
+    public void BufferData<T>(BufferTarget target, int size, T[] data, BufferUsageHint usage) where T : struct =>
+        GL.BufferData(target, size, data, usage);
+
     public void BufferSubData<T>(BufferTarget target, IntPtr offset, int size, T[] data) where T : struct =>
         GL.BufferSubData(target, offset, size, data);
     
