@@ -18,7 +18,7 @@ public class DynamicVertexBuffer : IVertexBuffer
     {
         _glWrapper = glWrapper;
         Handle = _glWrapper.GenBuffer();
-        _glWrapper.BindBuffer(BufferTarget.ArrayBuffer, Handle);
+        Bind();
         _glWrapper.BufferData(BufferTarget.ArrayBuffer, Vertex.Size * bufferCapacity, IntPtr.Zero, BufferUsageHint.DynamicDraw);
     }
 
