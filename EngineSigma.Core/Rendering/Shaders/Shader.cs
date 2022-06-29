@@ -73,8 +73,12 @@ public class Shader : IShader
 
     public void Use()
     {
-        if (Compiled) GL.UseProgram(ShaderHandle);
-        else Console.WriteLine($"Shader '{this}' has not been Compiled yet");
+        if (Compiled)
+        {
+            GL.UseProgram(ShaderHandle);
+            return;
+        }
+        Console.WriteLine($"Shader '{this}' has not been Compiled yet");
     }
     
     public void SetInt(string name, int data)
