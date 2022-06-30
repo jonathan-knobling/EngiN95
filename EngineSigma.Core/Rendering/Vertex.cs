@@ -4,8 +4,8 @@ namespace EngineSigma.Core.Rendering;
 
 public struct Vertex
 {
-    public const int Size = ComponentAmount * sizeof(float);
-    public const int ComponentAmount = 9;
+    public const int Size = 9 * sizeof(float);
+    public const int ComponentAmount = 3;
     
     public Vector3 Position;
     public Vector2 TexCoords;
