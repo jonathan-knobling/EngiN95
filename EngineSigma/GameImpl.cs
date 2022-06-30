@@ -28,7 +28,7 @@ internal class GameImpl : Game
     private IShader _shader = null!;
     private Texture _texture = null! ;
     private IndexBuffer _indexBuffer = null!;
-    private DynamicVertexBuffer _vertexBuffer = null!;
+    private VertexBuffer _vertexBuffer = null!;
     private VertexArray _vertexArray = null!;
     private readonly uint[] _indices;
     private readonly Vertex[] _vertices;
@@ -45,7 +45,7 @@ internal class GameImpl : Game
 
         IGLWrapper glWrapper = new GLWrapper();
         
-        _vertexBuffer = new DynamicVertexBuffer(glWrapper);
+        _vertexBuffer = new VertexBuffer(glWrapper);
         _vertexBuffer.BufferData(_vertices);
         _vertexArray = new VertexArray(glWrapper);
         _indexBuffer = new IndexBuffer(glWrapper, _indices);

@@ -2,7 +2,7 @@
 
 namespace EngineSigma.Core.Rendering;
 
-public class DynamicVertexBuffer : IVertexBuffer
+public class VertexBuffer : IVertexBuffer
 {
     private readonly IGLWrapper _glWrapper;
     public int Handle { get; }
@@ -14,7 +14,7 @@ public class DynamicVertexBuffer : IVertexBuffer
     /// </summary>
     /// <param name="glWrapper">A Wrapper around OpenTKs GL API</param>
     /// <param name="bufferCapacity">How many Vertices can be stored in this buffer</param>
-    public DynamicVertexBuffer(IGLWrapper glWrapper, int bufferCapacity = 1024)
+    public VertexBuffer(IGLWrapper glWrapper, int bufferCapacity = 1024)
     {
         _glWrapper = glWrapper;
         Handle = _glWrapper.GenBuffer();
@@ -41,7 +41,7 @@ public class DynamicVertexBuffer : IVertexBuffer
         _glWrapper.BindBuffer(BufferTarget.ArrayBuffer, 0);
     }
     
-    ~DynamicVertexBuffer()
+    ~VertexBuffer()
     {
         Dispose();
     }

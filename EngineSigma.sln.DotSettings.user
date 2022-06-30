@@ -4,8 +4,17 @@
   &lt;Assembly Path="C:\Users\happy\.dotnet\packs\Microsoft.NETCore.App.Ref\6.0.5\ref\net6.0\System.ComponentModel.TypeConverter.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Users\happy\.dotnet\packs\Microsoft.NETCore.App.Ref\6.0.5\ref\net6.0\System.Drawing.Primitives.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\happy\AppData\Local\JetBrains\Rider2022.1\resharper-host\temp\Rider\vAny\CoverageData\_EngineSigma.1115753178\Snapshot\snapshot.utdcvr</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b3301b68_002D4518_002D46a9_002Db099_002Dee077c40f726/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=54a043ca_002Da8ad_002D4759_002Db42d_002D0a622afbed34/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IndexBufferCtorTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::88E27649-D258-4E4A-B118-F3D8FEA34583::net6.0::EngineTests.Rendering.IndexBufferTests.IndexBufferCtorTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::88E27649-D258-4E4A-B118-F3D8FEA34583::net6.0::EngineTests.Rendering.IndexBufferTests.Bind_ShouldBindIndexBuffer&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::88E27649-D258-4E4A-B118-F3D8FEA34583::net6.0::EngineTests.Rendering.IndexBufferTests.UnBind_ShouldUnBindBuffer&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::88E27649-D258-4E4A-B118-F3D8FEA34583::net6.0::EngineTests.Rendering.IndexBufferTests.Dispose_ShouldDeleteBuffer&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::88E27649-D258-4E4A-B118-F3D8FEA34583::net6.0::EngineTests.Rendering.IndexBufferTests.Dispose_ShouldReturn_WhenAlreadyDisposed&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b3301b68_002D4518_002D46a9_002Db099_002Dee077c40f726/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	

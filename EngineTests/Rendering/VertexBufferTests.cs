@@ -17,7 +17,7 @@ public class DynamicVertexBufferTests
         glWrapper.GenBuffer().Returns(bufferHandle);
         
         //Act
-        var vBuffer = new DynamicVertexBuffer(glWrapper, 128);
+        var vBuffer = new VertexBuffer(glWrapper, 128);
         
         //Assert
         vBuffer.Handle.Should().Be(bufferHandle);
@@ -33,7 +33,7 @@ public class DynamicVertexBufferTests
         var glWrapper = Substitute.For<IGLWrapper>();
         const int bufferHandle = 69;
         glWrapper.GenBuffer().Returns(bufferHandle);
-        var vBuffer = new DynamicVertexBuffer(glWrapper);
+        var vBuffer = new VertexBuffer(glWrapper);
         var data = new Vertex[12];
 
         //Act
@@ -53,7 +53,7 @@ public class DynamicVertexBufferTests
         var glWrapper = Substitute.For<IGLWrapper>();
         const int bufferHandle = 69;
         glWrapper.GenBuffer().Returns(bufferHandle);
-        var vBuffer = new DynamicVertexBuffer(glWrapper);
+        var vBuffer = new VertexBuffer(glWrapper);
         var data = Array.Empty<Vertex>();
         
         //Act
@@ -71,7 +71,7 @@ public class DynamicVertexBufferTests
         var glWrapper = Substitute.For<IGLWrapper>();
         const int bufferHandle = 69;
         glWrapper.GenBuffer().Returns(bufferHandle);
-        var vBuffer = new DynamicVertexBuffer(glWrapper);
+        var vBuffer = new VertexBuffer(glWrapper);
         
         //Act
         vBuffer.Bind();
@@ -87,7 +87,7 @@ public class DynamicVertexBufferTests
         var glWrapper = Substitute.For<IGLWrapper>();
         const int bufferHandle = 69;
         glWrapper.GenBuffer().Returns(bufferHandle);
-        var vBuffer = new DynamicVertexBuffer(glWrapper);
+        var vBuffer = new VertexBuffer(glWrapper);
         
         //Act
         vBuffer.UnBind();
@@ -103,7 +103,7 @@ public class DynamicVertexBufferTests
         var glWrapper = Substitute.For<IGLWrapper>();
         const int bufferHandle = 69;
         glWrapper.GenBuffer().Returns(bufferHandle);
-        var vBuffer = new DynamicVertexBuffer(glWrapper);
+        var vBuffer = new VertexBuffer(glWrapper);
         
         //Act
         vBuffer.Dispose();
@@ -119,7 +119,7 @@ public class DynamicVertexBufferTests
         var glWrapper = Substitute.For<IGLWrapper>();
         const int bufferHandle = 69;
         glWrapper.GenBuffer().Returns(bufferHandle);
-        var vBuffer = new DynamicVertexBuffer(glWrapper);
+        var vBuffer = new VertexBuffer(glWrapper);
         
         //Act
         vBuffer.Dispose();
