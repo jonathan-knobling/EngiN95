@@ -5,7 +5,7 @@ namespace EngineSigma.Core.Rendering;
 public class VertexBuffer : IVertexBuffer
 {
     private readonly IGLWrapper _glWrapper;
-    public int Handle { get; }
+    public Handle Handle { get; }
     public int Elements { get; private set; }
     private bool _disposed;
 

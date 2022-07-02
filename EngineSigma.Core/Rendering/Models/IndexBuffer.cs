@@ -5,7 +5,7 @@ namespace EngineSigma.Core.Rendering;
 public class IndexBuffer : IIndexBuffer
 {
     private readonly IGLWrapper _glWrapper;
-    public int Handle { get; }
+    public Handle Handle { get; }
 
     private bool _disposed;
 

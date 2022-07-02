@@ -2,7 +2,7 @@
 
 public interface IVertexBuffer : IDisposable
 {
-    public int Handle { get; }
+    public Handle Handle { get; }
     void BufferData(Vertex[] data);
     void Bind();
     void UnBind();

@@ -2,7 +2,7 @@
 
 public interface IVertexArray : IDisposable
 {
-    public int Handle { get; }
+    public Handle Handle { get; }
     void Bind();
     void UnBind();
 }

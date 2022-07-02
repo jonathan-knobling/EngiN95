@@ -23,6 +23,8 @@ internal class GameImpl : Game
         {
             0, 1, 3, 1, 2, 3
         };
+        
+        
     }
 
     private IShader _shader = null!;
@@ -73,7 +75,7 @@ internal class GameImpl : Game
         _shader.Use();
         
         _vertexBuffer.BufferData(_vertices);
-        
+
         _vertexArray.Bind();
         _indexBuffer.Bind();
         _vertexBuffer.Bind();

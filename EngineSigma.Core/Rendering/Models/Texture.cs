@@ -7,9 +7,9 @@ namespace EngineSigma.Core.Rendering;
 
 public class Texture : IDisposable
 {
-    public int Handle { get; private set; }
-    public int Width { get; set; }
-    public int Height { get; set; }
+    public int Handle { get; }
+    public int Width { get; }
+    public int Height { get; }
     
     private bool _disposed;
 
