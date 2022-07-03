@@ -44,4 +44,12 @@ public interface IGLWrapper
     void UniformMatrix2(int location, bool transpose, ref Matrix2 matrix);
     void UniformMatrix3(int location, bool transpose, ref Matrix3 matrix);
     void UniformMatrix4(int location, bool transpose, ref Matrix4 matrix);
+
+    int GenTexture();
+    void ActiveTexture(TextureUnit texture);
+    void BindTexture(TextureTarget target, int texture);
+    void TexImage2D(TextureTarget target, int level, PixelInternalFormat internalformat, int width, int height, int border, PixelFormat format, PixelType type, IntPtr pixels);
+    void TexParameter(TextureTarget target, TextureParameterName pname, int param);
+    void GenerateMipmap(GenerateMipmapTarget target);
+    void DeleteTexture(int handle);
 }

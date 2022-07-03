@@ -2,29 +2,36 @@
 
 namespace EngineSigma.Core.Management;
 
-public static class ResourceManager
+public sealed class ResourceManager
 {
-    private static readonly IDictionary<string, Texture> TextureCache = new Dictionary<string, Texture>();
+    private readonly IGLWrapper _glWrapper;
 
-    public static Texture GetTexture(string textureName)
+    public ResourceManager(IGLWrapper glWrapper)
     {
-        TextureCache.TryGetValue(textureName, out var value);
+        _glWrapper = glWrapper;
+    }
+
+    private readonly IDictionary<string, Texture> _textureCache = new Dictionary<string, Texture>();
+
+    public Texture GetTexture(string textureName)
+    {
+        _textureCache.TryGetValue(textureName, out var value);
         {
             if (value is not null)
             {
                 return value;
             }
         }
-        value = Texture.Load(textureName);
-        TextureCache.Add(textureName, value);
+        value = Texture.Load(textureName, _glWrapper);
+        _textureCache.Add(textureName, value);
         return value;
     }
 
-    private static readonly IDictionary<string, Image> ImageCache = new Dictionary<string, Image>();
+    private readonly IDictionary<string, Image> _imageCache = new Dictionary<string, Image>();
 
-    public static Image GetImage(string imageName)
+    public Image GetImage(string imageName)
     {
-        ImageCache.TryGetValue(imageName, out var value);
+        _imageCache.TryGetValue(imageName, out var value);
         {
             if (value is not null)
             {
@@ -32,7 +39,7 @@ public static class ResourceManager
             }
         }
         value = new Image(imageName);
-        ImageCache.Add(imageName, value);
+        _imageCache.Add(imageName, value);
         return value;
     }
 }

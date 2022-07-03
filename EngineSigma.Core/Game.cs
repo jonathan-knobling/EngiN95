@@ -1,5 +1,4 @@
 ﻿using EngineSigma.Core.IO;
-using EngineSigma.Core.Management;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
@@ -23,7 +22,7 @@ public abstract class Game
         _nativeWindowSettings.API = ContextAPI.OpenGL;
         _nativeWindowSettings.APIVersion = new Version(4, 6);
         
-        var img = ResourceManager.GetImage("Resources/Sprites/stone.png");
+        var img = new Rendering.Image("Resources/Sprites/stone.png");
         _nativeWindowSettings.Icon = new WindowIcon(new Image(img.Width, img.Height, img.PixelData));
     }
 

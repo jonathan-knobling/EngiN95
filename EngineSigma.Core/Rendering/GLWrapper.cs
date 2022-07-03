@@ -91,4 +91,21 @@ public class GLWrapper : IGLWrapper
 
     public void UniformMatrix4(int location, bool transpose, ref Matrix4 matrix) =>
         GL.UniformMatrix4(location, transpose, ref matrix);
+
+    public int GenTexture() => GL.GenTexture();
+
+    public void ActiveTexture(TextureUnit texture) => GL.ActiveTexture(texture);
+
+    public void BindTexture(TextureTarget target, int texture) => GL.BindTexture(target, texture);
+
+    public void TexImage2D(TextureTarget target, int level, PixelInternalFormat internalformat, int width, int height,
+        int border, PixelFormat format, PixelType type, IntPtr pixels) => 
+        GL.TexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
+
+    public void TexParameter(TextureTarget target, TextureParameterName pname, int param) =>
+        GL.TexParameter(target, pname, param);
+
+    public void GenerateMipmap(GenerateMipmapTarget target) => GL.GenerateMipmap(target);
+
+    public void DeleteTexture(int handle) => GL.DeleteTexture(handle);
 }

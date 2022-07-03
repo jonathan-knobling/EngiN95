@@ -1,8 +1,8 @@
 ﻿namespace EngineSigma.Core.Rendering;
 
-public struct Handle : IEquatable<int>
+public readonly struct Handle : IEquatable<int>
 {
-    public int Value { get; set; }
+    public int Value { get; init; }
     
     public static implicit operator Handle(int value)
     {
@@ -32,5 +32,25 @@ public struct Handle : IEquatable<int>
     public override int GetHashCode()
     {
         return Value;
+    }
+
+    public static bool operator ==(Handle left, Handle right)
+    {
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(Handle left, Handle right)
+    {
+        return !(left == right);
+    }
+
+    public static bool operator ==(Handle left, int right)
+    {
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(Handle left, int right)
+    {
+        return !(left == right);
     }
 }

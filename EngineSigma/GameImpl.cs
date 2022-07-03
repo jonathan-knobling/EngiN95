@@ -51,8 +51,10 @@ internal class GameImpl : Game
         _vertexBuffer.BufferData(_vertices);
         _vertexArray = new VertexArray(glWrapper);
         _indexBuffer = new IndexBuffer(glWrapper, _indices);
+
+        var rm = new ResourceManager(glWrapper);
         
-        _texture = ResourceManager.GetTexture("Resources/Sprites/wall.jpg");
+        _texture = rm.GetTexture("Resources/Sprites/wall.jpg");
         _texture.Use();
 
         _shader.SetMatrix4("projection", 

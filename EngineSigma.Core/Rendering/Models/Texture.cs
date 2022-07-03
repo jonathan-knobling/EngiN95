@@ -7,18 +7,20 @@ namespace EngineSigma.Core.Rendering;
 
 public class Texture : IDisposable
 {
-    public int Handle { get; }
+    public Handle Handle { get; }
     public int Width { get; }
     public int Height { get; }
     
     private bool _disposed;
+    private readonly IGLWrapper _glWrapper;
 
-    public Texture(int handle)
+    public Texture(int handle, IGLWrapper glWrapper)
     {
         Handle = handle;
+        _glWrapper = glWrapper;
     }
 
-    public Texture(int handle, int width, int height) : this(handle)
+    public Texture(int handle, int width, int height, IGLWrapper glWrapper) : this(handle, glWrapper)
     {
         Width = width;
         Height = height;
@@ -26,32 +28,32 @@ public class Texture : IDisposable
     
     public void Use()
     {
-        GL.ActiveTexture(TextureUnit.Texture0);
-        GL.BindTexture(TextureTarget.Texture2D, Handle);
+        _glWrapper.ActiveTexture(TextureUnit.Texture0);
+        _glWrapper.BindTexture(TextureTarget.Texture2D, Handle);
     }
 
-    public static Texture Load(string textureName)
+    public static Texture Load(string textureName, IGLWrapper glWrapper)
     {
-        int handle = GL.GenTexture();
+        int handle = glWrapper.GenTexture();
         
-        GL.ActiveTexture(TextureUnit.Texture0);
-        GL.BindTexture(TextureTarget.Texture2D, handle);
+        glWrapper.ActiveTexture(TextureUnit.Texture0);
+        glWrapper.BindTexture(TextureTarget.Texture2D, handle);
         
         using var image = new Bitmap(textureName);
         image.RotateFlip(RotateFlipType.RotateNoneFlipY);
         var data = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadOnly,
             PixelFormat.Format32bppArgb);
         
-        GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, image.Width, image.Height, 0, OpenTK.Graphics.OpenGL4.PixelFormat.Bgra, PixelType.UnsignedByte, data.Scan0);
+        glWrapper.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, image.Width, image.Height, 0, OpenTK.Graphics.OpenGL4.PixelFormat.Bgra, PixelType.UnsignedByte, data.Scan0);
 
-        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Nearest);
-        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMinFilter.Nearest);
-        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)TextureWrapMode.Repeat);
-        GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)TextureWrapMode.Repeat);
+        glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Nearest);
+        glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMinFilter.Nearest);
+        glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)TextureWrapMode.Repeat);
+        glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)TextureWrapMode.Repeat);
         
-        //GL.GenerateMipmap(GenerateMipmapTarget.Texture2D);
+        glWrapper.GenerateMipmap(GenerateMipmapTarget.Texture2D);
         
-        return new Texture(handle, image.Width, image.Height);
+        return new Texture(handle, image.Width, image.Height, glWrapper);
     }
 
     ~Texture()
@@ -63,7 +65,7 @@ public class Texture : IDisposable
     {
         if (_disposed) return;
         _disposed = true;
-        GL.DeleteTexture(Handle);
+        _glWrapper.DeleteTexture(Handle);
         GC.SuppressFinalize(this);
     }
 }
