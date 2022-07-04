@@ -30,7 +30,7 @@
                                 <ColumnDefinition Width="100"/>
                         </Grid.ColumnDefinitions>
                         
-                        <TextBlock Text="Sigma Hub 1.0.0"
+                        <TextBlock Text=""
                                    Foreground="White"
                                    FontFamily="Fonts/#Raleway Thin"
                                    VerticalAlignment="Center"
@@ -41,7 +41,7 @@
                                     HorizontalAlignment="Right"
                                     Margin="0,0,4,0">
                                 
-                                <Button Content="-" Click="MinimizeButton" 
+                                <Button Content="🗕" Click="MinimizeButton" 
                                         Style="{StaticResource CloseButtonTheme}"
                                         Padding="0,0,0,2"/>
                                 

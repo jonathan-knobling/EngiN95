@@ -53,7 +53,7 @@
                                        Rect="0,0,200,200"/>
                 </Border.Clip>
                 
-                <Image Source="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Images\20220704_165733_0000.png"
+                <Image Source="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Images\logo.png"
                        Height="200" Width="200"
                        Stretch="Fill"/>
             </Border>
@@ -118,6 +118,64 @@
                     <TextBlock Text="Contact us"
                                HorizontalAlignment="Center"
                                Margin="5"></TextBlock>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        
+                        <Image Height="25"
+                               Margin="10,0,0,0"
+                               MouseDown="UIElement_OnMouseDown1">
+                            
+                            <Image.Style>
+                                
+                                <Style TargetType="{x:Type Image}">
+                                    
+                                    <Setter Property="Source" Value="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Images\Github Icons\GitHub-Mark-Light-64px.png"></Setter>
+                                    
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            
+                                            <Setter Property="Source" Value="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Images\Github Icons\GitHub-Mark-120px-plus.png"/>
+                                        </Trigger>    
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        
+                        <TextBlock Text="Carlo999"
+                                   FontFamily="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Fonts\C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\MVVM\View\AboutUsView.xaml"
+                                   FontWeight="Bold"
+                                   Margin="5,3,0,0"></TextBlock>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal">
+                        
+                        <Image Height="25"
+                               Margin="10,4,0,0"
+                               MouseDown="UIElement_OnMouseDown">
+                            
+                            <Image.Style>
+                                
+                                <Style TargetType="{x:Type Image}">
+                                    
+                                    <Setter Property="Source" Value="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Images\Github Icons\GitHub-Mark-Light-64px.png"></Setter>
+                                    
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            
+                                            <Setter Property="Source" Value="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Images\Github Icons\GitHub-Mark-120px-plus.png"/>
+                                        </Trigger>    
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        
+                        <TextBlock Text="jonathan-knobling"
+                                   FontFamily="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Fonts\C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\MVVM\View\AboutUsView.xaml"
+                                   FontWeight="Bold"
+                                   Margin="5,8,0,0"/>
+                        
+                        
+                    </StackPanel>
                 </StackPanel>
             </Border>
         </StackPanel>
