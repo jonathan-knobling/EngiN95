@@ -18,10 +18,10 @@
         
         <DockPanel>
         
-        <Border Height="28"
-                Background="#050621"
-                MouseDown="UIElement_OnMouseDown"
-                DockPanel.Dock="Top" CornerRadius="10,10,0,0">
+                <Border Height="28"
+                        Background="Black"
+                        MouseDown="UIElement_OnMouseDown"
+                        DockPanel.Dock="Top" CornerRadius="10,10,0,0">
                 
                 <Grid>
                         
@@ -52,7 +52,7 @@
                 </Grid>
         </Border>
         
-        <Border Background="#12172b" CornerRadius="0,0,10,10">
+        <Border Background="#252525">
                 
                 <Grid>
                         
@@ -68,10 +68,10 @@
                                 <RowDefinition/>
                         </Grid.RowDefinitions>
                         
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Engine Sigma" 
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="EΣ" 
                                    VerticalAlignment="Center" HorizontalAlignment="Left" 
                                    FontFamily="Fonts/#Roboto Mono Thin"
-                                   Foreground="White" FontSize="25" Margin="20, 10, 0, 0"
+                                   Foreground="White" FontSize="30" Margin="20, 10, 0, 0"
                                    FontWeight="Bold"/>
                         
                         <StackPanel Grid.Row="1" Grid.Column="0">
@@ -98,14 +98,16 @@
                                              Foreground="White"
                                              FontSize="20"
                                              Height="50"
-                                             Margin="0,10,0,0"/>
+                                             Margin="0,10,0,0"
+                                             Command="{Binding FeaturesViewCommand}"/>
                                 
                                 <RadioButton Style="{StaticResource MenuButtonTheme}"
                                              Content="About us"
                                              Foreground="White"
                                              FontSize="20"
                                              Height="50"
-                                             Margin="0,10,0,0"/>
+                                             Margin="0,10,0,0"
+                                             Command="{Binding AboutUsViewCommand}"/>
                                 
                         </StackPanel>
                         
@@ -122,6 +124,5 @@
                                         Content="{Binding CurrentView}"/>
                 </Grid>
         </Border>
-        
-    </DockPanel>
+        </DockPanel>
 </Window>

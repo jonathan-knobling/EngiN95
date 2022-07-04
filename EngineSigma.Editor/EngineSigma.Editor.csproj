@@ -8,11 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Images" />
-      <Folder Include="MVVM\Model" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Remove="Fonts\Raleway-VariableFont_wght.ttf" />
       <Content Include="Fonts\Raleway-VariableFont_wght.ttf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
