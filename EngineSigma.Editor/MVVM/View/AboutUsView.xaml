@@ -6,333 +6,385 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800"
              Background="Transparent">
-    
+
     <Grid>
 
         <Grid.RowDefinitions>
-            
-            <RowDefinition/>
-            <RowDefinition/>
+
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
-        
+
         <StackPanel Grid.Row="0"
                     Orientation="Horizontal">
-            
+
             <Border Width="490"
                     Height="200"
                     Background="DimGray"
                     Margin="0,5,5,5">
 
-                
+
                 <Border.Clip>
-                    <RectangleGeometry RadiusX="10" 
+                    <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
-                                       Rect="0,0,490,200"/>
+                                       Rect="0,0,490,200" />
                 </Border.Clip>
-                
-                <StackPanel>
-                    
-                    <TextBlock Text="The project" 
-                               HorizontalAlignment="Center"
-                               Margin="0,5,0,0">
+
+                <StackPanel Orientation="Horizontal">
                         
-                    </TextBlock>
-                    
-                    
+                    <Border VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Background="Gray"
+                            Height="200"
+                            Width="80"
+                            CornerRadius="10,0,0,10">
+                        
+                        
+                    </Border>
                 </StackPanel>
             </Border>
-            
+
             <Border Width="200" Height="200"
                     Background="Transparent"
                     Margin="5,0,0,0">
-                
+
                 <Border.Clip>
-                    <RectangleGeometry RadiusX="10" 
+                    <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
-                                       Rect="0,0,200,200"/>
+                                       Rect="0,0,200,200" />
                 </Border.Clip>
-                
+
                 <Image Source="/img/logo.png"
                        Height="200" Width="200"
-                       Stretch="Fill"/>
+                       Stretch="Fill" />
             </Border>
         </StackPanel>
-        
+
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            
+
             <Border Width="240"
                     Height="200"
                     Margin="0,0,5,5"
                     Background="DimGray">
-                
+
                 <Border.Clip>
-                    
+
                     <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
-                                       Rect="0,0,240,200"/>
+                                       Rect="0,0,240,200" />
                 </Border.Clip>
-                
-                <StackPanel>
-                    
-                    <TextBlock Text="Jonathan"
-                               HorizontalAlignment="Center"
-                               Margin="5"/>
+
+                <StackPanel Orientation="Vertical">
+                    <Border Height="50"
+                            Width="240"
+                            CornerRadius="10"
+                            Background="Gray"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left">
+
+                        <StackPanel Orientation="Vertical">
+
+                            <TextBlock Text="Jonathan Knobling"
+                                       FontFamily="/Fonts/#Ubuntu Bold"
+                                       HorizontalAlignment="Center"
+                                       FontSize="16"
+                                       Margin="0,7,0,0" />
+
+                            <TextBlock Text="Backend developer/Tech lead"
+                                       HorizontalAlignment="Center"
+                                       FontFamily="/Fonts/#Ubuntu Medium"
+                                       FontSize="14"
+                                       Margin="0,0,0,0" />
+                        </StackPanel>
+
+
+                    </Border>
                 </StackPanel>
             </Border>
-            
+
             <Border Width="240"
                     Height="200"
                     Margin="5,0,5,5"
                     Background="DimGray">
-                
+
                 <Border.Clip>
-                    
+
                     <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
-                                       Rect="0,0,240,200"/>
+                                       Rect="0,0,240,200" />
                 </Border.Clip>
-                
-                <StackPanel>
-                    
-                    <TextBlock Text="Carlo"
-                               HorizontalAlignment="Center"
-                               Margin="5"/>
+
+                <StackPanel Orientation="Vertical">
+                    <Border Height="50"
+                            Width="240"
+                            CornerRadius="10"
+                            Background="Gray"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left">
+
+                        <StackPanel Orientation="Vertical">
+
+                            <TextBlock Text="Carlo Feddeck"
+                                       FontFamily="/Fonts/#Ubuntu Bold"
+                                       HorizontalAlignment="Center"
+                                       FontSize="16"
+                                       Margin="0,7,0,0" />
+
+                            <TextBlock Text="Designer/Frontend developer"
+                                       HorizontalAlignment="Center"
+                                       FontFamily="/Fonts/#Ubuntu Medium"
+                                       FontSize="14"
+                                       Margin="0,0,0,0" />
+                        </StackPanel>
+
+
+                    </Border>
                 </StackPanel>
+
+
             </Border>
-            
+
             <Border Width="200"
                     Height="200"
                     Margin="5,0,0,5"
                     Background="DimGray">
-                
+
                 <Border.Clip>
-                    
+
                     <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
-                                       Rect="0,0,200,200"/>
+                                       Rect="0,0,200,200" />
                 </Border.Clip>
-                
+
                 <StackPanel>
-                    
+
                     <TextBlock Text="Contact us"
                                HorizontalAlignment="Center"
                                FontSize="16"
-                               FontFamily="/fonts/#Ubuntu Medium"
+                               FontFamily="/fonts/#Ubuntu Bold"
                                FontWeight="Bold"
-                               Margin="0,2,0,0"/>
-                    
+                               Margin="0,2,0,0" />
+
                     <Border Background="Gray"
                             Height="80"
                             Width="180"
                             Margin="0,0,0,3">
-                        
+
                         <Border.Clip>
-                    
+
                             <RectangleGeometry RadiusX="10"
                                                RadiusY="10"
-                                               Rect="0,0,180,80"/>
+                                               Rect="0,0,180,80" />
                         </Border.Clip>
-                        
+
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal">
-                        
-                            <Image Height="20"
-                                   Margin="10,4,0,0"
-                                   MouseDown="GithubOnMouseDownJonathan"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top">
-                            
-                                <Image.Style>
-                                
-                                    <Style TargetType="{x:Type Image}">
-                                    
-                                        <Setter Property="Source" Value="/img/Github Icons/GitHub-Mark-Light-120px-plus.png"/>
-                                    
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                            
-                                                <Setter Property="Source" Value="/img/Github Icons/GitHub-Mark-120px-plus.png"/>
-                                            </Trigger>    
-                                        </Style.Triggers>
-                                    </Style>
-                                </Image.Style>
-                            </Image>
-                        
-                            <TextBlock Text="jonathan-knobling"
-                                       FontWeight="Bold"
-                                       FontFamily="/fonts/#Ubuntu Medium"
-                                       Margin="5,7,0,0"/>
-                        </StackPanel>
+
+                                <Image Height="20"
+                                       Margin="10,4,0,0"
+                                       MouseDown="GithubOnMouseDownJonathan"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top">
+
+                                    <Image.Style>
+
+                                        <Style TargetType="{x:Type Image}">
+
+                                            <Setter Property="Source"
+                                                    Value="/img/Github Icons/GitHub-Mark-Light-120px-plus.png" />
+
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+
+                                                    <Setter Property="Source"
+                                                            Value="/img/Github Icons/GitHub-Mark-120px-plus.png" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+
+                                <TextBlock Text="jonathan-knobling"
+                                           FontWeight="Bold"
+                                           FontFamily="/fonts/#Ubuntu Medium"
+                                           Margin="5,7,0,0" />
+                            </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                
+
                                 <StackPanel Orientation="Horizontal">
-                                                        
+
                                     <Image Height="20"
                                            Margin="10,7,0,0"
                                            MouseDown="LinkedInOnMouseDownJonathan "
                                            HorizontalAlignment="Left"
                                            VerticalAlignment="Top">
-                            
+
                                         <Image.Style>
-                                
+
                                             <Style TargetType="{x:Type Image}">
-                                    
-                                                <Setter Property="Source" Value="/img/LinkedIn Icons/linkedin-logo-blue.png"/>
-                                    
+
+                                                <Setter Property="Source"
+                                                        Value="/img/LinkedIn Icons/linkedin-logo-blue.png" />
+
                                                 <Style.Triggers>
                                                     <Trigger Property="IsMouseOver" Value="True">
-                                            
-                                                        <Setter Property="Source" Value="/img/LinkedIn Icons/linkedin-logo-black.png"/>
-                                                    </Trigger>    
+
+                                                        <Setter Property="Source"
+                                                                Value="/img/LinkedIn Icons/linkedin-logo-black.png" />
+                                                    </Trigger>
                                                 </Style.Triggers>
                                             </Style>
                                         </Image.Style>
                                     </Image>
-                        
+
                                     <TextBlock Text="Jonathan Knobling"
                                                FontWeight="Bold"
                                                FontFamily="/fonts/#Ubuntu Medium"
-                                               Margin="5,10,0,0"/>
-                                
+                                               Margin="5,10,0,0" />
+
                                 </StackPanel>
-                                
-                                
+
+
                             </StackPanel>
-                            
+
                             <StackPanel Orientation="Horizontal">
-                                                        
+
                                 <Image Height="20"
                                        Margin="10,5,0,0"
                                        HorizontalAlignment="Left"
                                        VerticalAlignment="Top"
                                        MouseDown="EmailOnMouseDownJonathan">
-                            
+
                                     <Image.Style>
-                                
+
                                         <Style TargetType="{x:Type Image}">
-                                    
-                                            <Setter Property="Source" Value="/img/Email Icons/mail-white.png"/>
-                                    
+
+                                            <Setter Property="Source" Value="/img/Email Icons/mail-white.png" />
+
                                             <Style.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                            
-                                                    <Setter Property="Source" Value="/img/Email Icons/mail-black.png"/>
-                                                </Trigger>    
+
+                                                    <Setter Property="Source" Value="/img/Email Icons/mail-black.png" />
+                                                </Trigger>
                                             </Style.Triggers>
                                         </Style>
                                     </Image.Style>
                                 </Image>
-                        
+
                                 <TextBlock Text="Copy to clipboard"
                                            FontFamily="/fonts/#Ubuntu Medium"
                                            FontWeight="Bold"
-                                           Margin="5,7,0,0"/>
-                                
+                                           Margin="5,7,0,0" />
+
                             </StackPanel>
                         </StackPanel>
                     </Border>
-                    
+
                     <Border Background="Gray"
                             Height="80"
                             Width="180"
                             Margin="0,5,0,0">
-                        
+
                         <Border.Clip>
-                    
+
                             <RectangleGeometry RadiusX="10"
                                                RadiusY="10"
-                                               Rect="0,0,180,80"/>
+                                               Rect="0,0,180,80" />
                         </Border.Clip>
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal">
-                        
-                            <Image Height="20"
-                                   Margin="10,4,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top">
-                            
-                                <Image.Style>
-                                
-                                    <Style TargetType="{x:Type Image}">
-                                    
-                                        <Setter Property="Source" Value="/img/Github Icons/GitHub-Mark-Light-120px-plus.png"/>
-                                    
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                            
-                                                <Setter Property="Source" Value="/img/Github Icons/GitHub-Mark-120px-plus.png"/>
-                                            </Trigger>    
-                                        </Style.Triggers>
-                                    </Style>
-                                </Image.Style>
-                            </Image>
-                        
-                            <TextBlock Text="Carlo999"
-                                       FontFamily="/fonts/#Ubuntu Medium"
-                                       FontWeight="Bold"
-                                       Margin="5,8,0,0"/>
-                        </StackPanel>
-                            
+
+                                <Image Height="20"
+                                       Margin="10,4,0,0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top">
+
+                                    <Image.Style>
+
+                                        <Style TargetType="{x:Type Image}">
+
+                                            <Setter Property="Source"
+                                                    Value="/img/Github Icons/GitHub-Mark-Light-120px-plus.png" />
+
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+
+                                                    <Setter Property="Source"
+                                                            Value="/img/Github Icons/GitHub-Mark-120px-plus.png" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+
+                                <TextBlock Text="Carlo999"
+                                           FontFamily="/fonts/#Ubuntu Medium"
+                                           FontWeight="Bold"
+                                           Margin="5,8,0,0" />
+                            </StackPanel>
+
                             <StackPanel Orientation="Horizontal">
-                                                        
+
                                 <Image Height="20"
                                        Margin="10,5,0,0"
                                        HorizontalAlignment="Left"
                                        VerticalAlignment="Top"
                                        MouseDown="LinkedInOnMouseDownCarlo ">
-                            
+
                                     <Image.Style>
-                                
+
                                         <Style TargetType="{x:Type Image}">
-                                    
-                                            <Setter Property="Source" Value="/img/LinkedIn Icons/linkedin-logo-blue.png"/>
-                                    
+
+                                            <Setter Property="Source"
+                                                    Value="/img/LinkedIn Icons/linkedin-logo-blue.png" />
+
                                             <Style.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                            
-                                                    <Setter Property="Source" Value="/img/LinkedIn Icons/linkedin-logo-black.png"/>
-                                                </Trigger>    
+
+                                                    <Setter Property="Source"
+                                                            Value="/img/LinkedIn Icons/linkedin-logo-black.png" />
+                                                </Trigger>
                                             </Style.Triggers>
                                         </Style>
                                     </Image.Style>
                                 </Image>
-                        
+
                                 <TextBlock Text="Carlo Feddeck"
                                            FontWeight="Bold"
                                            FontFamily="/fonts/#Ubuntu Medium"
-                                           Margin="5,9,0,0"/>
-                                
+                                           Margin="5,9,0,0" />
+
                             </StackPanel>
-                            
+
                             <StackPanel Orientation="Horizontal">
-                                                        
+
                                 <Image Height="20"
                                        Margin="10,5,0,0"
                                        HorizontalAlignment="Left"
                                        VerticalAlignment="Top"
                                        MouseDown="EmailOnMouseDownCarlo">
-                            
+
                                     <Image.Style>
-                                
+
                                         <Style TargetType="{x:Type Image}">
-                                    
-                                            <Setter Property="Source" Value="/img/Email Icons/mail-white.png"/>
-                                    
+
+                                            <Setter Property="Source" Value="/img/Email Icons/mail-white.png" />
+
                                             <Style.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                            
-                                                    <Setter Property="Source" Value="/img/Email Icons/mail-black.png"/>
-                                                </Trigger>    
+
+                                                    <Setter Property="Source" Value="/img/Email Icons/mail-black.png" />
+                                                </Trigger>
                                             </Style.Triggers>
                                         </Style>
                                     </Image.Style>
                                 </Image>
-                        
+
                                 <TextBlock Text="Copy to clipboard"
                                            FontWeight="Bold"
                                            FontFamily="/fonts/#Ubuntu Medium"
-                                           Margin="5,8,0,0"/>
-                                
+                                           Margin="5,8,0,0" />
+
                             </StackPanel>
                         </StackPanel>
                     </Border>

@@ -21,7 +21,7 @@
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
                                        Margin="30,0,0,0"
-                                       FontFamily="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Fonts\#Raleway Thin"/>
+                                       FontFamily="/Fonts/#Ubuntu Medium"/>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>

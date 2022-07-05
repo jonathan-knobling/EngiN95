@@ -20,6 +20,10 @@
       <Content Include="Fonts\Ubuntu-Medium.ttf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Fonts\Ubuntu-Bold.ttf" />
+      <Content Include="Fonts\Ubuntu-Bold.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
