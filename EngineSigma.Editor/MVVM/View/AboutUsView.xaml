@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:EngineSigma.Editor.MVVM.View"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800"
              Background="Transparent">
@@ -53,7 +52,7 @@
                                        Rect="0,0,200,200"/>
                 </Border.Clip>
                 
-                <Image Source="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Images\logo.png"
+                <Image Source="/img/logo.png"
                        Height="200" Width="200"
                        Stretch="Fill"/>
             </Border>
@@ -77,7 +76,7 @@
                     
                     <TextBlock Text="Jonathan"
                                HorizontalAlignment="Center"
-                               Margin="5"></TextBlock>
+                               Margin="5"/>
                 </StackPanel>
             </Border>
             
@@ -97,7 +96,7 @@
                     
                     <TextBlock Text="Carlo"
                                HorizontalAlignment="Center"
-                               Margin="5"></TextBlock>
+                               Margin="5"/>
                 </StackPanel>
             </Border>
             
@@ -117,65 +116,226 @@
                     
                     <TextBlock Text="Contact us"
                                HorizontalAlignment="Center"
-                               Margin="5"></TextBlock>
+                               FontSize="16"
+                               FontFamily="/fonts/#Ubuntu Medium"
+                               FontWeight="Bold"
+                               Margin="0,2,0,0"/>
                     
-                    <StackPanel Orientation="Horizontal">
+                    <Border Background="Gray"
+                            Height="80"
+                            Width="180"
+                            Margin="0,0,0,3">
                         
-                        <Image Height="25"
-                               Margin="10,0,0,0"
-                               MouseDown="UIElement_OnMouseDown1">
-                            
-                            <Image.Style>
-                                
-                                <Style TargetType="{x:Type Image}">
-                                    
-                                    <Setter Property="Source" Value="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Images\Github Icons\GitHub-Mark-Light-64px.png"></Setter>
-                                    
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            
-                                            <Setter Property="Source" Value="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Images\Github Icons\GitHub-Mark-120px-plus.png"/>
-                                        </Trigger>    
-                                    </Style.Triggers>
-                                </Style>
-                            </Image.Style>
-                        </Image>
-                        
-                        <TextBlock Text="Carlo999"
-                                   FontFamily="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Fonts\C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\MVVM\View\AboutUsView.xaml"
-                                   FontWeight="Bold"
-                                   Margin="5,3,0,0"></TextBlock>
-                    </StackPanel>
+                        <Border.Clip>
                     
-                    <StackPanel Orientation="Horizontal">
+                            <RectangleGeometry RadiusX="10"
+                                               RadiusY="10"
+                                               Rect="0,0,180,80"/>
+                        </Border.Clip>
                         
-                        <Image Height="25"
-                               Margin="10,4,0,0"
-                               MouseDown="UIElement_OnMouseDown">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                        
+                            <Image Height="20"
+                                   Margin="10,4,0,0"
+                                   MouseDown="GithubOnMouseDownJonathan"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Top">
                             
-                            <Image.Style>
+                                <Image.Style>
                                 
-                                <Style TargetType="{x:Type Image}">
+                                    <Style TargetType="{x:Type Image}">
                                     
-                                    <Setter Property="Source" Value="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Images\Github Icons\GitHub-Mark-Light-64px.png"></Setter>
+                                        <Setter Property="Source" Value="/img/Github Icons/GitHub-Mark-Light-120px-plus.png"/>
                                     
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
                                             
-                                            <Setter Property="Source" Value="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Images\Github Icons\GitHub-Mark-120px-plus.png"/>
-                                        </Trigger>    
-                                    </Style.Triggers>
-                                </Style>
-                            </Image.Style>
-                        </Image>
+                                                <Setter Property="Source" Value="/img/Github Icons/GitHub-Mark-120px-plus.png"/>
+                                            </Trigger>    
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
                         
-                        <TextBlock Text="jonathan-knobling"
-                                   FontFamily="C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\Fonts\C:\Users\benec\Documents\0 - Coding\0 - Projects\0 - Github\EngineSigma\EngineSigma.Editor\MVVM\View\AboutUsView.xaml"
-                                   FontWeight="Bold"
-                                   Margin="5,8,0,0"/>
+                            <TextBlock Text="jonathan-knobling"
+                                       FontWeight="Bold"
+                                       FontFamily="/fonts/#Ubuntu Medium"
+                                       Margin="5,7,0,0"/>
+                        </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                
+                                <StackPanel Orientation="Horizontal">
+                                                        
+                                    <Image Height="20"
+                                           Margin="10,7,0,0"
+                                           MouseDown="LinkedInOnMouseDownJonathan "
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Top">
+                            
+                                        <Image.Style>
+                                
+                                            <Style TargetType="{x:Type Image}">
+                                    
+                                                <Setter Property="Source" Value="/img/LinkedIn Icons/linkedin-logo-blue.png"/>
+                                    
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                            
+                                                        <Setter Property="Source" Value="/img/LinkedIn Icons/linkedin-logo-black.png"/>
+                                                    </Trigger>    
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
                         
+                                    <TextBlock Text="Jonathan Knobling"
+                                               FontWeight="Bold"
+                                               FontFamily="/fonts/#Ubuntu Medium"
+                                               Margin="5,10,0,0"/>
+                                
+                                </StackPanel>
+                                
+                                
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal">
+                                                        
+                                <Image Height="20"
+                                       Margin="10,5,0,0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       MouseDown="EmailOnMouseDownJonathan">
+                            
+                                    <Image.Style>
+                                
+                                        <Style TargetType="{x:Type Image}">
+                                    
+                                            <Setter Property="Source" Value="/img/Email Icons/mail-white.png"/>
+                                    
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                            
+                                                    <Setter Property="Source" Value="/img/Email Icons/mail-black.png"/>
+                                                </Trigger>    
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
                         
-                    </StackPanel>
+                                <TextBlock Text="Copy to clipboard"
+                                           FontFamily="/fonts/#Ubuntu Medium"
+                                           FontWeight="Bold"
+                                           Margin="5,7,0,0"/>
+                                
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    
+                    <Border Background="Gray"
+                            Height="80"
+                            Width="180"
+                            Margin="0,5,0,0">
+                        
+                        <Border.Clip>
+                    
+                            <RectangleGeometry RadiusX="10"
+                                               RadiusY="10"
+                                               Rect="0,0,180,80"/>
+                        </Border.Clip>
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                        
+                            <Image Height="20"
+                                   Margin="10,4,0,0"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Top">
+                            
+                                <Image.Style>
+                                
+                                    <Style TargetType="{x:Type Image}">
+                                    
+                                        <Setter Property="Source" Value="/img/Github Icons/GitHub-Mark-Light-120px-plus.png"/>
+                                    
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                            
+                                                <Setter Property="Source" Value="/img/Github Icons/GitHub-Mark-120px-plus.png"/>
+                                            </Trigger>    
+                                        </Style.Triggers>
+                                    </Style>
+                                </Image.Style>
+                            </Image>
+                        
+                            <TextBlock Text="Carlo999"
+                                       FontFamily="/fonts/#Ubuntu Medium"
+                                       FontWeight="Bold"
+                                       Margin="5,8,0,0"/>
+                        </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal">
+                                                        
+                                <Image Height="20"
+                                       Margin="10,5,0,0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       MouseDown="LinkedInOnMouseDownCarlo ">
+                            
+                                    <Image.Style>
+                                
+                                        <Style TargetType="{x:Type Image}">
+                                    
+                                            <Setter Property="Source" Value="/img/LinkedIn Icons/linkedin-logo-blue.png"/>
+                                    
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                            
+                                                    <Setter Property="Source" Value="/img/LinkedIn Icons/linkedin-logo-black.png"/>
+                                                </Trigger>    
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                        
+                                <TextBlock Text="Carlo Feddeck"
+                                           FontWeight="Bold"
+                                           FontFamily="/fonts/#Ubuntu Medium"
+                                           Margin="5,9,0,0"/>
+                                
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal">
+                                                        
+                                <Image Height="20"
+                                       Margin="10,5,0,0"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Top"
+                                       MouseDown="EmailOnMouseDownCarlo">
+                            
+                                    <Image.Style>
+                                
+                                        <Style TargetType="{x:Type Image}">
+                                    
+                                            <Setter Property="Source" Value="/img/Email Icons/mail-white.png"/>
+                                    
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                            
+                                                    <Setter Property="Source" Value="/img/Email Icons/mail-black.png"/>
+                                                </Trigger>    
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                        
+                                <TextBlock Text="Copy to clipboard"
+                                           FontWeight="Bold"
+                                           FontFamily="/fonts/#Ubuntu Medium"
+                                           Margin="5,8,0,0"/>
+                                
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
                 </StackPanel>
             </Border>
         </StackPanel>

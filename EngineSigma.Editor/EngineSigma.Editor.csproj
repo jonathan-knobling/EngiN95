@@ -12,6 +12,39 @@
       <Content Include="Fonts\Raleway-VariableFont_wght.ttf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Fonts\RobotoMono-VariableFont_wght.ttf" />
+      <Content Include="Fonts\RobotoMono-VariableFont_wght.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Fonts\Ubuntu-Medium.ttf" />
+      <Content Include="Fonts\Ubuntu-Medium.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="img\logo.png" />
+      <Resource Include="img\logo.png" />
+      <None Remove="img\Github Icons\GitHub-Mark-Light-120px-plus.png" />
+      <Resource Include="img\Github Icons\GitHub-Mark-Light-120px-plus.png" />
+      <None Remove="img\Github Icons\GitHub-Mark-120px-plus.png" />
+      <Resource Include="img\Github Icons\GitHub-Mark-120px-plus.png" />
+      <None Remove="img\Github Icons\GitHub-Mark-32px.png" />
+      <Resource Include="img\Github Icons\GitHub-Mark-32px.png" />
+      <None Remove="img\Github Icons\GitHub-Mark-64px.png" />
+      <Resource Include="img\Github Icons\GitHub-Mark-64px.png" />
+      <None Remove="img\Github Icons\GitHub-Mark-Light-32px.png" />
+      <Resource Include="img\Github Icons\GitHub-Mark-Light-32px.png" />
+      <None Remove="img\Github Icons\GitHub-Mark-Light-64px.png" />
+      <Resource Include="img\Github Icons\GitHub-Mark-Light-64px.png" />
+      <None Remove="img\LinkedIn Icons\linkedin-logo-black.png" />
+      <Resource Include="img\LinkedIn Icons\linkedin-logo-black.png" />
+      <None Remove="img\LinkedIn Icons\linkedin-logo-blue.png" />
+      <Resource Include="img\LinkedIn Icons\linkedin-logo-blue.png" />
+      <None Remove="img\Email Icons\mail-black.png" />
+      <Resource Include="img\Email Icons\mail-black.png" />
+      <None Remove="img\Email Icons\mail-white.png" />
+      <Resource Include="img\Email Icons\mail-white.png" />
     </ItemGroup>
 
 </Project>
