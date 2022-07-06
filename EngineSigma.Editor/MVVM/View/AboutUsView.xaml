@@ -36,8 +36,9 @@
                             HorizontalAlignment="Left"
                             Background="Gray"
                             Height="200"
-                            Width="80"
-                            CornerRadius="10,0,0,10">
+                            Width="50"
+                            CornerRadius="10,0,0,10"
+                            Style="{StaticResource BorderAnimation}">
                         
                         
                     </Border>
