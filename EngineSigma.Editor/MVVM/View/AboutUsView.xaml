@@ -71,52 +71,7 @@
                                            FontSize="16"/>
                             </StackPanel>
                         </StackPanel>
-                        
-                        <Border.Triggers>
-                            <EventTrigger RoutedEvent="MouseEnter">
-                                
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            From="0"
-                                            To="2" 
-                                            Storyboard.TargetName="BlurEffectProject"
-                                            Duration="00:00:.1" 
-                                            Storyboard.TargetProperty="Radius"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                            
-                            <EventTrigger RoutedEvent="MouseLeave">
-                                
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                            From="2"
-                                            To="0" 
-                                            Storyboard.TargetName="BlurEffectProject"
-                                            Duration="00:00:.1" 
-                                            Storyboard.TargetProperty="Radius"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Border.Triggers>
                     </Border>
-                    
-                    <Border Width="454"
-                            Height="200"
-                            CornerRadius="0,10,10,0"
-                            Background="DimGray">
-                    
-                        <Border.Effect>
-                            
-                            <BlurEffect Radius="0"
-                                        x:Name="BlurEffectProject"/>
-                        </Border.Effect>
-                        
-                        <TextBlock Text="test" HorizontalAlignment="Center"/>
-                    </Border>
-                    
                 </StackPanel>
             </Border>
 
@@ -163,11 +118,13 @@
                             <TextBlock Text="Jonathan Knobling"
                                        FontFamily="/Fonts/#Ubuntu Bold"
                                        HorizontalAlignment="Center"
-                                       FontSize="16"
-                                       Margin="0,7,0,0" />
+                                       FontSize="14"
+                                       Margin="0,6,0,0" 
+                                       x:Name="TextBlockJonathan"/>
 
                             <TextBlock Text="Backend developer/Tech lead"
                                        HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
                                        FontFamily="/Fonts/#Ubuntu Medium"
                                        FontSize="14"
                                        Margin="0,0,0,0" />
@@ -201,6 +158,38 @@
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
+                            
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                
+                                <BeginStoryboard>
+                        
+                                    <Storyboard>
+                            
+                                        <DoubleAnimation
+                                            To="16"
+                                            From="14"
+                                            Storyboard.TargetProperty="FontSize"
+                                            Storyboard.TargetName="TextBlockJonathan"
+                                            Duration="0:0:.1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                
+                                <BeginStoryboard>
+                        
+                                    <Storyboard>
+                            
+                                        <DoubleAnimation
+                                            To="14"
+                                            From="16"
+                                            Storyboard.TargetProperty="FontSize"
+                                            Storyboard.TargetName="TextBlockJonathan"
+                                            Duration="0:0:.1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
                         </Border.Triggers>
                     </Border>
                     
@@ -208,13 +197,11 @@
                             Height="150"
                             CornerRadius="0,0,10,10">
                         
-                        
-                        <TextBlock Text="lulu trash"/>
                         <Border.Effect>
                             
                             <BlurEffect x:Name="BlurEffectJonathan"
                                         Radius="0"/>
-                        </Border.Effect>
+                            </Border.Effect>
                     </Border>
                 </StackPanel>
                 
@@ -245,11 +232,15 @@
                             <TextBlock Text="Carlo Feddeck"
                                        FontFamily="/Fonts/#Ubuntu Bold"
                                        HorizontalAlignment="Center"
-                                       FontSize="16"
-                                       Margin="0,7,0,0" />
+                                       FontSize="14"
+                                       Margin="0,6,0,0"
+                                       x:Name="TextBlockCarlo">
+                                
+                            </TextBlock>
 
                             <TextBlock Text="Designer/Frontend developer"
                                        HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
                                        FontFamily="/Fonts/#Ubuntu Medium"
                                        FontSize="14"
                                        Margin="0,0,0,0" />
@@ -278,8 +269,40 @@
                                             From="8"
                                             To="0" 
                                             Storyboard.TargetName="BlurEffectCarlo"
-                                            Duration="00:00:.1" 
+                                            Duration="00:00:.4" 
                                             Storyboard.TargetProperty="Radius"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                
+                                    <BeginStoryboard>
+                        
+                                        <Storyboard>
+                            
+                                            <DoubleAnimation
+                                                To="16"
+                                                From="14"
+                                                Storyboard.TargetProperty="FontSize"
+                                                Storyboard.TargetName="TextBlockCarlo"
+                                                Duration="0:0:.1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                            </EventTrigger>
+                            
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                
+                                <BeginStoryboard>
+                        
+                                    <Storyboard>
+                            
+                                        <DoubleAnimation
+                                            To="14"
+                                            From="16"
+                                            Storyboard.TargetProperty="FontSize"
+                                            Storyboard.TargetName="TextBlockCarlo"
+                                            Duration="0:0:.1"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
@@ -290,11 +313,8 @@
                             Height="150"
                             CornerRadius="0,0,10,10">
                         
-                        
-                        <TextBlock VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   FontSize="20"
-                                   Text="Some sort of text">
+                        <TextBlock Margin="5,0,0,0" Text="A german Software Engineer&#10;eager to learn new skills and technologies.">
+                            
                         </TextBlock>
                         
                         <Border.Effect>
