@@ -32,18 +32,39 @@
             <Setter Property="BorderThickness" Value="10"/>
             
         </Style.Setters>
-                
+ 
         <Style.Triggers>
-            
-            <Trigger Property="IsMouseOver" Value="True">
-                
-                <Setter Property="Background" Value="#808080"/>
-            </Trigger>
             
             <Trigger Property="IsChecked" Value="True">
                 
-                <Setter Property="Background" Value="#4d4d4d"/>
+                <Trigger.EnterActions>
+                    
+                    <BeginStoryboard>
+                        
+                        <Storyboard>
+                            
+                            <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" 
+                                            To="#4d4d4d"
+                                            Duration="0:0:.3"/>
+
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                
+                <Trigger.ExitActions>
+                    
+                    <BeginStoryboard>
+                        
+                        <Storyboard>
+                            
+                            <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" 
+                                            To="Transparent"
+                                            Duration="0:0:.3"/>
+
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
             </Trigger>
         </Style.Triggers>
-    </Style>
+     </Style>
 </ResourceDictionary>

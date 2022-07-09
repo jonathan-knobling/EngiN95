@@ -49,6 +49,10 @@
       <Resource Include="img\Email Icons\mail-black.png" />
       <None Remove="img\Email Icons\mail-white.png" />
       <Resource Include="img\Email Icons\mail-white.png" />
+      <None Remove="img\idea.png" />
+      <Resource Include="img\idea.png" />
+      <None Remove="img\roadmap.png" />
+      <Resource Include="img\roadmap.png" />
     </ItemGroup>
 
 </Project>

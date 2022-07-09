@@ -1,11 +1,13 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
+using System.Windows.Media.Effects;
 
 namespace EngineSigma.Editor.MVVM.View;
 
-public partial class AboutUsView : UserControl
+public partial class AboutUsView 
 {
     public AboutUsView()
     {

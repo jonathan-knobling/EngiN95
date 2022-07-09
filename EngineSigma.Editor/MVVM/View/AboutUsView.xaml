@@ -36,12 +36,87 @@
                             HorizontalAlignment="Left"
                             Background="Gray"
                             Height="200"
-                            Width="50"
+                            Width="36"
                             CornerRadius="10,0,0,10"
                             Style="{StaticResource BorderAnimation}">
                         
+                        <StackPanel Orientation="Vertical">
+                            
+                            <StackPanel Orientation="Horizontal">
+                                
+                                <Image Source="/img/idea.png" Width="30"
+                                       Margin="4,25,0,0"/>
+                                
+                                <TextBlock Text="The "
+                                           Margin="5,30,0,0"
+                                           FontSize="16"
+                                           FontFamily="/Fonts/#Ubuntu Medium"/>
+                                
+                                <TextBlock Text="idea" TextDecorations="underline"
+                                           FontFamily="/Fonts/#Ubuntu Medium"
+                                           FontSize="16"
+                                           Margin="0,30,0,0"/>
+                                
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,30,0,0">
+                                
+                                <Image Source="/img/roadmap.png" Width="30"
+                                       Margin="4,25,0,0"/>
+                                
+                                <TextBlock Text="Plans for &#10;the future"
+                                           Margin="5,30,0,0"
+                                           FontFamily="/Fonts/#Ubuntu Medium"
+                                           FontSize="16"/>
+                            </StackPanel>
+                        </StackPanel>
                         
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            From="0"
+                                            To="2" 
+                                            Storyboard.TargetName="BlurEffectProject"
+                                            Duration="00:00:.1" 
+                                            Storyboard.TargetProperty="Radius"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            From="2"
+                                            To="0" 
+                                            Storyboard.TargetName="BlurEffectProject"
+                                            Duration="00:00:.1" 
+                                            Storyboard.TargetProperty="Radius"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
                     </Border>
+                    
+                    <Border Width="454"
+                            Height="200"
+                            CornerRadius="0,10,10,0"
+                            Background="DimGray">
+                    
+                        <Border.Effect>
+                            
+                            <BlurEffect Radius="0"
+                                        x:Name="BlurEffectProject"/>
+                        </Border.Effect>
+                        
+                        <TextBlock Text="test" HorizontalAlignment="Center"/>
+                    </Border>
+                    
                 </StackPanel>
             </Border>
 
@@ -74,11 +149,11 @@
                                        RadiusY="10"
                                        Rect="0,0,240,200" />
                 </Border.Clip>
-
+                
                 <StackPanel Orientation="Vertical">
                     <Border Height="50"
                             Width="240"
-                            CornerRadius="10"
+                            CornerRadius="10,10,0,0"
                             Background="Gray"
                             VerticalAlignment="Top"
                             HorizontalAlignment="Left">
@@ -98,9 +173,51 @@
                                        Margin="0,0,0,0" />
                         </StackPanel>
 
-
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            From="0"
+                                            To="2" 
+                                            Storyboard.TargetName="BlurEffectJonathan"
+                                            Duration="00:00:.1" 
+                                            Storyboard.TargetProperty="Radius"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            From="2"
+                                            To="0" 
+                                            Storyboard.TargetName="BlurEffectJonathan"
+                                            Duration="00:00:.1" 
+                                            Storyboard.TargetProperty="Radius"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+                    
+                    <Border Background="DimGray"
+                            Height="150"
+                            CornerRadius="0,0,10,10">
+                        
+                        
+                        <TextBlock Text="lulu trash"/>
+                        <Border.Effect>
+                            
+                            <BlurEffect x:Name="BlurEffectJonathan"
+                                        Radius="0"/>
+                        </Border.Effect>
                     </Border>
                 </StackPanel>
+                
             </Border>
 
             <Border Width="240"
@@ -118,7 +235,7 @@
                 <StackPanel Orientation="Vertical">
                     <Border Height="50"
                             Width="240"
-                            CornerRadius="10"
+                            CornerRadius="10,10,0,0"
                             Background="Gray"
                             VerticalAlignment="Top"
                             HorizontalAlignment="Left">
@@ -137,8 +254,54 @@
                                        FontSize="14"
                                        Margin="0,0,0,0" />
                         </StackPanel>
-
-
+                        
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            From="0"
+                                            To="8" 
+                                            Storyboard.TargetName="BlurEffectCarlo"
+                                            Duration="00:00:.1" 
+                                            Storyboard.TargetProperty="Radius"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            From="8"
+                                            To="0" 
+                                            Storyboard.TargetName="BlurEffectCarlo"
+                                            Duration="00:00:.1" 
+                                            Storyboard.TargetProperty="Radius"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+                    
+                    <Border Background="DimGray"
+                            Height="150"
+                            CornerRadius="0,0,10,10">
+                        
+                        
+                        <TextBlock VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontSize="20"
+                                   Text="Some sort of text">
+                        </TextBlock>
+                        
+                        <Border.Effect>
+                            
+                            <BlurEffect x:Name="BlurEffectCarlo"
+                                        Radius="0"/>
+                        </Border.Effect>
                     </Border>
                 </StackPanel>
 
@@ -298,7 +461,8 @@
                                 <Image Height="20"
                                        Margin="10,4,0,0"
                                        HorizontalAlignment="Left"
-                                       VerticalAlignment="Top">
+                                       VerticalAlignment="Top"
+                                       MouseDown="GithubOnMouseDownCarlo">
 
                                     <Image.Style>
 
