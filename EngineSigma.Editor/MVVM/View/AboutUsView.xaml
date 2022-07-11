@@ -45,17 +45,17 @@
                             <StackPanel Orientation="Horizontal">
                                 
                                 <Image Source="/img/idea.png" Width="30"
-                                       Margin="4,25,0,0"/>
+                                       Margin="4,35,0,0"/>
                                 
                                 <TextBlock Text="The "
-                                           Margin="5,30,0,0"
+                                           Margin="5,43,0,0"
                                            FontSize="16"
                                            FontFamily="/Fonts/#Ubuntu Medium"/>
                                 
                                 <TextBlock Text="idea" TextDecorations="underline"
                                            FontFamily="/Fonts/#Ubuntu Medium"
                                            FontSize="16"
-                                           Margin="0,30,0,0"/>
+                                           Margin="0,43,0,0"/>
                                 
                             </StackPanel>
                             
@@ -72,6 +72,18 @@
                             </StackPanel>
                         </StackPanel>
                     </Border>
+                    <StackPanel Orientation="Vertical">
+                        
+                        <TextBlock Text="Engine Sigma is a small game engine build with &#10;the .NET framework and OpenGL.&#10;With the project we want&#10;to gain new skills and experience."
+                                   FontFamily="/Fonts/#Ubuntu Medium"
+                                   FontSize="14"
+                                   Margin="6,20,0,0"/>
+                        
+                        <TextBlock Text="In the future we want to expand the features&#10;of Engine Sigma and fix as many bugs as possible.&#10;Furthermore we want to expand&#10;the functionality of the editor"
+                                   FontFamily="/Fonts/#Ubuntu Medium"
+                                   FontSize="14"
+                                   Margin="6,24,0,0"/>
+                    </StackPanel>
                 </StackPanel>
             </Border>
 
@@ -137,7 +149,7 @@
                                     <Storyboard>
                                         <DoubleAnimation
                                             From="0"
-                                            To="2" 
+                                            To="4" 
                                             Storyboard.TargetName="BlurEffectJonathan"
                                             Duration="00:00:.1" 
                                             Storyboard.TargetProperty="Radius"/>
@@ -150,7 +162,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation
-                                            From="2"
+                                            From="4"
                                             To="0" 
                                             Storyboard.TargetName="BlurEffectJonathan"
                                             Duration="00:00:.1" 
@@ -196,6 +208,11 @@
                     <Border Background="DimGray"
                             Height="150"
                             CornerRadius="0,0,10,10">
+                        
+                        <TextBlock Margin="6,10,0,0"
+                                   FontSize="12"
+                                   Text="bla bla bla."
+                                   FontFamily="/Fonts/#Ubuntu Medium"/>
                         
                         <Border.Effect>
                             
@@ -253,7 +270,7 @@
                                     <Storyboard>
                                         <DoubleAnimation
                                             From="0"
-                                            To="8" 
+                                            To="4" 
                                             Storyboard.TargetName="BlurEffectCarlo"
                                             Duration="00:00:.1" 
                                             Storyboard.TargetProperty="Radius"/>
@@ -266,7 +283,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation
-                                            From="8"
+                                            From="4"
                                             To="0" 
                                             Storyboard.TargetName="BlurEffectCarlo"
                                             Duration="00:00:.4" 
@@ -313,7 +330,10 @@
                             Height="150"
                             CornerRadius="0,0,10,10">
                         
-                        <TextBlock Margin="5,0,0,0" Text="A german Software Engineer&#10;eager to learn new skills and technologies.">
+                        <TextBlock Margin="6,10,0,0"
+                                   FontSize="12"
+                                   Text="Responsible for the editor and hub. ..."
+                                   FontFamily="/Fonts/#Ubuntu Medium">
                             
                         </TextBlock>
                         
