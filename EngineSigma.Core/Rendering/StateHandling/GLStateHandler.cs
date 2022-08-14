@@ -6,10 +6,31 @@ internal class GLStateHandler : IGLStateHandler
 {
     private readonly IGLWrapper _glWrapper;
 
-    public Handle ActiveTexture { get; private set; }
-    public Handle ActiveVertexArray { get; private set; }
-    public Handle ActiveVertexBuffer { get; private set; }
-    public Handle ActiveIndexBuffer { get; private set; }
+    private Handle ActiveTexture { get; set; }
+    private Handle ActiveVertexArray { get; set; }
+    private Handle ActiveVertexBuffer { get; set; }
+    private Handle ActiveIndexBuffer { get; set; }
+
+    Handle IGLStateHandler.ActiveTexture
+    {
+        get => ActiveTexture;
+        set => ActiveTexture = value;
+    }
+    Handle IGLStateHandler.ActiveVertexArray
+    {
+        get => ActiveVertexArray;
+        set => ActiveVertexArray = value;
+    }
+    Handle IGLStateHandler.ActiveVertexBuffer
+    {
+        get => ActiveVertexBuffer;
+        set => ActiveVertexBuffer = value;
+    }
+    Handle IGLStateHandler.ActiveIndexBuffer
+    {
+        get => ActiveIndexBuffer;
+        set => ActiveIndexBuffer = value;
+    }
 
     public GLStateHandler(IGLWrapper glWrapper)
     {

@@ -5,9 +5,9 @@ namespace EngineSigma.Core.Rendering;
 
 public sealed class Camera
 {
-    public static Camera Instance { get; } = new Camera();
+    public static Camera Instance { get; } = new();
 
-    public Vector2 Position { get; set; }
+    private Vector2 Position { get; set; }
 
     public void Move(Vector2 movement)
     {

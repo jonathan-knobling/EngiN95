@@ -23,8 +23,6 @@ internal class GameImpl : Game
         {
             0, 1, 3, 1, 2, 3
         };
-        
-        
     }
 
     private IShader _shader = null!;
