@@ -31,10 +31,13 @@ public class Vector2ExtensionTests
     [Fact]
     public void ConvertToVec4_WithDefaultZW()
     {
+        //Arrange
         var vec2 = new Vector2(3, 4);
 
+        //Act
         var result = vec2.ToVector4();
 
+        //Assert
         result.Xy.Should().Be(vec2);
         result.Zw.Should().Be(Vector2.Zero);
     }
@@ -42,10 +45,13 @@ public class Vector2ExtensionTests
     [Fact]
     public void ConvertToVec4_WithSpecificZW()
     {
+        //Arrange
         var vec2 = new Vector2(3, 4);
 
+        //Act
         var result = vec2.ToVector4(10,22);
 
+        //Assert
         result.Xy.Should().Be(vec2);
         result.Zw.Should().Be(new Vector2(10,22));
     }
