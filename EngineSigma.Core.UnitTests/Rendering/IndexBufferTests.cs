@@ -1,6 +1,7 @@
 ﻿using EngineSigma.Core.Rendering;
 using FluentAssertions;
 using NSubstitute;
+using NSubstitute.Exceptions;
 using NSubstitute.ReceivedExtensions;
 using OpenTK.Graphics.OpenGL4;
 using Buffer = System.Buffer;
@@ -16,11 +17,12 @@ public class IndexBufferTests
     {
         //Arrange
         var glWrapper = Substitute.For<IGLWrapper>();
+        var glStateHandler = Substitute.For<IGLStateHandler>();
         var data = new uint[32];
         glWrapper.GenBuffer().Returns(Handle);
 
         //Act
-        var iBuffer = new IndexBuffer(glWrapper,data);
+        var iBuffer = new IndexBuffer(glWrapper, data, glStateHandler);
         
         //Assert
         glWrapper.Received(1).GenBuffer();
@@ -34,9 +36,10 @@ public class IndexBufferTests
     {
         //Arrange
         var glWrapper = Substitute.For<IGLWrapper>();
+        var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenBuffer().Returns(Handle);
         var data = new uint[32];
-        var iBuffer = new IndexBuffer(glWrapper,data);
+        var iBuffer = new IndexBuffer(glWrapper, data, glStateHandler);
         
         //Act
         iBuffer.Bind();
@@ -50,9 +53,10 @@ public class IndexBufferTests
     {
         //Arrange
         var glWrapper = Substitute.For<IGLWrapper>();
+        var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenBuffer().Returns(Handle);
         var data = new uint[32];
-        var iBuffer = new IndexBuffer(glWrapper,data);
+        var iBuffer = new IndexBuffer(glWrapper, data, glStateHandler);
         
         //Act
         iBuffer.UnBind();
@@ -66,9 +70,10 @@ public class IndexBufferTests
     {
         //Arrange
         var glWrapper = Substitute.For<IGLWrapper>();
+        var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenBuffer().Returns(Handle);
         var data = new uint[32];
-        var iBuffer = new IndexBuffer(glWrapper,data);
+        var iBuffer = new IndexBuffer(glWrapper, data, glStateHandler);
         
         //Act
         iBuffer.Dispose();
@@ -82,9 +87,10 @@ public class IndexBufferTests
     {
         //Arrange
         var glWrapper = Substitute.For<IGLWrapper>();
+        var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenBuffer().Returns(Handle);
         var data = new uint[32];
-        var iBuffer = new IndexBuffer(glWrapper,data);
+        var iBuffer = new IndexBuffer(glWrapper, data, glStateHandler);
         
         //Act
         iBuffer.Dispose();

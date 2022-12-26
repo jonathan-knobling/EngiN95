@@ -26,3 +26,5 @@ Frontend/bin/
 EngineSigma.Editor/bin/
 
 .vs/
+
+EngineSigma.Core.UnitTests/bin/

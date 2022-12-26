@@ -10,11 +10,11 @@
 	<s:Boolean x:Key="/Default/Environment/Highlighting/HighlightingEnabled/@EntryValue">False</s:Boolean>
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingMode/@EntryValue">OnlyFullLine</s:String>
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=54a043ca_002Da8ad_002D4759_002Db42d_002D0a622afbed34/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IndexBufferCtorTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=54a043ca_002Da8ad_002D4759_002Db42d_002D0a622afbed34/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="IndexBufferCtorTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Project Location="C:\Users\happy\Desktop\GitHub\EngineSigma\EngineTests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;EngineTests&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b3301b68_002D4518_002D46a9_002Db099_002Dee077c40f726/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b3301b68_002D4518_002D46a9_002Db099_002Dee077c40f726/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	

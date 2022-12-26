@@ -14,10 +14,11 @@ public class VertexArrayTests
     {
         //Arrange
         var glWrapper = Substitute.For<IGLWrapper>();
+        var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenVertexArray().Returns(Handle);
         
         //Act
-        var vArray = new VertexArray(glWrapper);
+        var vArray = new VertexArray(glWrapper,glStateHandler);
         
         //Assert
         vArray.Handle.Should().Be(Handle);
@@ -34,8 +35,9 @@ public class VertexArrayTests
     {
         //Arrange
         var glWrapper = Substitute.For<IGLWrapper>();
+        var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenVertexArray().Returns(Handle);
-        var vArray = new VertexArray(glWrapper);
+        var vArray = new VertexArray(glWrapper,glStateHandler);
         
         //Act
         vArray.Bind();
@@ -49,8 +51,9 @@ public class VertexArrayTests
     {
         //Arrange
         var glWrapper = Substitute.For<IGLWrapper>();
+        var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenVertexArray().Returns(Handle);
-        var vArray = new VertexArray(glWrapper);    
+        var vArray = new VertexArray(glWrapper,glStateHandler);    
         
         //Act
         vArray.UnBind();
@@ -64,8 +67,9 @@ public class VertexArrayTests
     {
         //Arrange
         var glWrapper = Substitute.For<IGLWrapper>();
+        var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenVertexArray().Returns(Handle);
-        var vArray = new VertexArray(glWrapper);
+        var vArray = new VertexArray(glWrapper,glStateHandler);
         
         //Act
         vArray.Dispose();
@@ -79,8 +83,9 @@ public class VertexArrayTests
     {
         //Arrange
         var glWrapper = Substitute.For<IGLWrapper>();
+        var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenVertexArray().Returns(Handle);
-        var vArray = new VertexArray(glWrapper);
+        var vArray = new VertexArray(glWrapper,glStateHandler);
         
         //Act
         vArray.Dispose();
