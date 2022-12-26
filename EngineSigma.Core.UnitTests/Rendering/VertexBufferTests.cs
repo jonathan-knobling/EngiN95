@@ -23,7 +23,7 @@ public class DynamicVertexBufferTests
         //Assert
         vBuffer.Handle.Should().Be(bufferHandle);
         glWrapper.Received(Quantity.Exactly(1)).GenBuffer();
-        glWrapper.Received(Quantity.Exactly(1)).BindBuffer(BufferTarget.ArrayBuffer, bufferHandle);
+        glStateHandler.Received(Quantity.Exactly(1)).UseVertexBuffer(bufferHandle);
         glWrapper.Received(Quantity.Exactly(1)).BufferData(BufferTarget.ArrayBuffer, Arg.Any<int>(), Arg.Any<IntPtr>(), BufferUsageHint.DynamicDraw);
     }
 
@@ -42,7 +42,7 @@ public class DynamicVertexBufferTests
         vBuffer.BufferData(data);
 
         //Assert
-        glWrapper.Received(Quantity.AtLeastOne()).BindBuffer(BufferTarget.ArrayBuffer, bufferHandle);
+        glStateHandler.Received(Quantity.AtLeastOne()).UseVertexBuffer(bufferHandle);
         glWrapper.Received(Quantity.Exactly(1)).BufferSubData(
             BufferTarget.ArrayBuffer, Arg.Any<IntPtr>(), Arg.Any<int>(), data);
         vBuffer.Elements.Should().Be(data.Length);
@@ -63,7 +63,7 @@ public class DynamicVertexBufferTests
         vBuffer.BufferData(data);
         
         //Assert
-        glWrapper.Received(Quantity.Exactly(1)).BindBuffer(Arg.Any<BufferTarget>(), bufferHandle);
+        glStateHandler.Received(Quantity.Exactly(1)).UseVertexBuffer(bufferHandle);
         glWrapper.Received(Quantity.None()).BufferSubData(BufferTarget.ArrayBuffer, Arg.Any<IntPtr>(), Arg.Any<int>(), data);
     }
 
@@ -76,12 +76,12 @@ public class DynamicVertexBufferTests
         const int bufferHandle = 69;
         glWrapper.GenBuffer().Returns(bufferHandle);
         var vBuffer = new VertexBuffer(glWrapper,glStateHandler);
-        
+
         //Act
         vBuffer.Bind();
         
         //Assert
-        glWrapper.Received(Quantity.AtLeastOne()).BindBuffer(BufferTarget.ArrayBuffer, bufferHandle);
+        glStateHandler.Received(Quantity.AtLeastOne()).UseVertexBuffer(bufferHandle);
     }
 
     [Fact]
@@ -98,7 +98,7 @@ public class DynamicVertexBufferTests
         vBuffer.UnBind();
         
         //Assert
-        glWrapper.Received(Quantity.Exactly(1)).BindBuffer(BufferTarget.ArrayBuffer, 0);
+        glStateHandler.Received(Quantity.Exactly(1)).UseVertexBuffer(0);
     }
 
     [Fact]

@@ -23,7 +23,7 @@ public class VertexArrayTests
         //Assert
         vArray.Handle.Should().Be(Handle);
         glWrapper.Received(1).GenVertexArray();
-        glWrapper.Received(1).BindVertexArray(Handle);
+        glStateHandler.Received(1).UseVertexArray(Handle);
         
         glWrapper.Received(Vertex.ComponentAmount).VertexAttribPointer(
             Arg.Any<int>(), Arg.Any<int>(), Arg.Any<VertexAttribPointerType>(), false, Vertex.Size, Arg.Any<int>());
@@ -43,7 +43,7 @@ public class VertexArrayTests
         vArray.Bind();
         
         //Assert
-        glWrapper.Received(2).BindVertexArray(Handle);
+        glStateHandler.Received(2).UseVertexArray(Handle);
     }
 
     [Fact]
@@ -59,7 +59,7 @@ public class VertexArrayTests
         vArray.UnBind();
         
         //Assert
-        glWrapper.Received(1).BindVertexArray(0);
+        glStateHandler.Received(1).UseVertexArray(0);
     }
 
     [Fact]
