@@ -4,6 +4,7 @@ using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Common.Input;
 using OpenTK.Windowing.Desktop;
+using Image = OpenTK.Windowing.Common.Input.Image;
 
 namespace EngineSigma.Core;
 
