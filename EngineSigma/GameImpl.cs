@@ -1,5 +1,4 @@
 ﻿using EngineSigma.Core;
-using EngineSigma.Core.IO;
 using EngineSigma.Core.Management;
 using EngineSigma.Core.Rendering;
 using OpenTK.Graphics.OpenGL4;

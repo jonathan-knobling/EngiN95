@@ -1,4 +1,4 @@
-﻿using EngineSigma.Core.IO;
+﻿using EngineSigma.Core.Input;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
@@ -62,7 +62,13 @@ public abstract class Game
         gameWindow.Run();
     }
 
+    /// <summary>
+    /// Runs before any other Setup is done
+    /// </summary>
     protected abstract void Init();
+    /// <summary>
+    /// Is being called by the GameWindows Load event
+    /// </summary>
     protected abstract void OnLoad();
     protected abstract void OnUpdate();
     protected abstract void OnRender();

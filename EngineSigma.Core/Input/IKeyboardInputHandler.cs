@@ -1,6 +1,6 @@
 ﻿using OpenTK.Windowing.GraphicsLibraryFramework;
 
-namespace EngineSigma.Core.IO;
+namespace EngineSigma.Core.Input;
 
 public interface IKeyboardInputHandler
 {

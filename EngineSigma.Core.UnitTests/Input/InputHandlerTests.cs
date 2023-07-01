@@ -1,4 +1,4 @@
-﻿using EngineSigma.Core.IO;
+﻿using EngineSigma.Core.Input;
 using FluentAssertions;
 using NSubstitute;
 using OpenTK.Mathematics;
