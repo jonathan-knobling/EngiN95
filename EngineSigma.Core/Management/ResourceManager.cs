@@ -1,4 +1,5 @@
 ﻿using EngineSigma.Core.Rendering;
+using Image = EngineSigma.Core.Rendering.Image;
 
 namespace EngineSigma.Core.Management;
 
