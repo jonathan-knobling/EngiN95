@@ -12,35 +12,34 @@ public sealed class ResourceManager
         _glWrapper = glWrapper;
     }
 
-    private readonly IDictionary<string, Texture> _textureCache = new Dictionary<string, Texture>();
+    private readonly Dictionary<string, Texture> _textureCache = new();
+    private readonly Dictionary<string, Image> _imageCache = new();
 
-    public Texture GetTexture(string textureName)
+    public Texture GetTexture(string texturePath)
     {
-        _textureCache.TryGetValue(textureName, out var value);
+        _textureCache.TryGetValue(texturePath, out var texture);
         {
-            if (value is not null)
+            if (texture is not null)
             {
-                return value;
+                return texture;
             }
         }
-        value = Texture.Load(textureName, _glWrapper);
-        _textureCache.Add(textureName, value);
-        return value;
+        texture = Texture.Load(texturePath, _glWrapper);
+        _textureCache.Add(texturePath, texture);
+        return texture;
     }
 
-    private readonly IDictionary<string, Image> _imageCache = new Dictionary<string, Image>();
-
-    public Image GetImage(string imageName)
+    public Image GetImage(string imagePath)
     {
-        _imageCache.TryGetValue(imageName, out var value);
+        _imageCache.TryGetValue(imagePath, out var image);
         {
-            if (value is not null)
+            if (image is not null)
             {
-                return value;
+                return image;
             }
         }
-        value = new Image(imageName);
-        _imageCache.Add(imageName, value);
-        return value;
+        image = new Image(imagePath);
+        _imageCache.Add(imagePath, image);
+        return image;
     }
 }

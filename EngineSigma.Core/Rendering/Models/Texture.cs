@@ -33,7 +33,7 @@ public class Texture : IDisposable
         _glWrapper.BindTexture(TextureTarget.Texture2D, Handle);
     }
 
-    public static Texture Load(string textureName, IGLWrapper glWrapper)
+    public static Texture Load(string texturePath, IGLWrapper glWrapper)
     {
         int handle = glWrapper.GenTexture();
 
@@ -43,7 +43,10 @@ public class Texture : IDisposable
 #pragma warning disable CA1416 
         //only works on windows
         
-        using var image = new Bitmap(textureName);
+        //only works on windows
+#pragma warning disable CA1416
+
+        using var image = new Bitmap(texturePath);
         image.RotateFlip(RotateFlipType.RotateNoneFlipY);
         var data = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadOnly,
             PixelFormat.Format32bppArgb);

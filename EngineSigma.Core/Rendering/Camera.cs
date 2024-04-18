@@ -9,9 +9,13 @@ public sealed class Camera
 
     private Vector2 Position { get; set; }
 
-    public void Move(Vector2 movement)
+    /// <summary>
+    /// Moves the camera along the displacement vector
+    /// </summary>
+    /// <param name="displacement">Displacement vector in pixels</param>
+    public void Move(Vector2 displacement)
     {
-        Position += movement;
+        Position += displacement;
     }
 
     public Matrix4 ToViewMatrix()

@@ -1,7 +1,4 @@
-﻿using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-
-namespace EngineSigma.Core.Rendering;
+﻿namespace EngineSigma.Core.Rendering;
 
 public class Image
 {
