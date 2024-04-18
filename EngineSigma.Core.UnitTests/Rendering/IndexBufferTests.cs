@@ -22,7 +22,7 @@ public class IndexBufferTests
         glWrapper.GenBuffer().Returns(Handle);
 
         //Act
-        var iBuffer = new IndexBuffer(glWrapper, data, glStateHandler);
+        var iBuffer = new IndexBuffer(glWrapper, data);
         
         //Assert
         glWrapper.Received(1).GenBuffer();
@@ -39,7 +39,7 @@ public class IndexBufferTests
         var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenBuffer().Returns(Handle);
         var data = new uint[32];
-        var iBuffer = new IndexBuffer(glWrapper, data, glStateHandler);
+        var iBuffer = new IndexBuffer(glWrapper, data);
         
         //Act
         iBuffer.Bind();
@@ -56,7 +56,7 @@ public class IndexBufferTests
         var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenBuffer().Returns(Handle);
         var data = new uint[32];
-        var iBuffer = new IndexBuffer(glWrapper, data, glStateHandler);
+        var iBuffer = new IndexBuffer(glWrapper, data);
         
         //Act
         iBuffer.UnBind();
@@ -73,7 +73,7 @@ public class IndexBufferTests
         var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenBuffer().Returns(Handle);
         var data = new uint[32];
-        var iBuffer = new IndexBuffer(glWrapper, data, glStateHandler);
+        var iBuffer = new IndexBuffer(glWrapper, data);
         
         //Act
         iBuffer.Dispose();
@@ -90,7 +90,7 @@ public class IndexBufferTests
         var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenBuffer().Returns(Handle);
         var data = new uint[32];
-        var iBuffer = new IndexBuffer(glWrapper, data, glStateHandler);
+        var iBuffer = new IndexBuffer(glWrapper, data);
         
         //Act
         iBuffer.Dispose();

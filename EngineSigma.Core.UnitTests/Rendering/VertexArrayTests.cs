@@ -18,7 +18,7 @@ public class VertexArrayTests
         glWrapper.GenVertexArray().Returns(Handle);
         
         //Act
-        var vArray = new VertexArray(glWrapper,glStateHandler);
+        var vArray = new VertexArray(glWrapper);
         
         //Assert
         vArray.Handle.Should().Be(Handle);
@@ -37,7 +37,7 @@ public class VertexArrayTests
         var glWrapper = Substitute.For<IGLWrapper>();
         var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenVertexArray().Returns(Handle);
-        var vArray = new VertexArray(glWrapper,glStateHandler);
+        var vArray = new VertexArray(glWrapper);
         
         //Act
         vArray.Bind();
@@ -53,7 +53,7 @@ public class VertexArrayTests
         var glWrapper = Substitute.For<IGLWrapper>();
         var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenVertexArray().Returns(Handle);
-        var vArray = new VertexArray(glWrapper,glStateHandler);    
+        var vArray = new VertexArray(glWrapper);    
         
         //Act
         vArray.UnBind();
@@ -69,7 +69,7 @@ public class VertexArrayTests
         var glWrapper = Substitute.For<IGLWrapper>();
         var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenVertexArray().Returns(Handle);
-        var vArray = new VertexArray(glWrapper,glStateHandler);
+        var vArray = new VertexArray(glWrapper);
         
         //Act
         vArray.Dispose();
@@ -85,7 +85,7 @@ public class VertexArrayTests
         var glWrapper = Substitute.For<IGLWrapper>();
         var glStateHandler = Substitute.For<IGLStateHandler>();
         glWrapper.GenVertexArray().Returns(Handle);
-        var vArray = new VertexArray(glWrapper,glStateHandler);
+        var vArray = new VertexArray(glWrapper);
         
         //Act
         vArray.Dispose();
