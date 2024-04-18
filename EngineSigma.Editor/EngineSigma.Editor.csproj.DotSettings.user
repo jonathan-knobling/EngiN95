@@ -1,5 +1,0 @@
-﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=MVVM_005CVIEW_005CIMAGES/@EntryIndexedValue">MVVM\View\Images</s:String>
-	<s:String x:Key="/Default/CodeInspection/WebPathMapping/MappedPaths/=MVVM_005CVIEW_005CENGINESIGMA_002EEDITOR/@EntryIndexedValue"></s:String>
-	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=MVVM_005CVIEW_005CENGINESIGMA_002EEDITOR/@EntryIndexedValue">MVVM\View\EngineSigma.Editor</s:String>
-	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=MVVM_005CVIEW_005CIMAGES/@EntryIndexedValue">MVVM\View\Images</s:String></wpf:ResourceDictionary>
