@@ -4,28 +4,28 @@ namespace EngiN95.Core.Rendering;
 
 public class IndexBuffer : IIndexBuffer
 {
-    private readonly IGLWrapper _glWrapper;
+    private readonly IGLWrapper glWrapper;
     public Handle Handle { get; }
 
-    private bool _disposed;
+    private bool disposed;
 
     public IndexBuffer(IGLWrapper glWrapper, uint[] indices)
     {
-        _glWrapper = glWrapper;
-        _disposed = false;
-        Handle = _glWrapper.GenBuffer();
-        _glWrapper.BindBuffer(BufferTarget.ElementArrayBuffer, Handle);
-        _glWrapper.BufferData(BufferTarget.ElementArrayBuffer, indices.Length * sizeof(uint), indices, BufferUsageHint.StaticDraw);
+        this.glWrapper = glWrapper;
+        disposed = false;
+        Handle = this.glWrapper.GenBuffer();
+        this.glWrapper.BindBuffer(BufferTarget.ElementArrayBuffer, Handle);
+        this.glWrapper.BufferData(BufferTarget.ElementArrayBuffer, indices.Length * sizeof(uint), indices, BufferUsageHint.StaticDraw);
     }
 
     public void Bind()
     {
-        _glWrapper.BindBuffer(BufferTarget.ElementArrayBuffer, Handle);
+        glWrapper.BindBuffer(BufferTarget.ElementArrayBuffer, Handle);
     }
 
     public void UnBind()
     {
-        _glWrapper.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+        glWrapper.BindBuffer(BufferTarget.ElementArrayBuffer, 0);
     }
 
     ~IndexBuffer()
@@ -35,9 +35,9 @@ public class IndexBuffer : IIndexBuffer
 
     public void Dispose()
     {
-        if (_disposed) return;
-        _disposed = true;
-        _glWrapper.DeleteBuffer(Handle);
+        if (disposed) return;
+        disposed = true;
+        glWrapper.DeleteBuffer(Handle);
         GC.SuppressFinalize(this);
     }
 }

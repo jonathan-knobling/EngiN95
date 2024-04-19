@@ -4,35 +4,35 @@ namespace EngiN95.Core.IO;
 
 public sealed class KeyboardInputHandler : IKeyboardInputHandler
 {
-    private readonly KeyboardState _keyboardState;
+    private readonly KeyboardState keyboardState;
 
     public KeyboardInputHandler(KeyboardState keyboardState)
     {
-        _keyboardState = keyboardState;
+        this.keyboardState = keyboardState;
     }
 
     public bool IsKeyDown(Keys key)
     {
-        return _keyboardState.IsKeyDown(key);
+        return keyboardState.IsKeyDown(key);
     }
 
     public bool WasKeyDown(Keys key)
     {
-        return _keyboardState.WasKeyDown(key);
+        return keyboardState.WasKeyDown(key);
     }
 
     public bool IsKeyPressed(Keys key)
     {
-        return _keyboardState.IsKeyPressed(key);
+        return keyboardState.IsKeyPressed(key);
     }
 
     public bool IsKeyReleased(Keys key)
     {
-        return _keyboardState.IsKeyReleased(key);
+        return keyboardState.IsKeyReleased(key);
     }
 
     public bool IsAnyKeyDown()
     {
-        return _keyboardState.IsAnyKeyDown;
+        return keyboardState.IsAnyKeyDown;
     }
 }

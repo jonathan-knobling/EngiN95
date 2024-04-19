@@ -6,11 +6,13 @@ using OpenTK.Mathematics;
 
 namespace EngineTest;
 
+#pragma warning disable CS8618
+
 internal class GameImpl : Game
 {
     public GameImpl(string windowTitle, int initialWindowWidth, int initialWindowHeight) : base(windowTitle, initialWindowWidth, initialWindowHeight)
     {
-        _vertices = new[]
+        vertices = new[]
         {
             new Vertex(new Vector3(600, 600, 0.0f), new Vector2(1.0f, 1.0f), Color4.DarkBlue),
             new Vertex(new Vector3(600, 0, 0.0f), new Vector2(1.0f, 0.0f), Color4.Transparent),
@@ -18,43 +20,43 @@ internal class GameImpl : Game
             new Vertex(new Vector3(0, 600, 0.0f), new Vector2(0.0f, 1.0f), Color4.Lime)
         };
         
-        _indices = new uint[]
+        indices = new uint[]
         {
             0, 1, 3, 1, 2, 3
         };
     }
 
-    private IShader _shader = null!;
-    private Texture _texture = null! ;
-    private IndexBuffer _indexBuffer = null!;
-    private VertexBuffer _vertexBuffer = null!;
-    private VertexArray _vertexArray = null!;
-    private readonly uint[] _indices;
-    private readonly Vertex[] _vertices;
+    private IShader shader;
+    private Texture texture;
+    private IndexBuffer indexBuffer;
+    private VertexBuffer vertexBuffer;
+    private VertexArray vertexArray;
+    private readonly uint[] indices;
+    private readonly Vertex[] vertices;
 
     protected override void Init()
     {
         
     }
-
+    
     protected override void OnLoad()
     {
         var src = ShaderProgramSource.LoadFromFiles("Resources/Shaders/vertex.glsl", "Resources/Shaders/fragment.glsl");
-        _shader = new Shader(src);
+        shader = new Shader(src);
 
         IGLWrapper glWrapper = new GLWrapper();
         
-        _vertexBuffer = new VertexBuffer(glWrapper);
-        _vertexBuffer.BufferData(_vertices);
-        _vertexArray = new VertexArray(glWrapper);
-        _indexBuffer = new IndexBuffer(glWrapper, _indices);
+        vertexBuffer = new VertexBuffer(glWrapper);
+        vertexBuffer.BufferData(vertices);
+        vertexArray = new VertexArray(glWrapper);
+        indexBuffer = new IndexBuffer(glWrapper, indices);
 
         var rm = new ResourceManager(glWrapper);
         
-        _texture = rm.GetTexture("Resources/Sprites/grass.png");
-        _texture.Use();
+        texture = rm.GetTexture("Resources/Sprites/grass.png");
+        texture.Use();
 
-        _shader.SetMatrix4("projection", 
+        shader.SetMatrix4("projection", 
             Matrix4.CreateOrthographic(GameWindow.Size.X, GameWindow.Size.Y, -1, 100));
     }
 
@@ -71,13 +73,13 @@ internal class GameImpl : Game
         GL.Clear(ClearBufferMask.ColorBufferBit);
         GL.ClearColor(Color4.CornflowerBlue);
         
-        _shader.Use();
+        shader.Use();
         
-        _vertexBuffer.BufferData(_vertices);
-        
-        _vertexArray.Bind();
-        _indexBuffer.Bind();
-        _vertexBuffer.Bind();
+        vertexBuffer.BufferData(vertices);
+
+        vertexArray.Bind();
+        indexBuffer.Bind();
+        vertexBuffer.Bind();
         
         Matrix4.CreateScale(0.5f, out var scale);
         Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(180f * Time.TotalGameTime), out var rotation);
@@ -88,10 +90,10 @@ internal class GameImpl : Game
         transform *= rotation;
         transform *= translation;
 
-        _shader.SetMatrix4("transform", transform);
+        shader.SetMatrix4("transform", transform);
         
-        _shader.SetMatrix4("view", Camera.Instance.ToViewMatrix());
+        shader.SetMatrix4("view", Camera.Instance.ToViewMatrix());
         
-        GL.DrawElements(PrimitiveType.Triangles, _indices.Length, DrawElementsType.UnsignedInt, 0);
+        GL.DrawElements(PrimitiveType.Triangles, indices.Length, DrawElementsType.UnsignedInt, 0);
     }
 }

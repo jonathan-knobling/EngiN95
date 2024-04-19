@@ -1,4 +1,4 @@
-﻿using EngiN95.Core.Extensions;
+using EngiN95.Core.Extensions;
 using OpenTK.Mathematics;
 
 namespace EngiN95.Core.Rendering;

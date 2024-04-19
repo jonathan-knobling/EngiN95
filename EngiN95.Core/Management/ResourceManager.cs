@@ -4,26 +4,26 @@ namespace EngiN95.Core.Management;
 
 public sealed class ResourceManager
 {
-    private readonly IGLWrapper _glWrapper;
+    private readonly IGLWrapper glWrapper;
 
     public ResourceManager(IGLWrapper glWrapper)
     {
-        _glWrapper = glWrapper;
+        this.glWrapper = glWrapper;
     }
+    
+    private readonly Dictionary<string, Texture> textureCache = new();
 
-    private readonly Dictionary<string, Texture> _textureCache = new();
-
-    public Texture GetTexture(string texturePath)
+    public Texture GetTexture(string textureName)
     {
-        _textureCache.TryGetValue(texturePath, out var texture);
+        textureCache.TryGetValue(textureName, out var texture);
         {
             if (texture is not null)
             {
                 return texture;
             }
         }
-        texture = Texture.Load(texturePath, _glWrapper);
-        _textureCache.Add(texturePath, texture);
+        texture = Texture.Load(textureName, glWrapper);
+        textureCache.Add(textureName, texture);
         return texture;
     }
 }

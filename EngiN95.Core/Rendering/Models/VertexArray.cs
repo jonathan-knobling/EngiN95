@@ -4,38 +4,38 @@ namespace EngiN95.Core.Rendering;
 
 public class VertexArray : IVertexArray
 {
-    private readonly IGLWrapper _glWrapper;
+    private readonly IGLWrapper glWrapper;
     public Handle Handle { get; }
 
-    private bool _disposed;
+    private bool disposed;
 
     public VertexArray(IGLWrapper glWrapper)
     {
-        _glWrapper = glWrapper;
-        Handle = _glWrapper.GenVertexArray();
+        this.glWrapper = glWrapper;
+        Handle = this.glWrapper.GenVertexArray();
         Bind();
         
         //Position
-        _glWrapper.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, Vertex.Size, 0);
-        _glWrapper.EnableVertexAttribArray(0);
+        this.glWrapper.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, Vertex.Size, 0);
+        this.glWrapper.EnableVertexAttribArray(0);
         
         //TexCoords
-        _glWrapper.VertexAttribPointer(1, 2, VertexAttribPointerType.Float, false, Vertex.Size, 3 * sizeof(float));
-        _glWrapper.EnableVertexAttribArray(1);
+        this.glWrapper.VertexAttribPointer(1, 2, VertexAttribPointerType.Float, false, Vertex.Size, 3 * sizeof(float));
+        this.glWrapper.EnableVertexAttribArray(1);
         
         //Color
-        _glWrapper.VertexAttribPointer(2, 4, VertexAttribPointerType.Float, false, Vertex.Size, 5 * sizeof(float));
-        _glWrapper.EnableVertexAttribArray(2);
+        this.glWrapper.VertexAttribPointer(2, 4, VertexAttribPointerType.Float, false, Vertex.Size, 5 * sizeof(float));
+        this.glWrapper.EnableVertexAttribArray(2);
     }
 
     public void Bind()
     {
-        _glWrapper.BindVertexArray(Handle);
+        glWrapper.BindVertexArray(Handle);
     }
 
     public void UnBind()
     {
-        _glWrapper.BindVertexArray(0);
+        glWrapper.BindVertexArray(0);
     }
 
     ~VertexArray()
@@ -45,9 +45,9 @@ public class VertexArray : IVertexArray
     
     public void Dispose()
     {
-        if (_disposed) return;
-        _disposed = true;
-        _glWrapper.DeleteVertexArray(Handle);
+        if (disposed) return;
+        disposed = true;
+        glWrapper.DeleteVertexArray(Handle);
         GC.SuppressFinalize(this);
     }
 }

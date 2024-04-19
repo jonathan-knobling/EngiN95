@@ -10,21 +10,21 @@ namespace EngiN95.Core;
 
 public abstract class Game
 {
-    private readonly GameWindowSettings _gameWindowSettings = GameWindowSettings.Default;
-    private readonly NativeWindowSettings _nativeWindowSettings = NativeWindowSettings.Default;
+    private readonly GameWindowSettings gameWindowSettings = GameWindowSettings.Default;
+    private readonly NativeWindowSettings nativeWindowSettings = NativeWindowSettings.Default;
 
     protected GameWindow GameWindow { get; private set; } = null!;
     protected InputHandler InputHandler { get; private set; } = null!;
 
     protected Game(string windowTitle, int initialWindowWidth, int initialWindowHeight)
     {
-        _nativeWindowSettings.Size = new Vector2i(initialWindowWidth, initialWindowHeight);
-        _nativeWindowSettings.Title = windowTitle;
-        _nativeWindowSettings.API = ContextAPI.OpenGL;
-        _nativeWindowSettings.APIVersion = new Version(4, 6);
+        nativeWindowSettings.Size = new Vector2i(initialWindowWidth, initialWindowHeight);
+        nativeWindowSettings.Title = windowTitle;
+        nativeWindowSettings.API = ContextAPI.OpenGL;
+        nativeWindowSettings.APIVersion = new Version(4, 6);
         
         var img = new Rendering.Image("Resources/Sprites/stone.png");
-        _nativeWindowSettings.Icon = new WindowIcon(new Image(img.Width, img.Height, img.PixelData));
+        nativeWindowSettings.Icon = new WindowIcon(new Image(img.Width, img.Height, img.PixelData));
     }
 
     public void Run()
@@ -35,7 +35,7 @@ public abstract class Game
 
     private void SetupGameWindow()
     {
-        var gameWindow = new GameWindow(_gameWindowSettings, _nativeWindowSettings);
+        var gameWindow = new GameWindow(gameWindowSettings, nativeWindowSettings);
 
         gameWindow.Load += OnLoad;
         gameWindow.UpdateFrame += args =>

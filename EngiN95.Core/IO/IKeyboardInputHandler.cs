@@ -19,7 +19,7 @@ public interface IKeyboardInputHandler
     bool WasKeyDown(Keys key);
 
     /// <summary>
-    /// Gets whether this key is down in the current frame but wasnt in the last frame
+    /// Gets whether this key is down in the current frame but wasn't in the last frame
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>

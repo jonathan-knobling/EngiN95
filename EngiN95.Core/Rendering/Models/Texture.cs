@@ -12,13 +12,13 @@ public class Texture : IDisposable
     public int Width { get; }
     public int Height { get; }
     
-    private bool _disposed;
-    private readonly IGLWrapper _glWrapper;
+    private bool disposed;
+    private readonly IGLWrapper glWrapper;
 
     public Texture(int handle, IGLWrapper glWrapper)
     {
         Handle = handle;
-        _glWrapper = glWrapper;
+        this.glWrapper = glWrapper;
     }
 
     public Texture(int handle, int width, int height, IGLWrapper glWrapper) : this(handle, glWrapper)
@@ -29,8 +29,8 @@ public class Texture : IDisposable
     
     public void Use()
     {
-        _glWrapper.ActiveTexture(TextureUnit.Texture0);
-        _glWrapper.BindTexture(TextureTarget.Texture2D, Handle);
+        glWrapper.ActiveTexture(TextureUnit.Texture0);
+        glWrapper.BindTexture(TextureTarget.Texture2D, Handle);
     }
 
     public static Texture Load(string texturePath, IGLWrapper glWrapper)
@@ -79,9 +79,9 @@ public class Texture : IDisposable
     
     public void Dispose()
     {
-        if (_disposed) return;
-        _disposed = true;
-        _glWrapper.DeleteTexture(Handle);
+        if (disposed) return;
+        disposed = true;
+        glWrapper.DeleteTexture(Handle);
         GC.SuppressFinalize(this);
     }
 }

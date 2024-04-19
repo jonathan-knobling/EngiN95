@@ -53,7 +53,7 @@ public interface IMouseInputHandler
     bool WasButtonDown(MouseButton button);
 
     /// <summary>
-    /// Gets whether this key is down in this frame but wasnt in the last frame
+    /// Gets whether this key is down in this frame but wasn't in the last frame
     /// </summary>
     /// <param name="button"></param>
     /// <returns></returns>

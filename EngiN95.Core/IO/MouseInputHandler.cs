@@ -5,47 +5,47 @@ namespace EngiN95.Core.IO;
 
 public class MouseInputHandler : IMouseInputHandler
 {
-    private readonly MouseState _mouseState;
+    private readonly MouseState mouseState;
 
     public MouseInputHandler(MouseState mouseState)
     {
-        _mouseState = mouseState;
+        this.mouseState = mouseState;
     }
 
-    public Vector2 Position => _mouseState.Position;
+    public Vector2 Position => mouseState.Position;
 
-    public Vector2 PreviousPosition => _mouseState.PreviousPosition;
+    public Vector2 PreviousPosition => mouseState.PreviousPosition;
 
-    public Vector2 PositionDelta => _mouseState.Delta;
+    public Vector2 PositionDelta => mouseState.Delta;
 
-    public Vector2 Scroll => _mouseState.Scroll;
+    public Vector2 Scroll => mouseState.Scroll;
 
-    public Vector2 PreviousScroll => _mouseState.PreviousScroll;
+    public Vector2 PreviousScroll => mouseState.PreviousScroll;
 
-    public Vector2 ScrollDelta => _mouseState.ScrollDelta;
+    public Vector2 ScrollDelta => mouseState.ScrollDelta;
 
     public bool IsButtonDown(MouseButton button)
     {
-        return _mouseState.IsButtonDown(button);
+        return mouseState.IsButtonDown(button);
     }
 
     public bool WasButtonDown(MouseButton button)
     {
-        return _mouseState.WasButtonDown(button);
+        return mouseState.WasButtonDown(button);
     }
 
     public bool IsButtonPressed(MouseButton button)
     {
-        return _mouseState.IsButtonPressed(button);
+        return mouseState.IsButtonPressed(button);
     }
 
     public bool IsButtonReleased(MouseButton button)
     {
-        return _mouseState.IsButtonReleased(button);
+        return mouseState.IsButtonReleased(button);
     }
 
     public bool IsAnyButtonDown()
     {
-        return _mouseState.IsAnyButtonDown;
+        return mouseState.IsAnyButtonDown;
     }
 }
