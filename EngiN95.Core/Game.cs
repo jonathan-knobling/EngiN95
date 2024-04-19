@@ -1,9 +1,10 @@
-﻿using EngiN95.Core.IO;
+using EngiN95.Core.IO;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Common.Input;
 using OpenTK.Windowing.Desktop;
+using Image = OpenTK.Windowing.Common.Input.Image;
 
 namespace EngiN95.Core;
 
@@ -62,7 +63,13 @@ public abstract class Game
         gameWindow.Run();
     }
 
+    /// <summary>
+    /// Runs before any other Setup is done
+    /// </summary>
     protected abstract void Init();
+    /// <summary>
+    /// Is being called by the GameWindows Load event
+    /// </summary>
     protected abstract void OnLoad();
     protected abstract void OnUpdate();
     protected abstract void OnRender();

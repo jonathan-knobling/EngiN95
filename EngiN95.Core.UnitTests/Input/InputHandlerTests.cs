@@ -1,4 +1,4 @@
-﻿using EngiN95.Core.IO;
+using EngiN95.Core.IO;
 using FluentAssertions;
 using NSubstitute;
 using OpenTK.Mathematics;

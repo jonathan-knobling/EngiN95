@@ -1,4 +1,4 @@
-﻿using EngiN95.Core.Rendering;
+using EngiN95.Core.Rendering;
 
 namespace EngiN95.Core.Management;
 
@@ -11,35 +11,19 @@ public sealed class ResourceManager
         _glWrapper = glWrapper;
     }
 
-    private readonly IDictionary<string, Texture> _textureCache = new Dictionary<string, Texture>();
+    private readonly Dictionary<string, Texture> _textureCache = new();
 
-    public Texture GetTexture(string textureName)
+    public Texture GetTexture(string texturePath)
     {
-        _textureCache.TryGetValue(textureName, out var value);
+        _textureCache.TryGetValue(texturePath, out var texture);
         {
-            if (value is not null)
+            if (texture is not null)
             {
-                return value;
+                return texture;
             }
         }
-        value = Texture.Load(textureName, _glWrapper);
-        _textureCache.Add(textureName, value);
-        return value;
-    }
-
-    private readonly IDictionary<string, Image> _imageCache = new Dictionary<string, Image>();
-
-    public Image GetImage(string imageName)
-    {
-        _imageCache.TryGetValue(imageName, out var value);
-        {
-            if (value is not null)
-            {
-                return value;
-            }
-        }
-        value = new Image(imageName);
-        _imageCache.Add(imageName, value);
-        return value;
+        texture = Texture.Load(texturePath, _glWrapper);
+        _textureCache.Add(texturePath, texture);
+        return texture;
     }
 }

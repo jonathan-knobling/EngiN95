@@ -1,4 +1,4 @@
-﻿using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 
 namespace EngiN95.Core.Rendering;

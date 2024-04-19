@@ -1,4 +1,4 @@
-﻿using EngiN95.Core;
+using EngiN95.Core;
 using EngiN95.Core.Management;
 using EngiN95.Core.Rendering;
 using OpenTK.Graphics.OpenGL4;
@@ -74,13 +74,13 @@ internal class GameImpl : Game
         _shader.Use();
         
         _vertexBuffer.BufferData(_vertices);
-
+        
         _vertexArray.Bind();
         _indexBuffer.Bind();
         _vertexBuffer.Bind();
         
         Matrix4.CreateScale(0.5f, out var scale);
-        Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(360f * DateTime.Now.Millisecond / 1000), out var rotation);
+        Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(180f * Time.TotalGameTime), out var rotation);
         Matrix4.CreateTranslation(400, 0, 0, out var translation);
 
         var transform = Matrix4.Identity;

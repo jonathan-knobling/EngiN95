@@ -24,7 +24,7 @@ public class IndexBufferTests
         
         //Assert
         glWrapper.Received(1).GenBuffer();
-        glWrapper.Received(1).BindBuffer(BufferTarget.ElementArrayBuffer, Handle);
+        glStateHandler.Received(1).UseIndexBuffer(Handle);
         glWrapper.Received(1).BufferData(BufferTarget.ElementArrayBuffer, Buffer.ByteLength(data), data, BufferUsageHint.StaticDraw);
         iBuffer.Handle.Should().Be(Handle);
     }
@@ -43,7 +43,7 @@ public class IndexBufferTests
         iBuffer.Bind();
         
         //Assert
-        glWrapper.Received(2).BindBuffer(BufferTarget.ElementArrayBuffer, Handle);
+        glStateHandler.Received(2).UseIndexBuffer(Handle);
     }
 
     [Fact]
@@ -60,7 +60,7 @@ public class IndexBufferTests
         iBuffer.UnBind();
         
         //Assert
-        glWrapper.Received(1).BindBuffer(BufferTarget.ElementArrayBuffer, 0);
+        glStateHandler.Received(1).UseIndexBuffer(0);
     }
 
     [Fact]
