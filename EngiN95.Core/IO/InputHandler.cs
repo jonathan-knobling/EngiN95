@@ -70,6 +70,9 @@ public sealed class InputHandler : IInputHandler
 
     /// <inheritdoc cref="IInputHandler.IsAnyKeyDown"/>
     public bool IsAnyKeyDown() => KeyboardInput.IsAnyKeyDown();
+
+    /// <inheritdoc cref="IInputHandler.IsAnyKeyOrMouseButtonDown"/>
+    public bool IsAnyKeyOrMouseButtonDown() => IsAnyKeyDown() || IsAnyMouseButtonDown();
     
     /// <inheritdoc cref="IInputHandler.MovementDirection"/>
     public Vector2 MovementDirection
