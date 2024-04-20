@@ -1,4 +1,4 @@
-<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/FiltersState/=CodeStyle/@EntryIndexedValue">On</s:String>
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/FiltersState/=NamingFilter/@EntryIndexedValue">On</s:String>
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/FiltersState/=SpellingFilter/@EntryIndexedValue">On</s:String>
@@ -7,6 +7,7 @@
   &lt;Assembly Path="C:\Users\happy\.dotnet\packs\NETStandard.Library.Ref\2.1.0\ref\netstandard2.1\netstandard.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Users\happy\.dotnet\packs\Microsoft.NETCore.App.Ref\6.0.5\ref\net6.0\System.ComponentModel.TypeConverter.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Users\happy\.dotnet\packs\Microsoft.NETCore.App.Ref\6.0.5\ref\net6.0\System.Drawing.Primitives.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\happy\.nuget\packages\system.drawing.common\7.0.0\lib\net7.0\System.Drawing.Common.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
 	<s:Boolean x:Key="/Default/Environment/Filtering/ExcludeCoverageFilters/=EngineSigma_002ECore_002EUnitTests_003B_002A_003B_002A_003B_002A/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/Environment/Filtering/ExcludeCoverageFilters/=EngineSigma_002ECore_003B_002A_003BEngineSigma_002ECore_002EIO_002EKeyboardInputHandler_003B_002A/@EntryIndexedValue">True</s:Boolean>

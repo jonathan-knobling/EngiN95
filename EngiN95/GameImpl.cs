@@ -14,10 +14,10 @@ internal class GameImpl : Game
     {
         vertices = new[]
         {
-            new Vertex(new Vector3(600, 600, 0.0f), new Vector2(1.0f, 1.0f), Color4.DarkBlue),
-            new Vertex(new Vector3(600, 0, 0.0f), new Vector2(1.0f, 0.0f), Color4.Transparent),
-            new Vertex(new Vector3(0, 0, 0.0f), new Vector2(0.0f, 0.0f), Color4.Fuchsia),
-            new Vertex(new Vector3(0, 600, 0.0f), new Vector2(0.0f, 1.0f), Color4.Lime)
+            new Vertex(new Vector3(600, 600, 0.0f), new Vector2(1.0f, 1.0f), Color4.White),
+            new Vertex(new Vector3(600, 0, 0.0f), new Vector2(1.0f, 0.0f), Color4.White),
+            new Vertex(new Vector3(0, 0, 0.0f), new Vector2(0.0f, 0.0f), Color4.White),
+            new Vertex(new Vector3(0, 600, 0.0f), new Vector2(0.0f, 1.0f), Color4.White)
         };
         
         indices = new uint[]
@@ -64,7 +64,7 @@ internal class GameImpl : Game
     {
         var movementDirection = InputHandler.MovementDirection;
         const float speed = 800f; // pixel/s
-        Console.WriteLine(movementDirection);
+        //Console.WriteLine(movementDirection);
         Camera.Instance.Move(movementDirection * speed * Time.DeltaTime);
     }
 
@@ -81,19 +81,21 @@ internal class GameImpl : Game
         indexBuffer.Bind();
         vertexBuffer.Bind();
         
+            
         Matrix4.CreateScale(0.5f, out var scale);
         Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(180f * Time.TotalGameTime), out var rotation);
         Matrix4.CreateTranslation(400, 0, 0, out var translation);
-
+        
         var transform = Matrix4.Identity;
         transform *= scale;
         transform *= rotation;
         transform *= translation;
 
         shader.SetMatrix4("transform", transform);
-        
+
         shader.SetMatrix4("view", Camera.Instance.ToViewMatrix());
-        
+
         GL.DrawElements(PrimitiveType.Triangles, indices.Length, DrawElementsType.UnsignedInt, 0);
+        
     }
 }
