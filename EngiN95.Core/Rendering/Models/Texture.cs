@@ -1,8 +1,5 @@
-﻿using System.Drawing;
-using System.Drawing.Imaging;
+﻿using System.Runtime.InteropServices;
 using OpenTK.Graphics.OpenGL4;
-using PixelFormat = System.Drawing.Imaging.PixelFormat;
-using Rectangle = System.Drawing.Rectangle;
 
 namespace EngiN95.Core.Rendering;
 
@@ -39,37 +36,43 @@ public class Texture : IDisposable
 
         glWrapper.ActiveTexture(TextureUnit.Texture0);
         glWrapper.BindTexture(TextureTarget.Texture2D, handle);
-
-#pragma warning disable CA1416 
-        //only works on windows
         
-        //only works on windows
-#pragma warning disable CA1416
-
-        using var image = new Bitmap(texturePath);
-        image.RotateFlip(RotateFlipType.RotateNoneFlipY);
-        var data = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadOnly,
-            PixelFormat.Format32bppArgb);
-
-        glWrapper.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, image.Width, image.Height, 0,
-            OpenTK.Graphics.OpenGL4.PixelFormat.Bgra, PixelType.UnsignedByte, data.Scan0);
         
-        glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter,
-            (int) TextureMinFilter.Nearest);
-        glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter,
-            (int) TextureMinFilter.Nearest);
-        glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS,
-            (int) TextureWrapMode.Repeat);
-        glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT,
-            (int) TextureWrapMode.Repeat);
+        using var texture = SixLabors.ImageSharp.Image.Load<Rgba32>(texturePath);
+        texture.Mutate(x => x.Flip(FlipMode.Vertical)); 
+        
+        var pixelData = new byte[4 * texture.Width * texture.Height];
+        Span<byte> span = stackalloc byte[4 * texture.Width * texture.Height];
+        texture.CopyPixelDataTo(span);
+        MemoryMarshal.AsBytes(span).CopyTo(pixelData);
+        
+        var pinnedArray = GCHandle.Alloc(pixelData, GCHandleType.Pinned);
+        try
+        {
+            IntPtr pointer = pinnedArray.AddrOfPinnedObject();
 
+            GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.Rgba, texture.Width, texture.Height, 0,
+                OpenTK.Graphics.OpenGL4.PixelFormat.Rgba, PixelType.UnsignedByte, pointer);
+            
+            glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter,
+                (int) TextureMinFilter.Nearest);
+            glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter,
+                (int) TextureMinFilter.Nearest);
+            glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS,
+                (int) TextureWrapMode.Repeat);
+            glWrapper.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT,
+                (int) TextureWrapMode.Repeat);
+        }
+        finally
+        {
+            pinnedArray.Free();
+        }
+        
         glWrapper.GenerateMipmap(GenerateMipmapTarget.Texture2D);
         
         glWrapper.BindTexture(TextureTarget.Texture2D, 0);
-
-        return new Texture(handle, image.Width, image.Height, glWrapper);
         
-#pragma warning restore CA1416
+        return new Texture(handle, texture.Width, texture.Height, glWrapper);
     }
 
     ~Texture()
