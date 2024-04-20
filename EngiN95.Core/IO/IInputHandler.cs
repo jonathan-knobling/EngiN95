@@ -120,4 +120,10 @@ public interface IInputHandler
     /// </summary>
     /// <returns>If any key is currently pressed</returns>
     bool IsAnyKeyDown();
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>If any mouse button or key is pressed</returns>
+    bool IsAnyKeyOrMouseButtonDown();
 }
