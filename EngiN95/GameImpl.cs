@@ -53,11 +53,14 @@ internal class GameImpl : Game
 
         var rm = new ResourceManager(glWrapper);
         
-        texture = rm.GetTexture("Resources/Sprites/grass.png");
+        texture = rm.GetTexture("Resources/Sprites/travisfish.png");
         texture.Use();
 
         shader.SetMatrix4("projection", 
             Matrix4.CreateOrthographic(GameWindow.Size.X, GameWindow.Size.Y, -1, 100));
+
+        GL.Enable(EnableCap.Blend);
+        GL.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
     }
 
     protected override void OnUpdate()
@@ -96,6 +99,5 @@ internal class GameImpl : Game
         shader.SetMatrix4("view", Camera.Instance.ToViewMatrix());
 
         GL.DrawElements(PrimitiveType.Triangles, indices.Length, DrawElementsType.UnsignedInt, 0);
-        
     }
 }

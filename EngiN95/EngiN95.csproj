@@ -35,6 +35,10 @@
       <Content Include="Resources\Sprites\wall.jpg">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <None Remove="Resources\Sprites\travisfish.png" />
+      <Content Include="Resources\Sprites\travisfish.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>
