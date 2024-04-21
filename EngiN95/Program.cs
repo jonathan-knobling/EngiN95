@@ -1,6 +1,6 @@
 ﻿using EngiN95.Core;
 
-namespace EngineTest;
+namespace EngiN95;
 
 public static class Program
 {
