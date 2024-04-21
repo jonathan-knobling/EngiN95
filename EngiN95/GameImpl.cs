@@ -50,8 +50,8 @@ internal class GameImpl : Game
         vertexBuffer.BufferData(vertices);
         vertexArray = new VertexArray(glWrapper);
         indexBuffer = new IndexBuffer(glWrapper, indices);
-
-        var rm = new ResourceManager(glWrapper);
+        
+        var rm = ResourceManager.Instance;
         
         texture = rm.GetTexture("Resources/Sprites/travisfish.png");
         texture.Use();
