@@ -4,7 +4,7 @@ using EngiN95.Core.Rendering;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 
-namespace EngineTest;
+namespace EngiN95;
 
 #pragma warning disable CS8618
 
